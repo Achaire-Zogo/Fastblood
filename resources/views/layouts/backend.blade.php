@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang={{ str_replace('_', '-', app()->getLocale()) }}>
 
 
 <!-- index.html  21 Nov 2019 03:44:50 GMT -->
