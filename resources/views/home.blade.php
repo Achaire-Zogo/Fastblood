@@ -32,7 +32,7 @@
                             <nav class="navbar h-100 navbar-expand-lg">
                                 <!-- Logo Area  -->
                                 <a class="navbar-brand mt-10" href="index-2.html"><img src="{{asset('img/logo.png')}}" style="height: 80px; width: 180px;" alt="" title="retour à l'acceuil | Fast blood"></a>
-
+                                <h4>Centre de transfusion Sanguine</h4>
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
                                 <div class="collapse navbar-collapse" id="medilifeMenu">
@@ -40,9 +40,6 @@
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item">
                                             <a class="nav-link" href="index-2.html">Accueil</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="sign_up.html">S'inscire</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="sign_in.html">Se Connecter</a>
