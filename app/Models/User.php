@@ -19,9 +19,33 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'telephone',
+        'role_id',
         'email',
         'password',
+        'enabled',
+        'profile_picture',
     ];
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    public function groupe_users()
+    {
+        return $this->hasMany(GroupeUser::class);
+    }
+
+    public function bloodbanks()
+    {
+        return $this->hasMany(BloodBank::class);
+    }
+
+    public function usersossignals()
+    {
+        return $this->hasMany(UserSosSignal::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
