@@ -19,7 +19,7 @@
 5. intervention/image: for image creation while uploading
 6. spatie/laravel-sitemap: generating the sitemap of the application
 
-#### HOW TO RIN THE App
+#### HOW TO RUN THE App
 1. Clone the repository from Heroku CLI
 2. Install all the necessary packages by: `$ composer install` or `$ composer update `
 3. Create the .env file by typing the command:`$ cp .env.example .env`
