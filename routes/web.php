@@ -28,3 +28,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'App
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/dashbord', [App\Http\Controllers\admin\DashboardController::class, 'index'])->name('dashbord');
+Route::get('/user', [App\Http\Controllers\admin\UserController::class, 'index'])->name('user');
+Route::get('/dashbord/{id}', [App\Http\Controllers\admin\UserController::class, 'detail'])->name('dashbord');
