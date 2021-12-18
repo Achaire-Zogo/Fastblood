@@ -28,7 +28,18 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'App
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//route pour le directeur
+Route::get('/dashboard/director', [App\Http\Controllers\director\HomeDirectorController::class, 'index'])->name('director');
+Route::get('/dashboard/valideResponsable/director', [App\Http\Controllers\director\ValiderResponsableController::class, 'index'])->name('valideResponsable');
+Route::get('/dashboard/listeResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'index'])->name('listeResponsable');
 
-Route::get('/dashbord', [App\Http\Controllers\admin\DashboardController::class, 'index'])->name('dashbord');
-Route::get('/user', [App\Http\Controllers\admin\UserController::class, 'index'])->name('user');
-Route::get('/dashbord/{id}', [App\Http\Controllers\admin\UserController::class, 'detail'])->name('dashbord');
+//route pour le responsable
+Route::get('/dashboard/Responsable', [App\Http\Controllers\responsable\ResponsableController::class, 'index'])->name('responsable');
+
+
+//route pour le gestionnaire
+Route::get('/dashboard/gestionnaire', [App\Http\Controllers\gestionnaire\GestionnaireController::class, 'index'])->name('gestionnaire');
+
+
+//route pour le user
+Route::get('/dashboard/user', [App\Http\Controllers\user\UserController::class, 'index'])->name('user');
