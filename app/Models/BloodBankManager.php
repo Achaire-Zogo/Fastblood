@@ -9,7 +9,7 @@ class BloodBankManager extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'bank_id', 'enabled'];
+    protected $fillable = ['user_id', 'blood_bank_id', 'enabled'];
 
     public function user()
     {

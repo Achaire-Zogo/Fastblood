@@ -45,7 +45,7 @@
 				document.getElementById("existe").style.display="none";
 				document.getElementById("new").style.display="none";
 		document.getElementById("bank_idG").required=true;
-		document.getElementById("oui").required=true;
+		document.getElementById("oui").required=false;
 				document.getElementById("name_bank").required=false;
 				document.getElementById("ouiEx").required=false;
 		document.getElementById("address").required=false;
