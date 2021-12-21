@@ -30,8 +30,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'App
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //route pour le directeur
 Route::get('/dashboard/director', [App\Http\Controllers\director\HomeDirectorController::class, 'index'])->name('director');
-Route::get('/dashboard/valideResponsable/director', [App\Http\Controllers\director\ValiderResponsableController::class, 'index'])->name('valideResponsable');
+Route::get('/dashboard/valideResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'listeResponsableAttente'])->name('valideResponsable');
 Route::get('/dashboard/listeResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'index'])->name('listeResponsable');
+Route::get('/dashboard/detaileResponsable/director/{id}', [App\Http\Controllers\director\listeResponsableController::class, 'detail'])->name('detailResponsable');
+Route::post('/dashboard/detaileResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'valideResponsable'])->name('validerResponsable');
 
 //route pour le responsable
 Route::get('/dashboard/Responsable', [App\Http\Controllers\responsable\ResponsableController::class, 'index'])->name('responsable');

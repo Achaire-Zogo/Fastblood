@@ -11,4 +11,5 @@ class HomeDirectorController extends Controller
     {        
         return view('director.index');
     }
+    
 }
