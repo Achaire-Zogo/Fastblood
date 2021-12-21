@@ -10,7 +10,7 @@
 		
 			var select= document.getElementById("role_id");
 			var val= select.options[select.selectedIndex].value;
-			if (val==2) {
+			if (val==3) {
 				document.getElementById("chBON").style.display="";
 				document.getElementById("selectG").style.display="none";
 				document.getElementById("select").style.display="none";
@@ -38,7 +38,7 @@
 		document.getElementById("bank_id").required=false;
 				//document.getElementById("non").checked=true;
 			}
-			if(val==3){
+			if(val==2){
 				document.getElementById("selectG").style.display="";
 				document.getElementById("chBON").style.display="none";
 				document.getElementById("select").style.display="none";

@@ -51,7 +51,19 @@ Route::post('/login', 'App\Http\Controllers\Auth\SigninController@login');
 Route::post('/signup', 'App\Http\Controllers\Auth\SignupController@signup');
 
 
-Route::get('/dashbord', [App\Http\Controllers\admin\DashboardController::class, 'index'])->name('dashbord');
-Route::get('/user', [App\Http\Controllers\admin\UserController::class, 'index'])->name('user');
-Route::get('/dashbord/{id}', [App\Http\Controllers\admin\UserController::class, 'detail'])->name('dashbord');
+Route::get('/dashboard/director', [App\Http\Controllers\director\HomeDirectorController::class, 'index'])->name('director');
+Route::get('/dashboard/valideResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'listeResponsableAttente'])->name('valideResponsable');
+Route::get('/dashboard/listeResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'index'])->name('listeResponsable');
+Route::get('/dashboard/detaileResponsable/director/{id}', [App\Http\Controllers\director\listeResponsableController::class, 'detail'])->name('detailResponsable');
+Route::post('/dashboard/detaileResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'valideResponsable'])->name('validerResponsable');
 
+//route pour le responsable
+Route::get('/dashboard/Responsable', [App\Http\Controllers\responsable\ResponsableController::class, 'index'])->name('responsable');
+
+
+//route pour le gestionnaire
+Route::get('/dashboard/gestionnaire', [App\Http\Controllers\gestionnaire\GestionnaireController::class, 'index'])->name('gestionnaire');
+
+
+//route pour le user
+Route::get('/dashboard/user', [App\Http\Controllers\user\UserController::class, 'index'])->name('user');
