@@ -52,4 +52,5 @@ class LoginController extends Controller
             $this->redirectTo = route('user.dashboard.index');
         }
     }
+   
 }

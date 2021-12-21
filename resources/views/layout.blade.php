@@ -42,7 +42,7 @@
                                             <a class="nav-link" href="index-2.html">Accueil</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="sign_in.html">Se Connecter</a>
+                                            <a class="nav-link" href="{{route('loginpage')}}">Se Connecter</a>
                                         </li>
                                     <!-- Appointment Button -->
                                     <a href="#" class="btn medilife-appoint-btn ml-30 pt-0">Faire un <span>don</span> de sang</a>
