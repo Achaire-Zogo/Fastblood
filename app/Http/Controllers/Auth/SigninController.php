@@ -27,16 +27,16 @@ class SigninController extends Controller
                $role=(Role::where('id',$user->role_id))->first();
                Session::put('role',$role['id']);
                if (Session::get('role')==4) {
-                return view('director/index');
+                return redirect('/dashboard/director');
                }
                if (Session::get('role')==3) {
-                return view('responsable/index');
+                return redirect('/dashboard/Responsable');
                }
                if (Session::get('role')==2) {
-                return view('gestionnaire/index');
+                return redirect('/dashboard/gestionnaire');
                }
                if (Session::get('role')==1) {
-                return view('user/index');
+                return redirect('/dashboard/user');
                }
        }
        else{
