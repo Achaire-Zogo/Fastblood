@@ -67,3 +67,7 @@ Route::get('/dashboard/gestionnaire', [App\Http\Controllers\gestionnaire\Gestion
 
 //route pour le user
 Route::get('/dashboard/user', [App\Http\Controllers\user\UserController::class, 'index'])->name('user');
+Route::get('/donSang/user', [App\Http\Controllers\user\DonSangController::class, 'index'])->name('donSang');
+Route::get('/listeAssociation/user', [App\Http\Controllers\user\ListeAssociationController::class, 'index'])->name('listeAssociation');
+Route::get('/MesAssociation/user', [App\Http\Controllers\user\MesAssociationController::class, 'index'])->name('MesAssociation');
+Route::get('/creerAssociation/user', [App\Http\Controllers\user\CreerAssociationController::class, 'index'])->name('creerAssociation');

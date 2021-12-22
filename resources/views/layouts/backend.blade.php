@@ -9,6 +9,7 @@
     {!! SEOMeta::generate() !!}
     <title>FastBlood </title>
     <!-- General CSS Files -->
+    
     <link rel="stylesheet" href="{{ asset('backend/assets/css/app.min.css') }}">
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('backend/assets/css/style.css') }}">
@@ -16,10 +17,16 @@
     <link rel="stylesheet" href="{{ asset('backend/assets/bundles/datatables/datatables.min.css') }}">
     <link rel="stylesheet" href="{{asset('backend/assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{asset('backend/assets/bundles/izitoast/css/iziToast.min.css')}}">
+    <!--editor-->
+      <!-- General CSS Files -->
+  <link rel="stylesheet" href="{{ asset('backend/assets/bundles/summernote/summernote-bs4.css') }}">
+  <link rel="stylesheet" href="{{ asset('backend/assets/bundles/codemirror/lib/codemirror.css') }}">
+  <link rel="stylesheet" href="{{ asset('backend/assets/bundles/codemirror/theme/duotone-dark.css') }}">
+  <link rel="stylesheet" href="{{ asset('backend/assets/bundles/jquery-selectric/selectric.css') }}">
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="{{ asset('backend/assets/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('toastr.css') }}">
-    <link rel='shortcut icon' type='image/x-icon' href='{{ asset('backend/assets/img/favicon.ico') }}' />
+    <link rel='shortcut icon' type='image/x-icon' href="{{ asset('backend/assets/img/favicon.ico') }}" />
     @yield('styles')
 </head>
 
@@ -245,32 +252,28 @@
                     </li>
                     @endif
                     @if(session()->get('role')==1)
-                    <li class="dropdown active">
-                        <a href="/" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+                    <li class="dropdown">
+                        <a href="{{route('user')}}" class="menu-toggle nav-link "><i
+                                data-feather="briefcase"></i><span>Demander du sang</span></a>
+                      
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Gestion des responsables</span></a>
-                        <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="{{route('valideResponsable')}}">valider les responsables</a></li>
-                            <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des responsables</a></li>
-                        </ul>
+                        <a href="{{route('donSang')}}" class="menu-toggle nav-link "><i data-feather="command"></i><span>Faire un don de sang</span></a>
+                        
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Gestion des banques de sang</span></a>
+                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Mes associations</span></a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="portfolio.html">creer une banque de sang</a></li>
-                            <li><a class="nav-link" href="chat.html">valider banque de sang</a></li>
-                             <li><a class="nav-link" href="blog.html">liste de banque de sang</a></li>
+                        <li><a class="nav-link" href="{{route('listeAssociation')}}">Liste des association</a></li>
+                        <li><a class="nav-link" href="{{route('creerAssociation')}}">Creer une association</a></li>
+                        <li><a class="nav-link" href="email-compose.html">Messagerie de l'Assocition </a></li>                           
+                        <li><a class="nav-link" href="{{route('MesAssociation')}}">Mes associations </a></li>
                         </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Gestion des associations</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="email-inbox.html">valider les associations</a></li>
-                            <li><a class="nav-link" href="email-compose.html">liste des associations</a></li>
-                        </ul>
-                    </li>
+                    </li>creerAssociation
+                    
+            
+                   
+                    
                     @endif
                     @if(session()->get('role')==5)
                     <li class="dropdown active">
@@ -377,6 +380,12 @@
 <script src="{{ asset('backend/assets/bundles/datatables/export-tables/vfs_fonts.js')}}"></script>
 <script src="{{ asset('backend/assets/bundles/datatables/export-tables/buttons.print.min.js')}}"></script>
 <script src="{{ asset('backend/assets/js/page/datatables.js')}}"></script>
+<script src="{{ asset('backend/assets/bundles/summernote/summernote-bs4.js')}}"></script> 
+<script src="{{ asset('backend/assets/bundles/codemirror/lib/codemirror.js')}}"></script>
+<script src="{{ asset('backend/assets/bundles/codemirror/mode/javascript/javascript.js')}}"></script>
+<script src="{{ asset('backend/assets/bundles/jquery-selectric/jquery.selectric.min.js')}}"></script>
+<script src="{{ asset('backend/assets/bundles/ckeditor/ckeditor.js')}}"></script>
+
 <!-- Template JS File -->
 @yield('scripts')
 </body>
