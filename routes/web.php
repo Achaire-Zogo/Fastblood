@@ -44,6 +44,12 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'namespace' => 'App\
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// //route pour le directeur
+// Route::get('/dashboard/director', [App\Http\Controllers\director\HomeDirectorController::class, 'index'])->name('director');
+// Route::get('/dashboard/valideResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'listeResponsableAttente'])->name('valideResponsable');
+// Route::get('/dashboard/listeResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'index'])->name('listeResponsable');
+// Route::get('/dashboard/detaileResponsable/director/{id}', [App\Http\Controllers\director\listeResponsableController::class, 'detail'])->name('detailResponsable');
+// Route::post('/dashboard/detaileResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'valideResponsable'])->name('validerResponsable');
 
 Route::view('/connexion', 'auth/login' )->name('loginpage');
 Route::get('/signup_page', 'App\Http\Controllers\Auth\SignupController@signuppage' )->name('signuppage');
@@ -67,7 +73,9 @@ Route::get('/dashboard/gestionnaire', [App\Http\Controllers\gestionnaire\Gestion
 
 //route pour le user
 Route::get('/dashboard/user', [App\Http\Controllers\user\UserController::class, 'index'])->name('user');
+
 Route::get('/donSang/user', [App\Http\Controllers\user\DonSangController::class, 'index'])->name('donSang');
 Route::get('/listeAssociation/user', [App\Http\Controllers\user\ListeAssociationController::class, 'index'])->name('listeAssociation');
 Route::get('/MesAssociation/user', [App\Http\Controllers\user\MesAssociationController::class, 'index'])->name('MesAssociation');
 Route::get('/creerAssociation/user', [App\Http\Controllers\user\CreerAssociationController::class, 'index'])->name('creerAssociation');
+

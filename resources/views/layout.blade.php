@@ -21,142 +21,203 @@
 </head>
 
 <body>
+        <div id="preloader">
+                <div class="medilife-load"></div>
+            </div>
     <!-- ***** Header Area Start ***** -->
     <header class="header-area">
-        <!-- Main Header Area -->
-        <div class="main-header-area" id="stickyHeader">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12 h-100">
-                        <div class="main-menu h-100">
-                            <nav class="navbar h-100 navbar-expand-lg">
-                                <!-- Logo Area  -->
-                                <a class="navbar-brand mt-10" href="index-2.html"><img src="{{asset('img/logo.png')}}" style="height: 80px; width: 180px;" alt="" title="retour à l'acceuil | Fast blood"></a>
-                                <h3>Centre de transfusion Sanguine</h3>
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-
-                                <div class="collapse navbar-collapse" id="medilifeMenu">
-                                    <!-- Menu Area -->
-                                    <ul class="navbar-nav ml-auto">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="index-2.html">Accueil</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{route('loginpage')}}">Se Connecter</a>
-                                        </li>
-                                    <!-- Appointment Button -->
-                                    <a href="#" class="btn medilife-appoint-btn ml-30 pt-0">Faire un <span>don</span> de sang</a>
-                                    </ul>
+                <!-- Top Header Area -->
+                <div class="top-header-area">
+                        <div class="container h-100">
+                            <div class="row h-100">
+                                <div class="col-12 h-100">
+                                    <div class="h-100 d-md-flex justify-content-between align-items-center">
+                                            <select data-placeholder="Choose a Language..." class=" bg-primary border-0">
+                                                    <option value="fr">Fr</option>
+                                                    <option value="en">En</option>
+                                            </select>
+                                        <span class=" text-white">Centre de transfusion sanguine</span>
+                                                
+                                     
+                                        <p class=" text-white">Opening Hours : Monday to Saturday - 8am to 10pm Contact : <span>+12-823-611-8721</span></p>
+                                    </div>
                                 </div>
-                            </nav>
+                            </div>
                         </div>
+                    </div>  
+<!-- Main Header Area -->
+<div class="main-header-area" id="stickyHeader">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 h-100">
+                    <div class="main-menu h-100">
+                        <nav class="navbar h-100 navbar-expand-lg">
+                            <!-- Logo Area  -->
+                            <a class="navbar-brand" href="index-2.html"><img src="{{asset('img/logo.png')}}" style="width:100px; height:50px;" alt="Logo"></a>
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+                            <div class="collapse navbar-collapse" id="medilifeMenu">
+                                <!-- Menu Area -->
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="index-2.html">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="index-2.html">Home</a>
+                                            <a class="dropdown-item" href="about-us.html">About Us</a>
+                                            <a class="dropdown-item" href="services.html">Services</a>
+                                            <a class="dropdown-item" href="blog.html">News</a>
+                                            <a class="dropdown-item" href="single-blog.html">News Details</a>
+                                            <a class="dropdown-item" href="contact.html">Contact</a>
+                                            <a class="dropdown-item" href="elements.html">Elements</a>
+                                            <a class="dropdown-item" href="index-icons.html">All Icons</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="about-us.html">About Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="services.html">Services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="blog.html">News</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="contact.html">Contact</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{route('loginpage')}}">Se Connecter</a>
+                                    </li>
+                                </ul>
+                                <!-- Appointment Button -->
+                                <a href="#gift" class="btn medilife-appoint-btn ml-30 pt-0">Faire un <span>don</span> de sang</a>
+                            </div>
+                        </nav>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </header>
 	
 @yield('body')
 
-        <footer class="footer">
-            <div class="section-two">
-                <div class="container">
-                    <!--Footer Info -->
-                    <div class="row footer-info">
-                        <div class="col-lg-3 col-md-12 col-sm-12">
-                            <div class="">
-                                <a href="index-2.html" class="logo">
-                                    <img src="{{asset('img/logo.png')}}" alt="missing_logo" height="20">
-                                </a>
+    <!-- ***** Footer Area Start ***** -->
+    <footer class="footer-area section-padding-100">
+        <!-- Main Footer Area -->
+        <div class="main-footer-area">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="footer-widget-area">
+                            <div class="footer-logo">
+                                <img src="img/core-img/logo.png" alt="">
                             </div>
-                            <p class="text-footer-clr mt-3">These cases are perfectly simple and easy to free hour, when nothing prevents distinguish.</p>
-                            <div>
-                                <ul class="list-unstyled social-icon">
-                                    <li class="list-inline-item"><a href="#"><i class="fab fa-apple"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                </ul>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer.</p>
+                            <div class="footer-social-info">
+                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                             </div>
                         </div>
-                        <div class="col-lg-2 col-md-4 col-sm-4">
-                            <div class="footer-head">
-                                <h5 class="text-light">Company</h5>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="footer-widget-area">
+                            <div class="widget-title">
+                                <h6>Latest News</h6>
                             </div>
-                            <div class="footer-item mt-3">
-                                <ul class="list-unstyled">
-                                    <li><a href="#"><i class="fas fa-chevron-right mr-2"></i> About us</a></li>
-                                    <li><a href="#"><i class="fas fa-chevron-right mr-2"></i> Services</a></li>
-                                    <li><a href="#"><i class="fas fa-chevron-right mr-2"></i> Portfolio</a></li>
-                                    <li><a href="#"><i class="fas fa-chevron-right mr-2"></i> News</a></li>
-                                    <li><a href="#"><i class="fas fa-chevron-right mr-2"></i> FAQ</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-4">
-                            <div class="footer-head">
-                                <h5 class="text-light">Useful</h5>
-                            </div>
-                            <div class="footer-item mt-3">
-                                <ul class="list-unstyled">
-                                    <li><a href="#"><i class="fas fa-chevron-right mr-2"></i> Accounts</a></li>
-                                    <li><a href="#"><i class="fas fa-chevron-right mr-2"></i> Sales & Support</a></li>
-                                    <li><a href="#"><i class="fas fa-chevron-right mr-2"></i> Orders Track</a></li>
-                                    <li><a href="#"><i class="fas fa-chevron-right mr-2"></i> Download Center</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-4">
-                            <div class="footer-head">
-                                <h5 class="text-light">Additional</h5>
-                            </div>
-                            <div class="footer-item mt-3">
-                                <ul class="list-unstyled">
-                                    <li><a href="#"><i class="fas fa-chevron-right mr-2"></i> Portfolio</a></li>
-                                    <li><a href="#"><i class="fas fa-chevron-right mr-2"></i> Contact Us</a></li>
-                                    <li><a href="#"><i class="fas fa-chevron-right mr-2"></i> Blog</a></li>
-                                    <li><a href="#"><i class="fas fa-chevron-right mr-2"></i> Help Center</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="footer-head">
-                                <h5 class="text-light">Newsletter</h5>
-                            </div>
-                            <div class="footer-news mt-3">
-                                <p class="text-footer-clr">Subscribe to our email newsletter to receive useful articles and special offers.</p>
-                                <div class="subscribed-form">
-                                    <div class="subcribed-form">
-                                        <form action="#">
-                                            <input name="email" type="email" placeholder="Your Email" id="email" required="">
-                                            <button type="submit" class=""><span class="fab fa-telegram-plane"></span></button>
-                                        </form>
+                            <div class="widget-blog-post">
+                                <!-- Single Blog Post -->
+                                <div class="widget-single-blog-post d-flex">
+                                    <div class="widget-post-thumbnail">
+                                        <img src="img/blog-img/ln1.jpg" alt="">
+                                    </div>
+                                    <div class="widget-post-content">
+                                        <a href="#">Better Health Care</a>
+                                        <p>Dec 02, 2017</p>
+                                    </div>
+                                </div>
+                                <!-- Single Blog Post -->
+                                <div class="widget-single-blog-post d-flex">
+                                    <div class="widget-post-thumbnail">
+                                        <img src="img/blog-img/ln2.jpg" alt="">
+                                    </div>
+                                    <div class="widget-post-content">
+                                        <a href="#">A new drug is tested</a>
+                                        <p>Dec 02, 2017</p>
+                                    </div>
+                                </div>
+                                <!-- Single Blog Post -->
+                                <div class="widget-single-blog-post d-flex">
+                                    <div class="widget-post-thumbnail">
+                                        <img src="img/blog-img/ln3.jpg" alt="">
+                                    </div>
+                                    <div class="widget-post-content">
+                                        <a href="#">Health department advice</a>
+                                        <p>Dec 02, 2017</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- End Footer Info -->
-                </div>
-            </div>
-            <hr>
 
-            <!-- Copyright Bar -->
-            <section class="section-30">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-12">
-                            <div class="text-center">
-                                <p class="copy-rights text-white mb-0"><a href="#" target="_blank">Fast Blood</a></p>
+                    <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="footer-widget-area">
+                            <div class="widget-title">
+                                <h6>Contact Form</h6>
+                            </div>
+                            <div class="footer-contact-form">
+                                <form action="#" method="post">
+                                    <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="footer-name" id="footer-name" placeholder="Name">
+                                    <input type="email" class="form-control border-top-0 border-right-0 border-left-0" name="footer-email" id="footer-email" placeholder="Email">
+                                    <textarea name="message" class="form-control border-top-0 border-right-0 border-left-0" id="footerMessage" placeholder="Message"></textarea>
+                                    <button type="submit" class="btn medilife-btn">Contact Us </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="footer-widget-area">
+                            <div class="widget-title">
+                                <h6>News Letter</h6>
+                            </div>
+
+                            <div class="footer-newsletter-area">
+                                <form action="#">
+                                    <input type="email" class="form-control border-0 mb-0" name="newsletterEmail" id="newsletterEmail" placeholder="Your Email Here">
+                                    <button type="submit">Subscribe</button>
+                                </form>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- End Copyright Bar -->
-        </footer>
-        <!-- FOOTER END -->
+            </div>
+        </div>
+        <!-- Bottom Footer Area -->
+        <div class="bottom-footer-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="bottom-footer-content">
+                            <!-- Copywrite Text -->
+                            <div class="copywrite-text">
+                                 <p><a target="_blank" href="/">FastBlood</a>
+</p>              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ***** Footer Area End ***** -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <!-- Portfolio -->

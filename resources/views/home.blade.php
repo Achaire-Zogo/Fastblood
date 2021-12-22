@@ -1,19 +1,18 @@
 
 @extends('layout')
 @section('body')
-    <!-- ***** Header Area End ***** -->
-
+ 
     <!-- ***** Hero Area Start ***** -->
     <section class="hero-area">
         <div class="hero-slides owl-carousel">
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url('{{asset('img/bg-img/hero1.jpg')}}');">
+            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/pex1.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
                             <div class="hero-slides-content">
                                 <h2 data-animation="fadeInUp" data-delay="100ms">Le sang c'est la <span class="text-danger">Vie.</span></h2>
-                                <h6 data-animation="fadeInUp" data-delay="400ms">  C'est l'essence vital qui nous maintient debout et assurer le fonctionnement de notre corps.</h6>
+                                <h5 data-animation="fadeInUp" data-delay="400ms">C'est l'essence vital qui nous maintient debout et assurer le fonctionnement de notre corps.</h5>
                                 <a href="#" class="btn medilife-btn mt-50 pt-0" data-animation="fadeInUp" data-delay="700ms">Découvrir FastBlood</a>
                             </div>
                         </div>
@@ -21,13 +20,13 @@
                 </div>
             </div>
 <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url('{{asset('img/bg-img/breadcumb3.jpg')}}');">
+            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/pex2.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
                             <div class="hero-slides-content">
                                 <h2 data-animation="fadeInUp" data-delay="100ms">Aidez tout en <br> restant en <span class="text-danger">sécurité.</span></h2>
-                                <h6 data-animation="fadeInUp" data-delay="400ms">Venez, Inscrivez-vous et aidez ceux qui sont dans le besoin.</h6>
+                                <h5 data-animation="fadeInUp" data-delay="400ms">Venez, Inscrivez-vous et aidez ceux qui sont dans le besoin.</h5>
                                 <a href="#" class="btn medilife-btn mt-50 pt-0" data-animation="fadeInUp" data-delay="700ms">Découvrir FastBlood</a>
                             </div>
                         </div>
@@ -35,13 +34,13 @@
                 </div>
             </div>
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url('{{asset('img/bg-img/breadcumb1.jpg')}}');">
+            <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/pex3.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
                             <div class="hero-slides-content">
                                 <h2 data-animation="fadeInUp" data-delay="100ms">Une poche de sang de donnée <br>vaut une vie de <span class="text-danger">sauvée.</span></h2>
-                                <h6 data-animation="fadeInUp" data-delay="400ms">Ils sont des centaines à mourir chaque jours par manque de sang, venez...</h6>
+                                <h5 data-animation="fadeInUp" data-delay="400ms">Ils sont des centaines à mourir chaque jours par manque de sang, venez...</h5>
                                 <a href="#" class="btn medilife-btn mt-50 pt-0" data-animation="fadeInUp" data-delay="700ms">Découvrir FastBlood</a>
                             </div>
                         </div>
@@ -53,97 +52,113 @@
     <!-- ***** Hero Area End ***** -->
 
     <!-- ***** Book An Appoinment Area Start ***** -->
-    <div class="medilife-book-an-appoinment-area">
-        <div class="container">
-            <div class="row">
-                <div class="pt-3 col-lg-12" style="border-radius: 1rem; background-color: rgb(150, 183, 242);">
-                    <div class="col-lg-8 col-md-12 mx-auto">
-                        <div class="text-center">
-                            <h3>Faire une demande de sang</h3>
-                            <div class="spacer-15"></div>
-                            <p class="text-muted mb-0">Besoin de sang ? Faites votre demande.</p>
-                            <div class="spacer-30"></div>
+    <div class="medilife-book-an-appoinment-area" id="gift">
+            <div class="container">
+                <div class="row">
+                        <div class="pt-3 col-lg-12" style="border-radius: 1rem; background-color: rgb(150, 183, 242);">
+                            <div class="col-lg-8 col-md-12 mx-auto">
+                                <div class="text-center">
+                                    <h3>Faire un don de sang</h3>
+                                    <div class="spacer-15"></div>
+                                    <p class="text-muted mb-0">Donnez votre sang, Aidez ceux qui en ont besoin </p>
+                                    <div class="spacer-30"></div>
+                                </div>
+                            </div>
+                        <div class="appointment-form-content" style="background-color: rgb(150, 183, 242);">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-12 col-lg-9">
+                                    <div class="medilife-appointment-form" style="background-color: rgb(150, 183, 242);">
+                                        <form action="#" method="post">
+                                            <div class="row align-items-end">
+                                                <div class="col-12 col-md-4">
+                                                    <div class="form-group">
+                                                        <select class="form-control" id="speciality">
+                                                        <option>Speciality 1</option>
+                                                        <option>Speciality 2</option>
+                                                        <option>Speciality 3</option>
+                                                        <option>Speciality 4</option>
+                                                        <option>Speciality 5</option>
+                                                    </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <div class="form-group">
+                                                        <select class="form-control" id="doctors">
+                                                        <option>Doctors 1</option>
+                                                        <option>Doctors 2</option>
+                                                        <option>Doctors 3</option>
+                                                        <option>Doctors 4</option>
+                                                        <option>Doctors 5</option>
+                                                    </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-2">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" name="date" id="date" placeholder="Date">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-2">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" name="time" id="time" placeholder="Time">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="name" id="name" placeholder="Name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="number" id="number" placeholder="Phone">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <div class="form-group">
+                                                        <input type="email" class="form-control border-top-0 border-right-0 border-left-0" name="email" id="email" placeholder="E-mail">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-7">
+                                                    <div class="form-group mb-0">
+                                                        <textarea name="message" class="form-control mb-0 border-top-0 border-right-0 border-left-0" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-5 mb-0">
+                                                    <div class="form-group mb-0">
+                                                        <button type="submit" class="btn medilife-btn">Make an Appointment </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-3">
+                                    <div class="medilife-contact-info">
+                                        <!-- Single Contact Info -->
+                                        <div class="single-contact-info mb-30">
+                                            <img src="img/icons/alarm-clock.png" alt="">
+                                            <p>Mon - Sat 08:00 - 21:00 <br>Sunday CLOSED</p>
+                                        </div>
+                                        <!-- Single Contact Info -->
+                                        <div class="single-contact-info mb-30">
+                                            <img src="img/icons/envelope.png" alt="">
+                                            <p>0080 673 729 766 <br>contact@business.com</p>
+                                        </div>
+                                        <!-- Single Contact Info -->
+                                        <div class="single-contact-info">
+                                            <img src="img/icons/map-pin.png" alt="">
+                                            <p>Lamas Str, no 14-18 <br>41770 Miami</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                <div style="position: relative;">
-                    <form action="#" method="post">
-                    <div class="row align-items-end">
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <select class="form-control" id="speciality">
-                                <option>Speciality 1</option>
-                            </select>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <select class="form-control" id="doctors">
-                                <option>Doctors 1</option>
-                            </select>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-2">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="date" id="date" placeholder="Date">
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-2">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="time" id="time" placeholder="Time">
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <div class="form-group">
-                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="name" id="name" placeholder="Name">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="number" id="number" placeholder="Phone">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <input type="email" class="form-control border-top-0 border-right-0 border-left-0" name="email" id="email" placeholder="E-mail">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-7">
-                            <div class="form-group mb-0">
-                                <textarea name="message" class="form-control mb-0 border-top-0 border-right-0 border-left-0" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5 mb-0">
-                            <div class="form-group mb-0">
-                                <button type="submit" class="btn medilife-btn pt-0">Valider & Envoyer </button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                </div>
-                   <div class="medilife-contact-info d-flex">
-                        <!-- Single Contact Info -->
-                        <div class="single-contact-info mb-30 mx-auto">
-                            <img src="img/icons/alarm-clock.png" alt="">
-                            <p>Mon - Sat 08:00 - 21:00 <br>Sunday CLOSED</p>
-                        </div>
-                        <!-- Single Contact Info -->
-                        <div class="single-contact-info mb-30 mx-auto">
-                            <img src="img/icons/envelope.png" alt="">
-                            <p>0080 673 729 766 <br>contact@business.com</p>
-                        </div>
-                        <!-- Single Contact Info -->
-                        <div class="single-contact-info mx-auto">
-                            <img src="img/icons/map-pin.png" alt="">
-                            <p>Lamas Str, no 14-18 <br>41770 Miami</p>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- ***** Book An Appoinment Area End ***** -->
-
+        <!-- ***** Book An Appoinment Area End ***** -->
+    
+s    
     <!-- ***** Features Area Start ***** -->
     <div class="medilife-features-area section-padding-100">
         <div class="container">
@@ -152,142 +167,18 @@
                     <div class="features-content">
                         <h2>A new way to treat pacients in a revolutionary <span class="text-danger">facility.</span></h2>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing eli.Lorem ipsum dolor sit amet, consec tetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer.</p>
-                        <a href="#" class="btn medilife-btn mt-50">View the services <span>+</span></a>
+                        <a href="#" class="btn medilife-btn mt-50">View the services </a>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="features-thumbnail">
-                        <img src="img/bg-img/medical1.png" alt="">
+                        <img src="img/bg-img/g1.jpg" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- ***** Features Area End ***** -->
-
-
-        <!-- BLOG START -->
-        <section class="section">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-md-12">
-                        <div class="text-center">
-                            <h3>Annonces</h3>
-                            <div class="spacer-15"></div>
-                            <p class="text-muted mb-0">Rececez des annonces pour rester informés des détails.</p>
-                            <div class="spacer-30"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-4">
-                        <article class="post mt-30">
-                            <div class="post-preview">
-                                <a href="#"><img src="img/blog-img/3.jpg" alt="" class="img-fluid mx-auto d-block"></a>
-                            </div>
-
-                            <div class="post-header">
-                                <h4 class="post-title"><a href="#"> The business woman hard work</a></h4>
-                                <ul class="post-meta">
-                                    <li><i class="mdi mdi-calendar"></i> <small>Fab 01, 2019</small></li>
-                                    <li><i class="mdi mdi-tag-text-outline"></i>
-                                        <a href="#"> <small style="font-style: italic;">Le direceteur</small></a></li>
-                                </ul>
-
-                                <div class="post-content">
-                                    <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
-                                </div>
-
-                                <span class="bar"></span>
-
-                                <div class="post-footer">
-                                    <div class="likes">
-                                        <ul class="post-meta">
-                                            <li><a href="#"><i class="far fa-heart mr-1"></i> <small>29</small></a></li>
-                                            <li><a href="#"> <i class="far fa-comment mr-1"></i>
-                                                 <small>40</small></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="post-more"><a href="#">Read More <i class="mdi mdi-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-md-4">
-                        <article class="post mt-30">
-                            <div class="post-preview">
-                                <a href="#"><img src="img/blog-img/2.jpg" alt="" class="img-fluid mx-auto d-block"></a>
-                            </div>
-
-                            <div class="post-header">
-                                <h4 class="post-title"><a href="#">Business adviser analyzing financial</a></h4>
-                                <ul class="post-meta">
-                                    <li><i class="mdi mdi-calendar"></i> <small>Fab 01, 2019</small></li>
-                                    <li><i class="mdi mdi-tag-text-outline"></i>
-                                        <a href="#"> <small style="font-style: italic;">Essos Bank</small></a></li>
-                                </ul>
-                                <div class="post-content">
-                                    <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
-                                </div>
-
-                                <span class="bar"></span>
-
-                                <div class="post-footer">
-                                    <div class="likes">
-                                        <ul class="post-meta">
-                                            <li><a href="#"><i class="far fa-heart mr-1"></i> <small>29</small></a></li>
-                                            <li><a href="#"> <i class="far fa-comment mr-1"></i>
-                                                 <small>40</small></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="post-more"><a href="#">Read More <i class="mdi mdi-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-md-4">
-                        <article class="post mt-30">
-                            <div class="post-preview">
-                                <a href="#"><img src="img/blog-img/1.jpg" alt="" class="img-fluid mx-auto d-block"></a>
-                            </div>
-
-                            <div class="post-header">
-                                <h4 class="post-title"><a href="#">The progress work of the company</a></h4>
-                                <ul class="post-meta">
-                                    <li><i class="mdi mdi-calendar"></i> <small>Fab 01, 2019</small></li>
-                                    <li><i class="mdi mdi-tag-text-outline"></i>
-                                        <a href="#"> <small style="font-style: italic;">Center Bank</small></a></li>
-                                </ul>
-
-                                <div class="post-content">
-                                    <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
-                                </div>
-
-                                <span class="bar"></span>
-
-                                <div class="post-footer">
-                                    <div class="likes">
-                                        <ul class="post-meta">
-                                            <li><a href="#"><i class="far fa-heart mr-1"></i> <small>29</small></a></li>
-                                            <li><a href="#"> <i class="far fa-comment mr-1"></i>
-                                                 <small>40</small></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="post-more"><a href="#">Read More <i class="mdi mdi-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- BLOG END -->
 
     <!-- ***** About Us Area Start ***** -->
     <section class="medica-about-us-area section-padding-100-20">
@@ -297,7 +188,7 @@
                     <div class="medica-about-content">
                         <h2>Pourquoi nous choisir et nous faire <span class="text-danger">confiance.</span></h2>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing eli.</p>
-                        <a href="#" class="btn medilife-btn mt-50">View the services <span>+</span></a>
+                        <a href="#" class="btn medilife-btn mt-50">View the services </a>
                     </div>
                 </div>
                 <div class="col-12 col-lg-8">
@@ -310,7 +201,12 @@
                                 </div>
                                 <div class="service-content">
                                     <h5>The Best Doctors</h5>
-                                    <p>Lorem ipsum dolor sit amet, consecte tuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.</p>
+                                    <p class="text-justify">Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -322,7 +218,12 @@
                                 </div>
                                 <div class="service-content">
                                     <h5>Baby Nursery</h5>
-                                    <p>Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.</p>
+                                    <p class="text-justify">Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -334,7 +235,12 @@
                                 </div>
                                 <div class="service-content">
                                     <h5>Laboratory</h5>
-                                    <p>Lorem ipsum dolor sit amet, consecte tuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.</p>
+                                    <p class="text-justify">Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -346,7 +252,12 @@
                                 </div>
                                 <div class="service-content">
                                     <h5>Emergency Room</h5>
-                                    <p>Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.</p>
+                                    <p class="text-justify">Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -357,92 +268,267 @@
     </section>
     <!-- ***** About Us Area End ***** -->
 
-
+        <!-- BLOG START -->
+        <section class="section">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-md-12">
+                            <div class="text-center">
+                                <h3>Annonces</h3>
+                                <div class="spacer-15"></div>
+                                <p class="text-muted mb-0">Rececez des annonces pour rester informés des détails.</p>
+                                <div class="spacer-30"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-md-4">
+                            <article class="post mt-30">
+                                <div class="post-preview">
+                                    <a href="#"><img src="img/blog-img/3.jpg" alt="" class="img-fluid mx-auto d-block"></a>
+                                </div>
+    
+                                <div class="post-header">
+                                    <h4 class="post-title"><a href="#"> The business woman hard work</a></h4>
+                                    <ul class="post-meta">
+                                        <li><i class="mdi mdi-calendar"></i> <small>Fab 01, 2019</small></li>
+                                        <li><i class="mdi mdi-tag-text-outline"></i>
+                                            <a href="#"> <small style="font-style: italic;">Le direceteur</small></a></li>
+                                    </ul>
+    
+                                    <div class="post-content">
+                                        <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
+                                    </div>
+    
+                                    <span class="bar"></span>
+    
+                                    <div class="post-footer">
+                                        <div class="likes">
+                                            <ul class="post-meta">
+                                                <li><a href="#"><i class="far fa-heart mr-1"></i> <small>29</small></a></li>
+                                                <li><a href="#"> <i class="far fa-comment mr-1"></i>
+                                                     <small>40</small></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="post-more"><a href="#">Read More <i class="mdi mdi-arrow-right"></i></a></div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <article class="post mt-30">
+                                <div class="post-preview">
+                                    <a href="#"><img src="img/blog-img/2.jpg" alt="" class="img-fluid mx-auto d-block"></a>
+                                </div>
+    
+                                <div class="post-header">
+                                    <h4 class="post-title"><a href="#">Business adviser analyzing financial</a></h4>
+                                    <ul class="post-meta">
+                                        <li><i class="mdi mdi-calendar"></i> <small>Fab 01, 2019</small></li>
+                                        <li><i class="mdi mdi-tag-text-outline"></i>
+                                            <a href="#"> <small style="font-style: italic;">Essos Bank</small></a></li>
+                                    </ul>
+                                    <div class="post-content">
+                                        <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
+                                    </div>
+    
+                                    <span class="bar"></span>
+    
+                                    <div class="post-footer">
+                                        <div class="likes">
+                                            <ul class="post-meta">
+                                                <li><a href="#"><i class="far fa-heart mr-1"></i> <small>29</small></a></li>
+                                                <li><a href="#"> <i class="far fa-comment mr-1"></i>
+                                                     <small>40</small></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="post-more"><a href="#">Read More <i class="mdi mdi-arrow-right"></i></a></div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                            
+                        <div class="col-md-4">
+                            <article class="post mt-30">
+                                <div class="post-preview">
+                                    <a href="#"><img src="img/blog-img/1.jpg" alt="" class="img-fluid mx-auto d-block"></a>
+                                </div>
+    
+                                <div class="post-header">
+                                    <h4 class="post-title"><a href="#">The progress work of the company</a></h4>
+                                    <ul class="post-meta">
+                                        <li><i class="mdi mdi-calendar"></i> <small>Fab 01, 2019</small></li>
+                                        <li><i class="mdi mdi-tag-text-outline"></i>
+                                            <a href="#"> <small style="font-style: italic;">Center Bank</small></a></li>
+                                    </ul>
+    
+                                    <div class="post-content">
+                                        <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
+                                    </div>
+    
+                                    <span class="bar"></span>
+    
+                                    <div class="post-footer">
+                                        <div class="likes">
+                                            <ul class="post-meta">
+                                                <li><a href="#"><i class="far fa-heart mr-1"></i> <small>29</small></a></li>
+                                                <li><a href="#"> <i class="far fa-comment mr-1"></i>
+                                                     <small>40</small></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="post-more"><a href="#">Read More <i class="mdi mdi-arrow-right"></i></a></div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                       </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-center mt-30">
+                                <a href="more-bank.html" class="btn btn-custom"> Voir plus ...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- BLOG END -->
+    
         <!-- WORK START -->
-        <section class="section bg-light">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-md-12">
-                        <div class="text-center">
-                            <h3>Nos Banques</h3>
-                            <div class="spacer-15"></div>
-                            <p class="text-muted mb-0">Pour nous vous rendre aisé vos dons de sang, voici  nos banques, choisissez celle qui vous convient.</p>
+
+        <!-- BLOG START -->
+        <section class="section">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-md-12">
+                            <div class="text-center">
+                                <h3>Nos Banques</h3>
+                                <div class="spacer-15"></div>
+                                <p class="text-muted mb-0">Pour nous vous rendre aisé vos dons de sang, voici  nos banques, choisissez celle qui vous convient.</p>
                             <div class="spacer-30"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-md-4">
+                            <article class="post mt-30">
+                                <div class="post-preview">
+                                    <a href="#"><img src="img/blog-img/3.jpg" alt="" class="img-fluid mx-auto d-block"></a>
+                                </div>
+    
+                                <div class="post-header">
+                                    <h4 class="post-title"><a href="#"> The business woman hard work</a></h4>
+                                    <ul class="post-meta">
+                                        <li><i class="mdi mdi-calendar"></i> <small>Fab 01, 2019</small></li>
+                                        <li><i class="mdi mdi-tag-text-outline"></i>
+                                            <a href="#"> <small style="font-style: italic;">Le direceteur</small></a></li>
+                                    </ul>
+    
+                                    <div class="post-content">
+                                        <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
+                                    </div>
+    
+                                    <span class="bar"></span>
+    
+                                    <div class="post-footer">
+                                        <div class="likes">
+                                            <ul class="post-meta">
+                                                <li><a href="#"><i class="far fa-heart mr-1"></i> <small>29</small></a></li>
+                                                <li><a href="#"> <i class="far fa-comment mr-1"></i>
+                                                     <small>40</small></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="post-more"><a href="#">Read More <i class="mdi mdi-arrow-right"></i></a></div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <article class="post mt-30">
+                                <div class="post-preview">
+                                    <a href="#"><img src="img/blog-img/2.jpg" alt="" class="img-fluid mx-auto d-block"></a>
+                                </div>
+    
+                                <div class="post-header">
+                                    <h4 class="post-title"><a href="#">Business adviser analyzing financial</a></h4>
+                                    <ul class="post-meta">
+                                        <li><i class="mdi mdi-calendar"></i> <small>Fab 01, 2019</small></li>
+                                        <li><i class="mdi mdi-tag-text-outline"></i>
+                                            <a href="#"> <small style="font-style: italic;">Essos Bank</small></a></li>
+                                    </ul>
+                                    <div class="post-content">
+                                        <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
+                                    </div>
+    
+                                    <span class="bar"></span>
+    
+                                    <div class="post-footer">
+                                        <div class="likes">
+                                            <ul class="post-meta">
+                                                <li><a href="#"><i class="far fa-heart mr-1"></i> <small>29</small></a></li>
+                                                <li><a href="#"> <i class="far fa-comment mr-1"></i>
+                                                     <small>40</small></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="post-more"><a href="#">Read More <i class="mdi mdi-arrow-right"></i></a></div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                            
+                        <div class="col-md-4">
+                            <article class="post mt-30">
+                                <div class="post-preview">
+                                    <a href="#"><img src="img/blog-img/1.jpg" alt="" class="img-fluid mx-auto d-block"></a>
+                                </div>
+    
+                                <div class="post-header">
+                                    <h4 class="post-title"><a href="#">The progress work of the company</a></h4>
+                                    <ul class="post-meta">
+                                        <li><i class="mdi mdi-calendar"></i> <small>Fab 01, 2019</small></li>
+                                        <li><i class="mdi mdi-tag-text-outline"></i>
+                                            <a href="#"> <small style="font-style: italic;">Center Bank</small></a></li>
+                                    </ul>
+    
+                                    <div class="post-content">
+                                        <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
+                                    </div>
+    
+                                    <span class="bar"></span>
+    
+                                    <div class="post-footer">
+                                        <div class="likes">
+                                            <ul class="post-meta">
+                                                <li><a href="#"><i class="far fa-heart mr-1"></i> <small>29</small></a></li>
+                                                <li><a href="#"> <i class="far fa-comment mr-1"></i>
+                                                     <small>40</small></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="post-more"><a href="#">Read More <i class="mdi mdi-arrow-right"></i></a></div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-center mt-30">
+                                <a href="more-bank.html" class="btn btn-custom"> Voir plus ...</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="container-fluid">
-                <div class="port portfolio-masonry mt-3">
-                    <div class="portfolioContainer row">
-                        <div class="col-lg-3 col-md-6 part">
-                            <div class="portfolio-box">
-                                <a class="mfp-image" href="img/blog-img/1.jpg" title="Business Post">
-                                    <img src="img/blog-img/1.jpg" class="img-fluid" alt="member-image">
-                                </a>
-                                <div class="gallary-title text-center">
-                                    <h6><a href="work-single.html">Banque de Biyem-Assi</a></h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 part">
-                            <div class="portfolio-box">
-                                <a class="mfp-image" href="img/blog-img/3.jpg" title="Business Post">
-                                    <img src="img/blog-img/3.jpg" class="img-fluid" alt="member-image">
-                                </a>
-                                <div class="gallary-title text-center">
-                                    <h6><a href="work-single.html">Banque de Biyem-Assi</a></h6>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 part">
-                            <div class="portfolio-box">
-                                <a class="mfp-image" href="img/blog-img/2.jpg" title="Business Post">
-                                    <img src="img/blog-img/2.jpg" class="img-fluid" alt="member-image">
-                                </a>
-                                <div class="gallary-title text-center">
-                                    <h6><a href="work-single.html">Banque de Biyem-Assi</a></h6>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 part">
-                            <div class="portfolio-box">
-                                <a class="mfp-image" href="img/blog-img/4.jpg" title="Business Post">
-                                    <img src="img/blog-img/4.jpg" class="img-fluid" alt="member-image">
-                                </a>
-                                <div class="gallary-title text-center">
-                                    <h6><a href="work-single.html">Banque de Biyem-Assi</a></h6>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 part">
-                            <div class="portfolio-box">
-                                <a class="mfp-image" href="img/blog-img/3.jpg" title="Business Post">
-                                    <img src="img/blog-img/3.jpg" class="img-fluid" alt="member-image">
-                                </a>
-                                <div class="gallary-title text-center">
-                                    <h6><a href="work-single.html">Banque de Biyem-Assi</a></h6>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="text-center mt-30">
-                            <a href="more-bank.html" class="btn btn-custom">See More ...</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- WORK END -->
+            </section>
+            <!-- BLOG END -->
 
     <!-- ***** Blog Area Start ***** -->
     <div class="medilife-blog-area section-padding-100-0">
@@ -457,10 +543,10 @@
                         </div>
                     </div>
                 </div>
-            <div class="row mt-3">
+            <div class="row mt-3 mb-3">
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area mb-100">
+                    <div class="single-blog-area mb-10">
                         <!-- Post Thumbnail -->
                         <div class="blog-post-thumbnail">
                             <img src="img/blog-img/1.jpg" alt="">
@@ -482,7 +568,7 @@
                 </div>
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area mb-100">
+                    <div class="single-blog-area mb-10">
                         <!-- Post Thumbnail -->
                         <div class="blog-post-thumbnail">
                             <img src="img/blog-img/2.jpg" alt="">
@@ -504,7 +590,7 @@
                 </div>
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area mb-100">
+                    <div class="single-blog-area mb-10">
                         <!-- Post Thumbnail -->
                         <div class="blog-post-thumbnail">
                             <img src="img/blog-img/3.jpg" alt="">
@@ -521,7 +607,14 @@
                             <a href="#" class="headline">Good news for the pacients</a>
                             <p>Dolor sit amet, consecte tuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
                             <a href="#" class="comments">3 Comments</a>
-                        </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>   
+            <div class="row mb-30">
+                <div class="col-md-12">
+                    <div class="text-center mt-10">
+                        <a href="more-bank.html" class="btn btn-custom"> Voir plus ...</a>
                     </div>
                 </div>
             </div>
@@ -572,6 +665,4 @@
             </div>
         </div>
     </section>
-    <!-- ***** Cool Facts Area End ***** -->
-        <!-- FOOTER START -->
  @endsection
