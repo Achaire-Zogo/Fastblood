@@ -150,8 +150,12 @@
             <div class="row align-items-center">
                 <div class="col-12 col-lg-6">
                     <div class="features-content">
-                        <h2>A new way to treat pacients in a revolutionary <span class="text-danger">facility.</span></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing eli.Lorem ipsum dolor sit amet, consec tetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer.</p>
+                        <h2>les principaux faits sur la transfusion sanguine au cameroun<span class="text-danger">.</span></h2>
+                        <p>on se demander pourquoi créer un site internet pour le Programme National de Transfusion Sanguine.le PNTS(Programme National de Transfusion Sanguine, organe national de coordination 
+                            des activités de transfusion sanguine fait face à un défi majeur qu’est le déficit en informations crédibles auprès de la population.
+                            Actuellement au Cameroun, on estime à 400.000, le nombre de poches de sang nécessaires pour traiter annuellement les malades dans les formations sanitaires.Cependant, moins de 25% des 
+                            besoins en sang sont pourvus chaque année, avec près de 95% de dons de remplacement effectués par les proches ou membres des familles (dons proscrits par l’OMS) 
+                            et moins de 5% de dons bénévoles, volontaires et non rémunérés (dons recommandés).</p>
                         <a href="#" class="btn medilife-btn mt-50">View the services <span>+</span></a>
                     </div>
                 </div>

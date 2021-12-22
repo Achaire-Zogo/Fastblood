@@ -163,7 +163,7 @@
                                         class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="assets/img/user.png"
                                                                                                          class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
                     <div class="dropdown-menu dropdown-menu-right pullDown">
-                        <div class="dropdown-title">Hello Sarah Smith</div>
+                        <div class="dropdown-title">Hello {{Auth::user()->name}}</div>
                         <a href="profile.html" class="dropdown-item has-icon"> <i class="far
 										fa-user"></i> Profile
                         </a> <a href="timeline.html" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
@@ -172,9 +172,12 @@
                             Settings
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a href="auth-login.html" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
+                        <form method="POST" action="{{route('logout')}}">
+                            @csrf
+                        <a href="{{route('logout')}}" class="dropdown-item has-icon text-danger" onclick="event.preventDefault();this.closest('form').submit();"> <i class="fas fa-sign-out-alt"></i>
                             Logout
                         </a>
+                        </form>
                     </div>
                 </li>
             </ul>
@@ -310,6 +313,31 @@
                         <ul class="dropdown-menu">
                         <li><a class="nav-link" href="{{route('valideResponsable')}}">valider les gestionnaires</a></li>
                             <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des gestionnaires</a></li>
+                    <li class="dropdown active">
+                        <a href="{{route('responsable')}}" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                data-feather="briefcase"></i><span>Gestion des gestionnaires</span></a>
+                        <ul class="dropdown-menu">
+                        <li><a class="nav-link" href="{{route('valideResponsable')}}">valider les gestionnaires</a></li>
+                            <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des gestionnaires</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                data-feather="briefcase"></i><span>Gestion du stocks de sang</span></a>
+                        <ul class="dropdown-menu">
+                        <li><a class="nav-link" href="{{route('valideResponsable')}}">mise a jour du stock </a></li>
+                            <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des disponibilités</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                data-feather="briefcase"></i><span>Gestion des users</span></a>
+                        <ul class="dropdown-menu">
+                        <li><a class="nav-link" href="{{route('valideResponsable')}}">valider les gestionnaires</a></li>
+                            <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des users de la banque</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
