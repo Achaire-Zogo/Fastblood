@@ -221,31 +221,21 @@
                     @endif
                     @if(session()->get('role')==2)
                     <li class="dropdown active">
-                        <a href="/" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+                        <a href="/" class="nav-link"><i data-feather="monitor"></i><span>Gerer la banque de sang</span></a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Gestion des responsables</span></a>
+                                data-feather="briefcase"></i><span>Gestion des associations</span></a>
                         <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="{{route('valideResponsable')}}">valider les responsables</a></li>
-                            <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des responsables</a></li>
+                        <li><a class="nav-link" href="{{route('valideResponsable')}}">Voir les associations affiliees</a></li>
+                            <li><a class="nav-link" href="{{route('listeResponsable')}}">Valider une association</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Gestion des banques de sang</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="portfolio.html">creer une banque de sang</a></li>
-                            <li><a class="nav-link" href="chat.html">valider banque de sang</a></li>
-                             <li><a class="nav-link" href="blog.html">liste de banque de sang</a></li>
-                        </ul>
+                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Lancer une campagne</span></a>
+
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Gestion des associations</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="email-inbox.html">valider les associations</a></li>
-                            <li><a class="nav-link" href="email-compose.html">liste des associations</a></li>
-                        </ul>
-                    </li>
+
                     @endif
                     @if(session()->get('role')==1)
                     <li class="dropdown active">
@@ -371,7 +361,7 @@
         <!-- Main Content -->
         <div class="main-content">
             @yield('content')
-           
+
 
         </div>
         <footer class="main-footer">
