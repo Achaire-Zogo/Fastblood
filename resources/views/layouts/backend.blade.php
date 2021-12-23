@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     {!! SEOMeta::generate() !!}
-    <title>FastBlood </title>
+    <title> @yield('title') | FastBlood </title>
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('backend/assets/css/app.min.css') }}">
     <!-- Template CSS -->
@@ -183,8 +183,14 @@
                 </div>
                 <ul class="sidebar-menu">
                     <li class="menu-header">{{ __('messages.main') }}</li>
-                    <li class="dropdown {{ Request::is('/dashboard') ? 'active' : '' }}">
+                    <li class="dropdown {{ Request::is('admin/dashboard') ? 'active' : '' }}">
                         <a href="{{ route('admin.dashboard.index') }}" class="nav-link"><i data-feather="monitor"></i><span>{{ __('messages.dashboard') }}</span></a>
+                    </li>
+                </ul>
+                <ul class="sidebar-menu">
+                    <li class="menu-header">{{ __('messages.users') }}</li>
+                    <li class="dropdown {{ Request::is('admin/user') ? 'active' : '' }}">
+                        <a href="{{ route('admin.user.index') }}" class="nav-link"><i data-feather="monitor"></i><span>{{ __('messages.dashboard') }}</span></a>
                     </li>
                 </ul>
             </aside>

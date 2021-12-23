@@ -29,6 +29,7 @@ Auth::routes();
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'App\Http\Controllers\admin', 'as' => 'admin.'], function() {
     Route::resource('dashboard', 'DashboardController');
+    Route::resource('user', 'UserController');
 });
 
 Route::group(['prefix' => 'directeur', 'middleware' => ['auth'], 'namespace' => 'App\Http\Controllers\directeur', 'as' => 'directeur.'], function() {
