@@ -64,6 +64,6 @@ Route::get('/dashboard/Responsable', [App\Http\Controllers\responsable\Responsab
 //route pour le gestionnaire
 Route::get('/dashboard/gestionnaire', [App\Http\Controllers\gestionnaire\GestionnaireController::class, 'index'])->name('gestionnaire');
 Route::view('/groupe', 'gestionnaire/group' )->name('group');
-
+Route::view('/AjoutDon', 'gestionnaire/ajoutpoche' )->name('adddon');
 //route pour le user
 Route::get('/dashboard/user', [App\Http\Controllers\user\UserController::class, 'index'])->name('user');
