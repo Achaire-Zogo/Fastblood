@@ -97,9 +97,9 @@
 </head>
 <body>
 
-<section style="background-image: url(img/bg-img/g3.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: contain; height: 100vh; background-position-x: 50vw;">
+<section style="background-image: url(img/bg-img/blood.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; height: auto; background-position-x: 50vw;">
 
-	<div class="col-lg-6 bg-white" style="height: 100vh; box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15);">
+	<div class="col-lg-6 bg-white" style="height: auto; box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15);">
 		<div class="mx-auto text-center pt-4" style="height: 15%;"><a href="index-2.html"><img src="{{asset('img/logo.png')}}" style="height: 100px; width: 200px;" alt="" title="retour à l'acceuil | Fast blood"></a></div>
 		<div class="mx-auto text-center mt-5">
 			<h1 class="text-dark" style="font-weight: bold;">S'inscrire</h1>

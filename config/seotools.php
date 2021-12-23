@@ -9,15 +9,16 @@ return [
          * The default configurations to be used by the meta generator.
          */
         'defaults'       => [
-            'title'        => "PROVARESSCORE2.0 an immunization web application in the eight regions of Cameroon", // set false to total remove
+            'title'        => "FastBlood for Blood donation", // set false to total remove
             'titleBefore'  => false, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
-            'description'  => 'PROVARESSCORE2.0 is a web application that aims at managing the immunization situation in the eight regions of Cameroon. It can also be used by another organizations', // set false to total remove
+            'description'  => 'FastBlood.0 is a web application that permit to give and have Blood over Cameroon', // set false to total remove
             'separator'    => ' - ',
             'keywords'     => [
-                'provaresscore2.0',
-                'provaresc',
-                'programme elargi de vaccination',
-                'PEV',
+                'Fastblood',
+                'fast',
+                'blood',
+                'programme elargi de Don de Sang',
+                'Sang',
                 'Ministere de la santé',
                 'GAVI',
                 'UNICEF',
