@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<!-- index.html  21 Nov 2019 03:44:50 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
@@ -36,21 +33,12 @@
                     <li><a href="#" class="nav-link nav-link-lg fullscreen-btn">
                             <i data-feather="maximize"></i>
                         </a></li>
-                    <li>
-                        <form class="form-inline mr-auto">
-                            <div class="search-element">
-                                <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="200">
-                                <button class="btn" type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </li>
                 </ul>
             </div>
             <ul class="navbar-nav navbar-right">
-                <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
-                                                             class="nav-link nav-link-lg message-toggle"><i data-feather="mail"></i>
+                <li class="dropdown dropdown-list-toggle">
+                    <a href="#" data-toggle="dropdown"
+                       class="nav-link nav-link-lg message-toggle"><i data-feather="mail"></i>
                         <span class="badge headerBadge1">
                 6 </span> </a>
                     {{-- <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
@@ -110,8 +98,9 @@
                         </div>
                     </div>
                 </li> --}}
-                <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
-                                                             class="nav-link notification-toggle nav-link-lg"><i data-feather="bell" class="bell"></i>
+                <li class="dropdown dropdown-list-toggle">
+                    <a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg">
+                        <i data-feather="bell" class="bell"></i>
                     </a>
                     {{-- <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
                         <div class="dropdown-header">
@@ -159,11 +148,14 @@
                         </div>
                     </div> --}}
                 </li>
-                <li class="dropdown"><a href="#" data-toggle="dropdown"
-                                        class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="assets/img/user.png"
-                                                                                                         class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
+                <li class="dropdown">
+                    <a href="/" data-toggle="dropdown"
+                                        class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                        <img alt="image" src="{{ asset('backend/assets/img/user.png') }}" class="user-img-radious-style">
+                        <span class="d-sm-none d-lg-inline-block"></span>
+                    </a>
                     <div class="dropdown-menu dropdown-menu-right pullDown">
-                        <div class="dropdown-title">Hello {{Auth::user()->name}}</div>
+                        <div class="dropdown-title">Hello {{ Auth::user()->name }}</div>
                         <a href="profile.html" class="dropdown-item has-icon"> <i class="far
 										fa-user"></i> Profile
                         </a> <a href="timeline.html" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
@@ -172,10 +164,10 @@
                             Settings
                         </a>
                         <div class="dropdown-divider"></div>
-                        <form method="POST" action="{{route('logout')}}">
+                        <form method="POST" action="{{ route('logout') }}">
                             @csrf
                         <a href="{{route('logout')}}" class="dropdown-item has-icon text-danger" onclick="event.preventDefault();this.closest('form').submit();"> <i class="fas fa-sign-out-alt"></i>
-                            Logout
+                            {{ __('messages.logout') }}
                         </a>
                         </form>
                     </div>
@@ -185,202 +177,25 @@
         <div class="main-sidebar sidebar-style-2">
             <aside id="sidebar-wrapper">
                 <div class="sidebar-brand">
-<<<<<<< Updated upstream
-                    <a href="index.html"> <img alt="image" src="{{asset('img/logo.png')}}" class="header-logo" /> <span
-                            class="logo-name">Fastblood</span>
+                    <a href="/"> <img alt="image" src="{{ asset('backend/assets/img/logo.png') }}" class="header-logo" /> <span
+                            class="logo-name">FastBlood</span>
                     </a>
                 </div>
                 <ul class="sidebar-menu">
-                    <li class="menu-header">Main</li>
-                    @if(session()->get('role')==4)
-                    <li class="dropdown active">
-                        <a href="/" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Gestion des responsables</span></a>
-                        <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="{{route('valideResponsable')}}">valider les responsables</a></li>
-                            <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des responsables</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Gestion des banques de sang</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="portfolio.html">creer une banque de sang</a></li>
-                            <li><a class="nav-link" href="chat.html">valider banque de sang</a></li>
-                             <li><a class="nav-link" href="blog.html">liste de banque de sang</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Gestion des associations</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="email-inbox.html">valider les associations</a></li>
-                            <li><a class="nav-link" href="email-compose.html">liste des associations</a></li>
-                        </ul>
-                    </li>
-                    @endif
-                    @if(session()->get('role')==2)
-                    <li class="dropdown active">
-                        <a href="/" class="nav-link"><i data-feather="monitor"></i><span>Gerer la banque de sang</span></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Gestion des associations</span></a>
-                        <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="{{route('valideResponsable')}}">Voir les associations affiliees</a></li>
-                            <li><a class="nav-link" href="{{route('listeResponsable')}}">Valider une association</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Lancer une campagne</span></a>
-
-                    </li>
-
-                    @endif
-                    @if(session()->get('role')==1)
-                    <li class="dropdown active">
-                        <a href="/" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Gestion des responsables</span></a>
-                        <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="{{route('valideResponsable')}}">valider les responsables</a></li>
-                            <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des responsables</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Gestion des banques de sang</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="portfolio.html">creer une banque de sang</a></li>
-                            <li><a class="nav-link" href="chat.html">valider banque de sang</a></li>
-                             <li><a class="nav-link" href="blog.html">liste de banque de sang</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Gestion des associations</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="email-inbox.html">valider les associations</a></li>
-                            <li><a class="nav-link" href="email-compose.html">liste des associations</a></li>
-                        </ul>
-                    </li>
-                    @endif
-                    @if(session()->get('role')==5)
-                    <li class="dropdown active">
-                        <a href="/" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Gestion des responsables</span></a>
-                        <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="{{route('valideResponsable')}}">valider les responsables</a></li>
-                            <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des responsables</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Gestion des banques de sang</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="portfolio.html">creer une banque de sang</a></li>
-                            <li><a class="nav-link" href="chat.html">valider banque de sang</a></li>
-                             <li><a class="nav-link" href="blog.html">liste de banque de sang</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Gestion des associations</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="email-inbox.html">valider les associations</a></li>
-                            <li><a class="nav-link" href="email-compose.html">liste des associations</a></li>
-                        </ul>
-                    </li>
-                    @endif
-                    @if(session()->get('role')==3)
-                    <li class="dropdown active">
-                        <a href="{{route('responsable')}}" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Gestion des gestionnaires</span></a>
-                        <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="{{route('valideResponsable')}}">valider les gestionnaires</a></li>
-                            <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des gestionnaires</a></li>
-                    <li class="dropdown active">
-                        <a href="{{route('responsable')}}" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Gestion des gestionnaires</span></a>
-                        <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="{{route('valideResponsable')}}">valider les gestionnaires</a></li>
-                            <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des gestionnaires</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Gestion du stocks de sang</span></a>
-                        <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="{{route('valideResponsable')}}">mise a jour du stock </a></li>
-                            <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des disponibilités</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Gestion des users</span></a>
-                        <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="{{route('valideResponsable')}}">valider les gestionnaires</a></li>
-                            <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des users de la banque</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Gestion du stocks de sang</span></a>
-                        <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="{{route('valideResponsable')}}">mise a jour du stock </a></li>
-                            <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des disponibilités</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Gestion des users</span></a>
-                        <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="{{route('valideResponsable')}}">valider les gestionnaires</a></li>
-                            <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des users de la banque</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Gestion des demandes </span></a>
-                        <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="{{route('valideResponsable')}}">envoyer une demande de sang</a></li>
-                            <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des disponibilités</a></li>
-                        </ul>
-=======
-                    <a href="/"> <img alt="image" src="{{ asset('assets/img/logo.png') }}" class="header-logo" /> <span
-                            class="logo-name">FastBlood Administration</span>
-                    </a>
-                </div>
-                <ul class="sidebar-menu">
-                    <li class="menu-header">{{ __('messages.main' }}</li>
+                    <li class="menu-header">{{ __('messages.main') }}</li>
                     <li class="dropdown {{ Request::is('/dashboard') ? 'active' : '' }}">
                         <a href="{{ route('admin.dashboard.index') }}" class="nav-link"><i data-feather="monitor"></i><span>{{ __('messages.dashboard') }}</span></a>
->>>>>>> Stashed changes
                     </li>
-                    @endif
                 </ul>
             </aside>
         </div>
         <!-- Main Content -->
         <div class="main-content">
             @yield('content')
-<<<<<<< Updated upstream
-
-
-=======
->>>>>>> Stashed changes
         </div>
         <footer class="main-footer">
             <div class="footer-left">
-                <a href="#">FastBlood</a></a>
+                <a href="/">FastBlood</a></a>
             </div>
             <div class="footer-right">
             </div>
@@ -412,7 +227,4 @@
 <!-- Template JS File -->
 @yield('scripts')
 </body>
-
-
-<!-- index.html  21 Nov 2019 03:47:04 GMT -->
 </html>

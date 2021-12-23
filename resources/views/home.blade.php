@@ -1,7 +1,7 @@
 
 @extends('layout')
-@section('body')
- 
+@section('content')
+
     <!-- ***** Hero Area Start ***** -->
     <section class="hero-area">
         <div class="hero-slides owl-carousel">
@@ -157,8 +157,8 @@
             </div>
         </div>
         <!-- ***** Book An Appoinment Area End ***** -->
-    
-s    
+
+s
     <!-- ***** Features Area Start ***** -->
     <div class="medilife-features-area section-padding-100">
         <div class="container">
@@ -281,14 +281,14 @@ s
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="row">
                         <div class="col-md-4">
                             <article class="post mt-30">
                                 <div class="post-preview">
                                     <a href="#"><img src="img/blog-img/3.jpg" alt="" class="img-fluid mx-auto d-block"></a>
                                 </div>
-    
+
                                 <div class="post-header">
                                     <h4 class="post-title"><a href="#"> The business woman hard work</a></h4>
                                     <ul class="post-meta">
@@ -296,13 +296,13 @@ s
                                         <li><i class="mdi mdi-tag-text-outline"></i>
                                             <a href="#"> <small style="font-style: italic;">Le direceteur</small></a></li>
                                     </ul>
-    
+
                                     <div class="post-content">
                                         <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
                                     </div>
-    
+
                                     <span class="bar"></span>
-    
+
                                     <div class="post-footer">
                                         <div class="likes">
                                             <ul class="post-meta">
@@ -317,13 +317,13 @@ s
                                 </div>
                             </article>
                         </div>
-                        
+
                         <div class="col-md-4">
                             <article class="post mt-30">
                                 <div class="post-preview">
                                     <a href="#"><img src="img/blog-img/2.jpg" alt="" class="img-fluid mx-auto d-block"></a>
                                 </div>
-    
+
                                 <div class="post-header">
                                     <h4 class="post-title"><a href="#">Business adviser analyzing financial</a></h4>
                                     <ul class="post-meta">
@@ -334,9 +334,9 @@ s
                                     <div class="post-content">
                                         <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
                                     </div>
-    
+
                                     <span class="bar"></span>
-    
+
                                     <div class="post-footer">
                                         <div class="likes">
                                             <ul class="post-meta">
@@ -351,13 +351,13 @@ s
                                 </div>
                             </article>
                         </div>
-                            
+
                         <div class="col-md-4">
                             <article class="post mt-30">
                                 <div class="post-preview">
                                     <a href="#"><img src="img/blog-img/1.jpg" alt="" class="img-fluid mx-auto d-block"></a>
                                 </div>
-    
+
                                 <div class="post-header">
                                     <h4 class="post-title"><a href="#">The progress work of the company</a></h4>
                                     <ul class="post-meta">
@@ -365,13 +365,13 @@ s
                                         <li><i class="mdi mdi-tag-text-outline"></i>
                                             <a href="#"> <small style="font-style: italic;">Center Bank</small></a></li>
                                     </ul>
-    
+
                                     <div class="post-content">
                                         <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
                                     </div>
-    
+
                                     <span class="bar"></span>
-    
+
                                     <div class="post-footer">
                                         <div class="likes">
                                             <ul class="post-meta">
@@ -397,7 +397,7 @@ s
                 </div>
             </section>
             <!-- BLOG END -->
-    
+
         <!-- WORK START -->
 
         <!-- BLOG START -->
@@ -413,14 +413,14 @@ s
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="row">
                         <div class="col-md-4">
                             <article class="post mt-30">
                                 <div class="post-preview">
                                     <a href="#"><img src="img/blog-img/3.jpg" alt="" class="img-fluid mx-auto d-block"></a>
                                 </div>
-    
+
                                 <div class="post-header">
                                     <h4 class="post-title"><a href="#"> The business woman hard work</a></h4>
                                     <ul class="post-meta">
@@ -428,13 +428,13 @@ s
                                         <li><i class="mdi mdi-tag-text-outline"></i>
                                             <a href="#"> <small style="font-style: italic;">Le direceteur</small></a></li>
                                     </ul>
-    
+
                                     <div class="post-content">
                                         <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
                                     </div>
-    
+
                                     <span class="bar"></span>
-    
+
                                     <div class="post-footer">
                                         <div class="likes">
                                             <ul class="post-meta">
@@ -449,13 +449,13 @@ s
                                 </div>
                             </article>
                         </div>
-                        
+
                         <div class="col-md-4">
                             <article class="post mt-30">
                                 <div class="post-preview">
                                     <a href="#"><img src="img/blog-img/2.jpg" alt="" class="img-fluid mx-auto d-block"></a>
                                 </div>
-    
+
                                 <div class="post-header">
                                     <h4 class="post-title"><a href="#">Business adviser analyzing financial</a></h4>
                                     <ul class="post-meta">
@@ -466,9 +466,9 @@ s
                                     <div class="post-content">
                                         <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
                                     </div>
-    
+
                                     <span class="bar"></span>
-    
+
                                     <div class="post-footer">
                                         <div class="likes">
                                             <ul class="post-meta">
@@ -483,13 +483,13 @@ s
                                 </div>
                             </article>
                         </div>
-                            
+
                         <div class="col-md-4">
                             <article class="post mt-30">
                                 <div class="post-preview">
                                     <a href="#"><img src="img/blog-img/1.jpg" alt="" class="img-fluid mx-auto d-block"></a>
                                 </div>
-    
+
                                 <div class="post-header">
                                     <h4 class="post-title"><a href="#">The progress work of the company</a></h4>
                                     <ul class="post-meta">
@@ -497,13 +497,13 @@ s
                                         <li><i class="mdi mdi-tag-text-outline"></i>
                                             <a href="#"> <small style="font-style: italic;">Center Bank</small></a></li>
                                     </ul>
-    
+
                                     <div class="post-content">
                                         <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
                                     </div>
-    
+
                                     <span class="bar"></span>
-    
+
                                     <div class="post-footer">
                                         <div class="likes">
                                             <ul class="post-meta">
@@ -607,10 +607,10 @@ s
                             <a href="#" class="headline">Good news for the pacients</a>
                             <p>Dolor sit amet, consecte tuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
                             <a href="#" class="comments">3 Comments</a>
-                        </div> 
+                        </div>
                     </div>
                 </div>
-            </div>   
+            </div>
             <div class="row mb-30">
                 <div class="col-md-12">
                     <div class="text-center mt-10">

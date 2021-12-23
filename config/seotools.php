@@ -9,14 +9,14 @@ return [
          * The default configurations to be used by the meta generator.
          */
         'defaults'       => [
-            'title'        => "PROVARESSCORE2.0 an immunization web application in the eight regions of Cameroon", // set false to total remove
+            'title'        => "FastBlood is a web application that aims to manage blood in Cameroon", // set false to total remove
             'titleBefore'  => false, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
-            'description'  => 'PROVARESSCORE2.0 is a web application that aims at managing the immunization situation in the eight regions of Cameroon. It can also be used by another organizations', // set false to total remove
+            'description'  => 'FastBlood, a blood bank web application', // set false to total remove
             'separator'    => ' - ',
             'keywords'     => [
-                'provaresscore2.0',
-                'provaresc',
-                'programme elargi de vaccination',
+                'FastBlood',
+                'banque sang cameroun',
+                'Face Blood',
                 'PEV',
                 'Ministere de la santé',
                 'GAVI',
@@ -44,8 +44,8 @@ return [
          * The default configurations to be used by the opengraph generator.
          */
         'defaults' => [
-            'title'        => "PROVARESSCORE2.0 an immunization web application in the eight regions of Cameroon", // set false to total remove
-            'description'  => 'PROVARESSCORE2.0 is a web application that aims at managing the immunization situation in the eight regions of Cameroon. It can also be used by another organizations', // set false to total remove
+            'title'        => "FastBlood is a web application that aims to manage blood in Cameroon", // set false to total remove
+            'description'  => 'FastBlood, a blood bank web application', // set false to total remove
             'url'         => false, // Set null for using Url::current(), set false to total remove
             'type'        => false,
             'site_name'   => false,
@@ -66,8 +66,8 @@ return [
          * The default configurations to be used by the json-ld generator.
          */
         'defaults' => [
-            'title'        => "PROVARESSCORE2.0 an immunization web application in the eight regions of Cameroon", // set false to total remove
-            'description'  => 'PROVARESSCORE2.0 is a web application that aims at managing the immunization situation in the eight regions of Cameroon. It can also be used by another organizations', // set false to total remove
+            'title'        => "FastBlood is a web application that aims to manage blood in Cameroon", // set false to total remove
+            'description'  => 'FastBlood, a blood bank web application', // set false to total remove
             'url'         => false, // Set null for using Url::current(), set false to total remove
             'type'        => 'WebPage',
             'images'      => [],

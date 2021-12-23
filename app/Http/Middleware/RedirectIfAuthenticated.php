@@ -31,8 +31,7 @@ class RedirectIfAuthenticated
             return redirect()->route('gestionnaire.dashboard.index');
         } elseif (Auth::guard($guard)->check() && Auth::user()->role_id == 5) {
             return redirect()->route('user.dashboard.index');
-        }
-        else {
+        } else {
             return $next($request);
         }
 

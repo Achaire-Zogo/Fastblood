@@ -40,7 +40,7 @@ class LoginController extends Controller
 
     protected function authenticated($request, $user)
     {
-        if ($user->role_id==1) {
+        if ($user->role_id == 1) {
             $this->redirectTo = route('admin.dashboard.index');
         } elseif($user->role_id == 2) {
             $this->redirectTo = route('directeur.dashboard.index');
@@ -48,9 +48,9 @@ class LoginController extends Controller
             $this->redirectTo = route('responsable.dashboard.index');
         } elseif($user->role_id == 4) {
             $this->redirectTo = route('gestionnaire.dashboard.index');
-        } else {
+        } elseif($user->role_id == 5) {
             $this->redirectTo = route('user.dashboard.index');
         }
     }
-   
+
 }

@@ -22,7 +22,7 @@ Route::get('locale/{locale}', function ($locale) {
 });
 
 Route::get('/', function () {
-    return view('home');
+    return view('frontend.homepage');
 });
 
 Auth::routes();
@@ -55,7 +55,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::get('/dashboard/detaileResponsable/director/{id}', [App\Http\Controllers\director\listeResponsableController::class, 'detail'])->name('detailResponsable');
 // Route::post('/dashboard/detaileResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'valideResponsable'])->name('validerResponsable');
 
-Route::view('/connexion', 'auth/login' )->name('loginpage');
+/*Route::view('/connexion', 'auth/login' )->name('loginpage');
 Route::get('/signup_page', 'App\Http\Controllers\Auth\SignupController@signuppage' )->name('signuppage');
 Route::post('/login', 'App\Http\Controllers\Auth\SigninController@login');
 Route::post('/signup', 'App\Http\Controllers\Auth\SignupController@signup');
@@ -76,4 +76,4 @@ Route::get('/dashboard/gestionnaire', [App\Http\Controllers\gestionnaire\Gestion
 
 
 //route pour le user
-Route::get('/dashboard/user', [App\Http\Controllers\user\UserController::class, 'index'])->name('user');
+Route::get('/dashboard/user', [App\Http\Controllers\user\UserController::class, 'index'])->name('user');*/

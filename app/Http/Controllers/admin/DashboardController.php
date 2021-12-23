@@ -17,13 +17,13 @@ class DashboardController extends Controller
     {
 
         $users = User::where("enabled","1")->where("role_id","3")->get();
-        return view('admin.dashbord')->with('users',$users);
+        return view('admin.dashboard')->with('users',$users);
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */ 
+     */
     public function detail($id)
     {
 

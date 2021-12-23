@@ -32,7 +32,7 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    public function groupe_users()
+    public function groupeusers()
     {
         return $this->hasMany(GroupeUser::class);
     }
