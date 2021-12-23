@@ -181,6 +181,7 @@
                             class="logo-name">FastBlood</span>
                     </a>
                 </div>
+                @if(Auth::user()->role_id == 1)
                 <ul class="sidebar-menu">
                     <li class="menu-header">{{ __('messages.main') }}</li>
                     <li class="dropdown {{ Request::is('admin/dashboard') ? 'active' : '' }}">
@@ -190,9 +191,24 @@
                 <ul class="sidebar-menu">
                     <li class="menu-header">{{ __('messages.users') }}</li>
                     <li class="dropdown {{ Request::is('admin/user') ? 'active' : '' }}">
-                        <a href="{{ route('admin.user.index') }}" class="nav-link"><i data-feather="monitor"></i><span>{{ __('messages.dashboard') }}</span></a>
+                        <a href="{{ route('admin.user.index') }}" class="nav-link"><i data-feather="monitor"></i><span>{{ __('messages.users') }}</span></a>
                     </li>
                 </ul>
+                @elseif(Auth::user()->role_id == 2)
+                    <ul class="sidebar-menu">
+                        <li class="menu-header">{{ __('messages.main') }}</li>
+                        <li class="dropdown {{ Request::is('directeur/dashboard') ? 'active' : '' }}">
+                            <a href="{{ route('directeur.dashboard.index') }}" class="nav-link"><i data-feather="monitor"></i><span>{{ __('messages.dashboard') }}</span></a>
+                        </li>
+                    </ul>
+                    @elseif(Auth::user()->role_id == 3)
+                    <ul class="sidebar-menu">
+                        <li class="menu-header">{{ __('messages.main') }}</li>
+                        <li class="dropdown {{ Request::is('responsable/dashboard') ? 'active' : '' }}">
+                            <a href="{{ route('responsable.dashboard.index') }}" class="nav-link"><i data-feather="monitor"></i><span>{{ __('messages.dashboard') }}</span></a>
+                        </li>
+                    </ul>
+                @endif
             </aside>
         </div>
         <!-- Main Content -->
