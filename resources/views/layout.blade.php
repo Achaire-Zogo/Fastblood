@@ -32,19 +32,19 @@
                             <div class="row h-100">
                                 <div class="col-12 h-100">
                                     <div class="h-100 d-md-flex justify-content-between align-items-center">
-                                            <select data-placeholder="Choose a Language..." class=" bg-primary border-0">
+                                            <select data-placeholder="..." class=" bg-primary border-0">
                                                     <option value="fr">Fr</option>
                                                     <option value="en">En</option>
                                             </select>
                                         <span class=" text-white">Centre de transfusion sanguine</span>
-                                                
-                                     
-                                        <p class=" text-white">Opening Hours : Monday to Saturday - 8am to 10pm Contact : <span>+12-823-611-8721</span></p>
+
+
+                                        <p class=" text-white">Opening Hours : Monday to Saturday - 8am to 10pm Contact : <span>+234-697-611-87</span></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>  
+                    </div>
 <!-- Main Header Area -->
 <div class="main-header-area" id="stickyHeader">
         <div class="container h-100">
@@ -61,33 +61,36 @@
                                 <!-- Menu Area -->
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="index-2.html">Home <span class="sr-only">(current)</span></a>
+                                        <a class="nav-link" href="/">Accueil <span class="sr-only">(current)</span></a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="index-2.html">Home</a>
-                                            <a class="dropdown-item" href="about-us.html">About Us</a>
-                                            <a class="dropdown-item" href="services.html">Services</a>
-                                            <a class="dropdown-item" href="blog.html">News</a>
-                                            <a class="dropdown-item" href="single-blog.html">News Details</a>
-                                            <a class="dropdown-item" href="contact.html">Contact</a>
-                                            <a class="dropdown-item" href="elements.html">Elements</a>
-                                            <a class="dropdown-item" href="index-icons.html">All Icons</a>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="about-us.html">About Us</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="services.html">Services</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="blog.html">News</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="contact.html">Contact</a>
-                                    </li>
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Qui peut donner ?</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{{route('qpd_delai_entre_2_don')}}">Delai entre 2 Dons</a>
+                                                <a class="dropdown-item" href="{{route('qpd_puis_je_donner')}}">Puis-je Donner ? Test</a>
+                                                <a class="dropdown-item" href="{{route('qpd_condition')}}">Condition</a>
+                                                <a class="dropdown-item" href="{{route('qpd_contre_indications')}}">Contre Indication</a>
+                                            </div>
+                                        </li>
+                                    <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connaitre Plus</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{{route('cp_qu_est_ce_que_le_sang')}}">Qu'est ce que le sang ?</a>
+                                                <a class="dropdown-item" href="{{route('cp_histoire_du_sang')}}"><Label>histoire du sang</Label></a>
+                                                <a class="dropdown-item" href="{{route('cp_les_produits_sanguins')}}">les produits sanguins</a>
+                                                <a class="dropdown-item" href="{{route('cp_groupe_sanguins')}}">les groupes sanguins</a>
+                                                <a class="dropdown-item" href="{{route('cp_parcours_d_une_poche_de_sang')}}">le parcours d'une poche de sang</a>
+                                            </div>
+                                        </li>
+                                    <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FAQ</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{ route('faq_don_de_sang')}}">FAQ Don de sang</a>
+                                                <a class="dropdown-item" href="#">FAQ Don de plasma</a>
+                                                <a class="dropdown-item" href="#">FAQ Don de Plaquettes</a>
+                                                <a class="dropdown-item" href="#">FAQ Don cellules souches</a>
+                                            </div>
+                                        </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('loginpage')}}">Se Connecter</a>
                                     </li>
@@ -102,7 +105,7 @@
         </div>
     </div>
     </header>
-	
+
 @yield('body')
 
     <!-- ***** Footer Area Start ***** -->

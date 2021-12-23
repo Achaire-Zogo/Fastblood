@@ -1,6 +1,15 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\informations\Faq;
+use App\Http\Controllers\user\UserController;
+use App\Http\Controllers\director\HomeDirectorController;
+use App\Http\Controllers\responsable\ResponsableController;
+use App\Http\Controllers\gestionnaire\GestionnaireController;
+use App\Http\Controllers\informations\Connaitre_plus;
+use App\Http\Controllers\informations\Qui_peut_donner;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,3 +82,22 @@ Route::get('/dashboard/gestionnaire', [App\Http\Controllers\gestionnaire\Gestion
 
 //route pour le user
 Route::get('/dashboard/user', [App\Http\Controllers\user\UserController::class, 'index'])->name('user');
+
+//Foire aux Questions
+Route::get('/faq/don_de_sang', [Faq::class, 'faq_don_de_sang'])->name('faq_don_de_sang');
+Route::get('/faq/don_de_plasma', [Faq::class, 'faq_don_de_plasma'])->name('faq_don_de_plasma');
+Route::get('/faq/don_de_plaquette', [Faq::class, 'faq_don_de_plaquette'])->name('faq_don_de_plaquette');
+Route::get('/faq/don_de_cellules_souches', [Faq::class, 'faq_don_de_cellules_souches'])->name('faq_don_de_cellules_souches');
+
+//connaitre plus
+Route::get('/connaitre_plus/groupes_sanguins', [Connaitre_plus::class, 'cp_groupe_sanguins'])->name('cp_groupe_sanguins');
+Route::get('/connaitre_plus/histoire_du_sang', [Connaitre_plus::class, 'cp_histoire_du_sang'])->name('cp_histoire_du_sang');
+Route::get('/connaitre_plus/les_produits_sanguins', [Connaitre_plus::class, 'cp_les_produits_sanguins'])->name('cp_les_produits_sanguins');
+Route::get('/connaitre_plus/parcours_d_une_poche_de_sang', [Connaitre_plus::class, 'cp_parcours_d_une_poche_de_sang'])->name('cp_parcours_d_une_poche_de_sang');
+Route::get('/connaitre_plus/qu_est_ce_que_le_sang', [Connaitre_plus::class, 'cp_qu_est_ce_que_le_sang'])->name('cp_qu_est_ce_que_le_sang');
+
+//qui peut donner
+Route::get('/qui_peut_donner/condition', [Qui_peut_donner::class, 'qpd_condition'])->name('qpd_condition');
+Route::get('/qui_peut_donner/contre_indication', [Qui_peut_donner::class, 'qpd_contre_indications'])->name('qpd_contre_indications');
+Route::get('/qui_peut_donner/delai_entre_2_don', [Qui_peut_donner::class, 'qpd_delai_entre_2_don'])->name('qpd_delai_entre_2_don');
+Route::get('/qui_peut_donner/puis_je_donner?', [Qui_peut_donner::class, 'qpd_puis_je_donner'])->name('qpd_puis_je_donner');
