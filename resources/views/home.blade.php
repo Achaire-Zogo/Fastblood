@@ -164,9 +164,13 @@
             <div class="row align-items-center">
                 <div class="col-12 col-lg-6">
                     <div class="features-content">
-                        <h2>A new way to treat pacients in a revolutionary <span class="text-danger">facility.</span></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing eli.Lorem ipsum dolor sit amet, consec tetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer.</p>
-                        <a href="#" class="btn medilife-btn mt-50">View the services </a>
+                            <h2>les principaux faits sur la transfusion sanguine au cameroun<span class="text-danger">.</span></h2>
+                            <p>on se demander pourquoi créer un site internet pour le Programme National de Transfusion Sanguine.le PNTS(Programme National de Transfusion Sanguine, organe national de coordination 
+                                des activités de transfusion sanguine fait face à un défi majeur qu’est le déficit en informations crédibles auprès de la population.
+                                Actuellement au Cameroun, on estime à 400.000, le nombre de poches de sang nécessaires pour traiter annuellement les malades dans les formations sanitaires.Cependant, moins de 25% des 
+                                besoins en sang sont pourvus chaque année, avec près de 95% de dons de remplacement effectués par les proches ou membres des familles (dons proscrits par l’OMS) 
+                                et moins de 5% de dons bénévoles, volontaires et non rémunérés (dons recommandés).</p>
+                            <a href="#" class="btn medilife-btn mt-50">View the services </a>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
@@ -185,9 +189,10 @@
             <div class="row">
                 <div class="col-12 col-lg-4">
                     <div class="medica-about-content">
-                        <h2>Pourquoi nous choisir et nous faire <span class="text-danger">confiance.</span></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing eli.</p>
-                        <a href="#" class="btn medilife-btn mt-50">View the services </a>
+                            <h2>quels sont les étapes du don de sang <span class="text-danger">?</span></h2>
+                            <p>Les étapes de la collecte du don restent identiques quel que soit le lieu : site
+                                fixe, école, salle des fêtes… et le type de don.
+                                </p><a href="#" class="btn medilife-btn mt-50">View the services </a>
                     </div>
                 </div>
                 <div class="col-12 col-lg-8">
@@ -199,13 +204,10 @@
                                     <i class="icon-doctor"></i>
                                 </div>
                                 <div class="service-content">
-                                    <h5>The Best Doctors</h5>
-                                    <p class="text-justify">Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
-                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
-                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
-                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
-                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
-                                    </p>
+                                        <h5>1 L'inscription administrative</h5>
+                                        <p>Le candidat au don est accueilli par une secrétaire de la banque qui
+                                            enregistre son dossier administratif et lui remet le questionnaire pré-don
+                                            afin de préparer l’entretien médical.</p>
                                 </div>
                             </div>
                         </div>
@@ -216,13 +218,14 @@
                                     <i class="icon-blood-donation-1"></i>
                                 </div>
                                 <div class="service-content">
-                                    <h5>Baby Nursery</h5>
-                                    <p class="text-justify">Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
-                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
-                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
-                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
-                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
-                                    </p>
+                                        <h5>2 L'entretien médical
+                                            </h5>
+                                            <p>Le candidat au don est reçu par un médecin de la banque de sang pour un entretien
+                                                confidentiel et un examen médical. Cet entretien est destiné à vérifier
+                                                l’aptitude du candidat et à s’assurer que le don ne présente pas de risque,
+                                                pour le donneur comme pour le receveur. L’entretien médical est ainsi une
+                                                étape clé de la sécurité de la chaîne transfusionnelle.</p>
+                                       
                                 </div>
                             </div>
                         </div>
@@ -233,13 +236,14 @@
                                     <i class="icon-flask-2"></i>
                                 </div>
                                 <div class="service-content">
-                                    <h5>Laboratory</h5>
-                                    <p class="text-justify">Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
-                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
-                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
-                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
-                                            Dolor sit amet, consecte tuer elit, sed diam nonummy nibh euismod tincidunt ut ldolore magna.
-                                    </p>
+                                        <h5>3 Le prélèvement
+                                            </h5>
+                                            <p>Le prélèvement est effectué par une infirmière diplômée d’État. Des tubes
+                                                échantillons, à partir desquels seront réalisés les analyses de qualification,
+                                                sont d’abord prélevés.
+                                                Le prélèvement dure environ 10 minutes (pour un don de sang total) et le
+                                                volume prélevé est environ 500 ml. Le don de plasma et le don de
+                                                plaquettes durent plus longtemps.</p>
                                 </div>
                             </div>
                         </div>
