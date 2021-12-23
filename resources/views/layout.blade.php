@@ -39,7 +39,7 @@
                                         <span class=" text-white">Centre de transfusion sanguine</span>
 
 
-                                        <p class=" text-white">Opening Hours : Monday to Saturday - 8am to 10pm Contact : <span>+234-697-611-87</span></p>
+                                        <p class=" text-white">Opening Hours : Monday to Saturday - 8am to 10pm Contact : <span>+237-697-611-87</span></p>
                                     </div>
                                 </div>
                             </div>
