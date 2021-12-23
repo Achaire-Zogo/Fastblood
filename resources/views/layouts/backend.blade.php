@@ -185,6 +185,7 @@
         <div class="main-sidebar sidebar-style-2">
             <aside id="sidebar-wrapper">
                 <div class="sidebar-brand">
+<<<<<<< Updated upstream
                     <a href="index.html"> <img alt="image" src="{{asset('img/logo.png')}}" class="header-logo" /> <span
                             class="logo-name">Fastblood</span>
                     </a>
@@ -353,6 +354,16 @@
                         <li><a class="nav-link" href="{{route('valideResponsable')}}">envoyer une demande de sang</a></li>
                             <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des disponibilités</a></li>
                         </ul>
+=======
+                    <a href="/"> <img alt="image" src="{{ asset('assets/img/logo.png') }}" class="header-logo" /> <span
+                            class="logo-name">FastBlood Administration</span>
+                    </a>
+                </div>
+                <ul class="sidebar-menu">
+                    <li class="menu-header">{{ __('messages.main' }}</li>
+                    <li class="dropdown {{ Request::is('/dashboard') ? 'active' : '' }}">
+                        <a href="{{ route('admin.dashboard.index') }}" class="nav-link"><i data-feather="monitor"></i><span>{{ __('messages.dashboard') }}</span></a>
+>>>>>>> Stashed changes
                     </li>
                     @endif
                 </ul>
@@ -361,8 +372,11 @@
         <!-- Main Content -->
         <div class="main-content">
             @yield('content')
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
         </div>
         <footer class="main-footer">
             <div class="footer-left">
