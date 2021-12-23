@@ -63,7 +63,11 @@ Route::get('/dashboard/Responsable', [App\Http\Controllers\responsable\Responsab
 
 //route pour le gestionnaire
 Route::get('/dashboard/gestionnaire', [App\Http\Controllers\gestionnaire\GestionnaireController::class, 'index'])->name('gestionnaire');
+Route::view('/dashboard', 'gestionnaire/index' )->name('gererbanque');
 Route::view('/groupe', 'gestionnaire/group' )->name('group');
 Route::view('/AjoutDon', 'gestionnaire/ajoutpoche' )->name('adddon');
+Route::view('/Associations', 'gestionnaire/asociations' )->name('associations');
+Route::view('/AssociationsEnAttente', 'gestionnaire/ajoutpoche' )->name('asso_att');
+Route::view('/detailsAsso', 'gestionnaire/detailsAsso' )->name('detAsso');
 //route pour le user
 Route::get('/dashboard/user', [App\Http\Controllers\user\UserController::class, 'index'])->name('user');

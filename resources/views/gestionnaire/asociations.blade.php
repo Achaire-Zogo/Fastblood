@@ -41,7 +41,7 @@
                                     <td>chef1 </td>
                                     <td>11-08-2018</td>
                                     <td>23</td>
-                                    <td><a href="#" class="btn btn-outline-primary">Detail</a></td>
+                                    <td><a href="{{route('detAsso')}}" class="btn btn-outline-primary">Detail</a></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
@@ -49,7 +49,7 @@
                                     <td>chef2 </td>
                                     <td>11-08-2019</td>
                                     <td>33</td>
-                                    <td><a href="#" class="btn btn-outline-primary">Detail</a></td>
+                                    <td><a href="{{route('detAsso')}}" class="btn btn-outline-primary">Detail</a></td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
@@ -57,7 +57,7 @@
                                     <td>chef3 </td>
                                     <td>11-09-2018</td>
                                     <td>28</td>
-                                    <td><a href="#" class="btn btn-outline-primary">Detail</a></td>
+                                    <td><a href="{{route('detAsso')}}" class="btn btn-outline-primary">Detail</a></td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
@@ -65,7 +65,7 @@
                                     <td>chef5 </td>
                                     <td>11-08-2020</td>
                                     <td>22</td>
-                                    <td><a href="#" class="btn btn-outline-primary">Detail</a></td>
+                                    <td><a href="{{route('detAsso')}}" class="btn btn-outline-primary">Detail</a></td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
@@ -73,7 +73,7 @@
                                     <td>chef9 </td>
                                     <td>11-08-2021</td>
                                     <td>44</td>
-                                    <td><a href="#" class="btn btn-outline-primary">Detail</a></td>
+                                    <td><a href="{{route('detAsso')}}" class="btn btn-outline-primary">Detail</a></td>
                                 </tr>
                                 <tr>
                                     <td>6</td>
@@ -81,7 +81,7 @@
                                     <td>chef10 </td>
                                     <td>11-03-2018</td>
                                     <td>12</td>
-                                    <td><a href="#" class="btn btn-outline-primary">Detail</a></td>
+                                    <td><a href="{{route('detAsso')}}" class="btn btn-outline-primary">Detail</a></td>
                                 </tr>
                                 <tr>
                                     <td>7</td>
@@ -89,7 +89,7 @@
                                     <td>chef11 </td>
                                     <td>10-08-2018</td>
                                     <td>23</td>
-                                    <td><a href="#" class="btn btn-outline-primary">Detail</a></td>
+                                    <td><a href="{{route('detAsso')}}" class="btn btn-outline-primary">Detail</a></td>
                                 </tr>
                                 </tbody>
                             </table>
