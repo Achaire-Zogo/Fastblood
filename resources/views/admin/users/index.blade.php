@@ -10,6 +10,9 @@
                     <div class="card">
                         <div class="card-header">
                             <h4>{{ __('messages.users') }}</h4>
+                            <div class="float-right">
+                                <a href="{{ route('admin.user.create') }}" class="btn btn-primary">{{ __('messages.add') }}</a>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -40,20 +43,36 @@
                                                 <label for="checkbox-{{ $user->id }}" class="custom-control-label">&nbsp;</label>
                                             </div>
                                         </td>
-                                        <td>Create a mobile app</td>
-                                        <td class="align-middle">
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar width-per-70"></div>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->telephone }}</td>
+                                        <td>{{ $user->email }}</td>
+
+                                        <td>
+                                            @if($user->enabled == 1)
+                                                <div class="badge badge-success badge-shadow">{{ __('messages.enabled') }}</div>
+                                            @else
+                                                <div class="badge badge-danger badge-shadow">{{ __('messages.disabled') }}</div>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <div class="dropdown d-inline">
+                                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Actions
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item has-icon" href="#"><i class="far fa-eye"></i> {{ __('messages.show') }}</a>
+                                                    <a class="dropdown-item has-icon" href="{{ route('admin.user.destroy', $user->id) }}" onclick="event.preventDefault();
+                                                     document.getElementById('delete-form').submit();">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                        {{ __('messages.delete') }}
+                                                    </a>
+                                                    <form id="delete-form" action="{{ route('admin.user.destroy', $user->id) }}" method="POST" class="d-none">
+                                                        @csrf
+                                                    </form>
+                                                </div>
                                             </div>
                                         </td>
-                                        <td>
-                                            <img alt="image" src="assets/img/users/user-5.png" width="35">
-                                        </td>
-                                        <td>2018-01-20</td>
-                                        <td>
-                                            <div class="badge badge-success badge-shadow">Completed</div>
-                                        </td>
-                                        <td><a href="#" class="btn btn-primary">Detail</a></td>
                                     </tr>
                                     @endforeach
                                     </tbody>

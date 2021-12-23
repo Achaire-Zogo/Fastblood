@@ -12,5 +12,11 @@ return [
     'groups' => 'Groupes',
     'blood_banks' => 'Banque sang',
     'logout' => 'Se déconnecter',
+    'enabled' => 'Activé',
+    'disabled' => 'Désactivé',
+    'name' => 'Name',
+    'show' => 'Detail',
+    'delete' => 'Supprimer',
+    'add' => 'Ajouter',
     ''
 ];
