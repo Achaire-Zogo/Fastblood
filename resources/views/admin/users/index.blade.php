@@ -6,6 +6,20 @@
     <section class="section">
         <div class="section-body">
             <div class="row">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('messages.dashboard') }}</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ __('messages.users') }}</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
@@ -19,13 +33,13 @@
                                 <table class="table table-striped" id="table-2">
                                     <thead>
                                     <tr>
-                                        <th class="text-center pt-3">
+                                        {{--<th class="text-center pt-3">
                                             <div class="custom-checkbox custom-checkbox-table custom-control">
                                                 <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad"
                                                        class="custom-control-input" id="checkbox-all">
                                                 <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
                                             </div>
-                                        </th>
+                                        </th>--}}
                                         <th>{{ __('messages.name') }}</th>
                                         <th>Phone</th>
                                         <th>Email</th>
@@ -36,13 +50,13 @@
                                     <tbody>
                                     @foreach($users as $user)
                                     <tr>
-                                        <td class="text-center pt-2">
+                                        {{--<td class="text-center pt-2">
                                             <div class="custom-checkbox custom-control">
                                                 <input name="{{ $user->id }}" type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
                                                        id="checkbox-{{ $user->id }}">
                                                 <label for="checkbox-{{ $user->id }}" class="custom-control-label">&nbsp;</label>
                                             </div>
-                                        </td>
+                                        </td>--}}
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->telephone }}</td>
                                         <td>{{ $user->email }}</td>
@@ -55,23 +69,17 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <div class="dropdown d-inline">
-                                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2"
-                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Actions
-                                                </button>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item has-icon" href="#"><i class="far fa-eye"></i> {{ __('messages.show') }}</a>
-                                                    <a class="dropdown-item has-icon" href="{{ route('admin.user.destroy', $user->id) }}" onclick="event.preventDefault();
-                                                     document.getElementById('delete-form').submit();">
-                                                        <i class="fas fa-trash-alt"></i>
-                                                        {{ __('messages.delete') }}
-                                                    </a>
-                                                    <form id="delete-form" action="{{ route('admin.user.destroy', $user->id) }}" method="POST" class="d-none">
-                                                        @csrf
-                                                    </form>
-                                                </div>
-                                            </div>
+                                            <a class="btn btn-outline-primary" href="{{ route('admin.user.edit', $user->id) }}" title="{{ $user->enabled == 0 ?  __('messages.activate') :  __('messages.deactivate') }}">
+                                                <i class="fas fa-check"></i>
+                                            </a>
+                                            <a class="btn btn-outline-danger" href="" onclick="event.preventDefault();
+                                                     document.getElementById('delete-form').submit();" title=" {{ __('messages.delete') }}">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                            <form id="delete-form" action="{{ route('admin.user.destroy', $user->id) }}" method="POST" class="d-none">
+                                                @csrf
+                                                @method('DELETE')
+                                            </form>
                                         </td>
                                     </tr>
                                     @endforeach

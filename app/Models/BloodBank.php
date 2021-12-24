@@ -9,7 +9,7 @@ class BloodBank extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'address', 'user_id', 'num_ab', 'num_a', 'num_b', 'num_o', 'enabled'];
+    protected $fillable = ['name', 'address', 'user_id', 'enabled'];
 
     public function user()
     {
@@ -24,5 +24,10 @@ class BloodBank extends Model
     public function mouvements()
     {
         return $this->hasMany(Mouvement::class);
+    }
+
+    public function bloodbankmanager()
+    {
+        return $this->hasMany(BloodBankManager::class);
     }
 }

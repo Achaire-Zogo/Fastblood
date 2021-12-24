@@ -1,7 +1,7 @@
 @extends('layouts.backend')
 @section('content')
 <section class="section">
-        <a href="#" class="btn btn-primary">Nouveau don de sang</a><br>
+        <a href="{{route('adddon')}}" class="btn btn-primary">Nouveau don de sang</a><br>
         <div class="row ">
 
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -13,7 +13,7 @@
                                     <div class="card-content">
                                         <h5 class="font-15">Nombre de poches AB</h5>
                                         <h2 class="mb-3 font-18">25</h2>
-                                       <a href="#" class="btn btn-primary">Voir plus</a>
+                                       <a href="{{route('group')}}" class="btn btn-primary">Voir plus</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
@@ -35,7 +35,7 @@
                                     <div class="card-content">
                                         <h5 class="font-15">Nombre de poches A</h5>
                                         <h2 class="mb-3 font-18">15</h2>
-                                        <a href="#" class="btn btn-primary">Voir plus</a>
+                                        <a href="{{route('group')}}" class="btn btn-primary">Voir plus</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
@@ -57,7 +57,7 @@
                                     <div class="card-content">
                                         <h5 class="font-15">Nombre de poches B</h5>
                                         <h2 class="mb-3 font-18">12</h2>
-                                        <a href="#" class="btn btn-primary">Voir plus</a>
+                                        <a href="{{route('group')}}" class="btn btn-primary">Voir plus</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
@@ -79,7 +79,7 @@
                                     <div class="card-content">
                                         <h5 class="font-15">Nombre de poches O</h5>
                                         <h2 class="mb-3 font-18">19</h2>
-                                        <a href="#" class="btn btn-primary">Voir plus</a>
+                                        <a href="{{route('group')}}" class="btn btn-primary">Voir plus</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">

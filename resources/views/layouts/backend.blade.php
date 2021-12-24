@@ -10,11 +10,14 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('backend/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/css/components.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/assets/bundles/bootstrap-daterangepicker/daterangepicker.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/bundles/datatables/datatables.min.css') }}">
     <link rel="stylesheet" href="{{asset('backend/assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{asset('backend/assets/bundles/izitoast/css/iziToast.min.css')}}">
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="{{ asset('backend/assets/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ ASSET('backend/assets/bundles/select2/dist/css/select2.min.css') }}">
+
     <link rel="stylesheet" href="{{ asset('toastr.css') }}">
     <link rel='shortcut icon' type='image/x-icon' href='{{ asset('backend/assets/img/favicon.ico') }}' />
     @yield('styles')
@@ -191,7 +194,22 @@
                 <ul class="sidebar-menu">
                     <li class="menu-header">{{ __('messages.users') }}</li>
                     <li class="dropdown {{ Request::is('admin/user') ? 'active' : '' }}">
-                        <a href="{{ route('admin.user.index') }}" class="nav-link"><i data-feather="monitor"></i><span>{{ __('messages.users') }}</span></a>
+                        <a href="{{ route('admin.user.index') }}" class="nav-link"><i data-feather="users"></i><span>{{ __('messages.users') }}</span></a>
+                    </li>
+                </ul>
+                <ul class="sidebar-menu">
+                    <li class="menu-header">{{ __('messages.bloodbanks') }}</li>
+                    <li class="dropdown {{ Request::is('admin/bloodbank') ? 'active' : '' }}">
+                        <a href="{{ route('admin.bloodbank.index') }}" class="nav-link">
+                            <i data-feather="server"></i><span>{{ __('messages.bloodbanks') }}</span></a>
+                    </li>
+                    <li class="dropdown {{ Request::is('admin/bloodpocket') ? 'active' : '' }}">
+                        <a href="{{ route('admin.bloodpocket.index') }}" class="nav-link">
+                            <i data-feather="server"></i><span>{{ __('messages.bloodpockets') }}</span></a>
+                    </li>
+                    <li class="dropdown {{ Request::is('admin/bloodbankmanager') ? 'active' : '' }}">
+                        <a href="{{ route('admin.bloodbankmanager.index') }}" class="nav-link">
+                            <i data-feather="server"></i><span>{{ __('messages.bloodbankmanager') }}</span></a>
                     </li>
                 </ul>
                 @elseif(Auth::user()->role_id == 2)
@@ -220,6 +238,7 @@
                 <a href="/">FastBlood</a></a>
             </div>
             <div class="footer-right">
+                Centre de Transfusion Sanguine
             </div>
         </footer>
     </div>
@@ -245,8 +264,29 @@
 <script src="{{ asset('backend/assets/bundles/datatables/export-tables/pdfmake.min.js')}}"></script>
 <script src="{{ asset('backend/assets/bundles/datatables/export-tables/vfs_fonts.js')}}"></script>
 <script src="{{ asset('backend/assets/bundles/datatables/export-tables/buttons.print.min.js')}}"></script>
-<script src="{{ asset('backend/assets/js/page/datatables.js')}}"></script>
+<script src="{{ asset('toastr.js') }}"></script>
+<script src="{{ asset('backend/assets/bundles/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+<script src="{{ asset('backend/assets/bundles/jquery-pwstrength/jquery.pwstrength.min.js') }}"></script>
+<script src="{{ asset('backend/assets/bundles/select2/dist/js/select2.full.min.js') }}"></script>
+
 <!-- Template JS File -->
+{!! Toastr::message() !!}
+<script>
+    $('table').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
+    @if ($errors->any())
+    @foreach ($errors->all() as $error)
+    toastr.error('{{ $error }}','Error',{
+        closeButtor: true,
+        progressBar: true
+    });
+    @endforeach
+    @endif
+</script>
 @yield('scripts')
 </body>
 </html>

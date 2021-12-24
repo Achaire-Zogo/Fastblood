@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Role;
+use App\Models\BloodBank;
 use App\Models\User;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller
+class BloodBankController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +17,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();//where('role_id', '!=', 1)->get();
-        return view('admin.users.index', compact('users'));
+        $bloodbanks = BloodBank::all();
+        return view('admin.bloodbanks.index', compact('bloodbanks'));
     }
 
     /**
@@ -29,8 +28,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        $roles = Role::all();
-        return view('admin.users.create', compact('roles'));
+        $users = User::where('role_id', '!=', 1)
+            ->where('enabled', 1)
+            ->get();
+        return view('admin.bloodbanks.create', compact('users'));
     }
 
     /**
@@ -42,17 +43,15 @@ class UserController extends Controller
     public function store(Request $request)
     {
         try {
-            User::create([
-                'role_id' => $request->input('role_id'),
+            BloodBank::create([
+                'user_id' => $request->input('user_id'),
                 'name' => $request->input('name'),
-                'telephone' => $request->input('telephone'),
-                'email' => $request->input('email'),
-                'enabled' => 1,
-                'password' => Hash::make($request->input('password'))
+                'address' => $request->input('address'),
+                'enabled' => 1
             ]);
-            Toastr::success('messages', trans('messages.save_successfully'));
+            Toastr::success('message', trans('messages.save_successfully'));
             return back();
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             Toastr::error('message', trans('messages.unable_to_save'));
             return back();
         }
@@ -78,13 +77,13 @@ class UserController extends Controller
     public function edit($id)
     {
         try {
-            $user = User::findOrFail($id);
-            if ($user->enabled == 1) {
-                $user->enabled = 0;
-                $user->save();
+            $bloodbank = BloodBank::findOrFail($id);
+            if ($bloodbank->enabled == 1) {
+                $bloodbank->enabled = 0;
+                $bloodbank->save();
             } else {
-                $user->enabled = 1;
-                $user->save();
+                $bloodbank->enabled = 1;
+                $bloodbank->save();
             }
             Toastr::success('message', trans('messages.update_successfully'));
             return back();
@@ -102,20 +101,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        try {
-            $user = User::findOrFail($id);
-            if ($user->enabled == 1) {
-                $user->enabled = 0;
-                $user->save();
-            } else {
-                $user->enabled = 1;
-                $user->save();
-            }
-            Toastr::success('message', trans('messages.update_successfully'));
-            return back();
-        } catch(\Exception $e) {
-            Toastr::error('message', trans('messages.unable_to_update'));
-        }
+        //
     }
 
     /**
@@ -128,8 +114,8 @@ class UserController extends Controller
     {
         try
         {
-            $user = User::findOrFail($id);
-            $user->delete();
+            $bloodbank = BloodBank::findOrFail($id);
+            $bloodbank->delete();
             Toastr::success('messages', trans('messages.successfully_delete'));
             return back();
         }catch(\Exception $e){

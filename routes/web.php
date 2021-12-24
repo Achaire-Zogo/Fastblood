@@ -27,9 +27,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'App\Http\Controllers\admin', 'as' => 'admin.'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin'], 'namespace' => 'App\Http\Controllers\admin', 'as' => 'admin.'], function() {
     Route::resource('dashboard', 'DashboardController');
     Route::resource('user', 'UserController');
+    Route::resource('bloodbank', 'BloodBankController');
+    Route::resource('bloodpocket', 'BloodPocketController');
+    Route::resource('bloodbankmanager', 'BloodBankManagerController');
 });
 
 Route::group(['prefix' => 'directeur', 'middleware' => ['auth'], 'namespace' => 'App\Http\Controllers\directeur', 'as' => 'directeur.'], function() {
