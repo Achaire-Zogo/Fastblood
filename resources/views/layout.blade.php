@@ -94,9 +94,17 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('loginpage')}}">Se Connecter</a>
                                     </li>
+
+                                    <li class="nav-item dropdown active">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Donner / Demander</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="#gift">Donner du sang</a>
+                                                <a class="dropdown-item" href="#">Demander Du Sang</a>
+                                            </div>
+                                    </li>
                                 </ul>
                                 <!-- Appointment Button -->
-                                <a href="#gift" class="btn medilife-appoint-btn ml-30 pt-0">Faire un <span>don</span> de sang</a>
+
                             </div>
                         </nav>
                     </div>
