@@ -1,6 +1,6 @@
 @extends('layouts.backend')
 @section('title')
-    {{ __('messages.bloodbankmanager') }}
+    {{ __('messages.bloodbankaffiliations') }}
 @endsection
 @section('content')
     <section class="section">
@@ -12,7 +12,7 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('messages.dashboard') }}</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">{{ __('messages.bloodbankmanager') }}</li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ __('messages.groupes') }}</li>
                                 </ol>
                             </nav>
                         </div>
@@ -23,9 +23,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>{{ __('messages.bloodbankmanager') }}</h4>
+                            <h4>{{ __('messages.bloodbankaffiliations') }}</h4>
                             <div class="float-right">
-                                <a href="{{ route('admin.bloodbankmanager.create') }}" class="btn btn-primary">{{ __('messages.add') }}</a>
+                                <a href="{{ route('admin.bloodbankaffiliation.create') }}" class="btn btn-primary">{{ __('messages.add') }}</a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -41,13 +41,13 @@
                                             </div>
                                         </th>--}}
                                         <th>{{ __('messages.users') }}</th>
-{{--                                        <th>{{ __('messages.bloodbanks') }}</th>--}}
+                                        <th>{{ __('messages.bank_name') }}</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($bloodbankmanagers as $bloodbankmanager)
+                                    @foreach($bloodbankaffiliations as $bloodbankaffiliation)
                                         <tr>
                                             {{--<td class="text-center pt-2">
                                                 <div class="custom-checkbox custom-control">
@@ -56,25 +56,24 @@
                                                     <label for="checkbox-{{ $user->id }}" class="custom-control-label">&nbsp;</label>
                                                 </div>
                                             </td>--}}
-                                            <td>{{ $bloodbankmanager->user->name }}</td>
-{{--                                            <td>{{ $bloodbankmanager->bloodbank->name }}</td>--}}
-
+                                            <td>{{ $bloodbankaffiliation->user->name }}</td>
+                                            <td>{{ $bloodbankaffiliation->bloodbank->name }}</td>
                                             <td>
-                                                @if($bloodbankmanager->enabled == 1)
-                                                    <div class="badge badge-danger badge-shadow">{{ __('messages.enabled') }}</div>
+                                                @if($groupe->enabled == 1)
+                                                    <div class="badge badge-success badge-shadow">{{ __('messages.enabled') }}</div>
                                                 @else
-                                                    <div class="badge badge-success badge-shadow">{{ __('messages.disabled') }}</div>
+                                                    <div class="badge badge-danger badge-shadow">{{ __('messages.disabled') }}</div>
                                                 @endif
                                             </td>
                                             <td>
-                                                <a class="btn btn-outline-primary" href="{{ route('admin.bloodbankmanager.edit', $bloodbankmanager->id) }}" >
+                                                <a class="btn btn-outline-primary" href="{{ route('admin.bloodbankaffiliation.edit', $bloodbankaffiliation->id) }}" >
                                                     <i class="fas fa-pen"></i>
                                                 </a>
                                                 <a class="btn btn-outline-danger" href="" onclick="event.preventDefault();
                                                      document.getElementById('delete-form').submit();" title=" {{ __('messages.delete') }}">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </a>
-                                                <form id="delete-form" action="{{ route('admin.bloodbankmanager.destroy', $bloodbankmanager->id) }}" method="POST" class="d-none">
+                                                <form id="delete-form" action="{{ route('admin.bloodbankaffiliation.destroy', $bloodbankaffiliation->id) }}" method="POST" class="d-none">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>

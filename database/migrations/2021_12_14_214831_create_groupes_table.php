@@ -15,10 +15,13 @@ class CreateGroupesTable extends Migration
     {
         Schema::create('groupes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('owner_id');
             $table->string('name');
             $table->longText('description');
             $table->integer('enabled')->default(0);
             $table->timestamps();
+
+            $table->foreign('owner_id')->references('id')->on('users')->cascadeOnDelete();
         });
     }
 

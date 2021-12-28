@@ -211,6 +211,14 @@
                         <a href="{{ route('admin.bloodbankmanager.index') }}" class="nav-link">
                             <i data-feather="server"></i><span>{{ __('messages.bloodbankmanager') }}</span></a>
                     </li>
+                    <li class="dropdown {{ Request::is('admin/groupe') ? 'active' : '' }}">
+                        <a href="{{ route('admin.groupe.index') }}" class="nav-link">
+                            <i data-feather="server"></i><span>{{ __('messages.groupes') }}</span></a>
+                    </li>
+                    <li class="dropdown {{ Request::is('admin/bloodbankaffiliation') ? 'active' : '' }}">
+                        <a href="{{ route('admin.bloodbankaffiliation.index') }}" class="nav-link">
+                            <i data-feather="server"></i><span>{{ __('messages.bloodbankaffiliations') }}</span></a>
+                    </li>
                 </ul>
                 @elseif(Auth::user()->role_id == 2)
                     <ul class="sidebar-menu">

@@ -44,5 +44,11 @@ return [
     'modify_bloodpocket'=> 'Modifier une poche de sang',
     'bloodbankmanager' => 'Responsable de banque de sang',
     'add_bloodbankmanager' => 'Affecté une banque de Sang à un responsable',
+    'groupes' => 'Groupes',
+    'creator' => 'Créateur',
+    'description' => 'Description',
+    'add_groupe' => 'Ajouter un groupe',
+    'bloodbankaffiliations' => 'Affiliation Banque de sang',
+    'add_bloodbankaffiliation' => 'Ajouter un utilisateur à une banque de sang',
     ''
 ];

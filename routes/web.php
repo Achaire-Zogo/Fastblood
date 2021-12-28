@@ -33,6 +33,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin'], 'namespace
     Route::resource('bloodbank', 'BloodBankController');
     Route::resource('bloodpocket', 'BloodPocketController');
     Route::resource('bloodbankmanager', 'BloodBankManagerController');
+    Route::resource('groupe', 'GroupeController');
+    Route::resource('bloodbankaffiliation', 'BlooBankAffiliationController');
 });
 
 Route::group(['prefix' => 'directeur', 'middleware' => ['auth'], 'namespace' => 'App\Http\Controllers\directeur', 'as' => 'directeur.'], function() {
