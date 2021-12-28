@@ -50,5 +50,6 @@ return [
     'add_groupe' => 'Ajouter un groupe',
     'bloodbankaffiliations' => 'Affiliation Banque de sang',
     'add_bloodbankaffiliation' => 'Ajouter un utilisateur à une banque de sang',
+    'sliders' => 'Slides',
     ''
 ];

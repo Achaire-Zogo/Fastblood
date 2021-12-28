@@ -219,6 +219,10 @@
                         <a href="{{ route('admin.bloodbankaffiliation.index') }}" class="nav-link">
                             <i data-feather="server"></i><span>{{ __('messages.bloodbankaffiliations') }}</span></a>
                     </li>
+                    <li class="dropdown {{ Request::is('admin/slider') ? 'active' : '' }}">
+                        <a href="{{ route('admin.slider.index') }}" class="nav-link">
+                            <i data-feather="server"></i><span>{{ __('messages.slider') }}</span></a>
+                    </li>
                 </ul>
                 @elseif(Auth::user()->role_id == 2)
                     <ul class="sidebar-menu">
