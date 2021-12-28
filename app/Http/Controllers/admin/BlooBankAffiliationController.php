@@ -75,7 +75,11 @@ class BlooBankAffiliationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $blood_banks = BloodBank::where('enabled', 1)->get();
+        $users = User::where('enabled', 1)->get();
+        $bloodbankaffiliation = BloodBankAffiliation::findOrFail($id);
+        return view('admin.bloodbankaffiliations.edit', compact('users',
+            'bloodbankaffiliation', 'blood_banks'));
     }
 
     /**
@@ -87,7 +91,18 @@ class BlooBankAffiliationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try {
+            BloodBankAffiliation::where('id', $id)->update([
+                'user_id' => $request->input('user_id'),
+                'blood_bank_id' => $request->input('blood_bank_id'),
+                'enabled' => 1
+            ]);
+            Toastr::success('messages', trans('messages.save_successfully'));
+            return back();
+        } catch(\Exception $e) {
+            Toastr::error('messages', trans('messages.unable_to_save'));
+            return back();
+        }
     }
 
     /**
