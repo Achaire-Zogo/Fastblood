@@ -9,7 +9,7 @@ class Groupe extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'enabled'];
+    protected $fillable = ['name', 'description', 'enabled','blood_bank_id'];
 
     public function groupe_users()
     {

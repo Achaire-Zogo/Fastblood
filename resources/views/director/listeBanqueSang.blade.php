@@ -15,30 +15,27 @@
                           <tr>
                              
                               <th> Name</th>
-                              <th>Email</th>
-                              <th>phone</th>
+                              
+                              <th>address</th>
                               <th>Status</th>
                               <th>Action</th>
                             
                           </tr>
                         </thead>
                         <tbody>
-                              <tr>
-                                  <td>chu</td>
+                          @foreach ($bank as $banks)
+                             <tr>
+                              <td>{{$banks->name}}</td>
                                   <td class="align-middle">
-                                    yaounde
+                                      {{$banks->address}}
                                   </td>
                                   <td>
-                                   677721è26
-                                  </td>
-                                 
-                                  <td>
-                                    <div class="badge badge-success">attante</div>
+                                    <div class="badge badge-success">valide</div>
                                   </td>
                                   <td>
                                   <a type="button" href="" class="btn btn-primary" >details</a></td>
                                 </tr>
-                                
+                                @endforeach
                         </tbody>
                       </table>
                     </div>

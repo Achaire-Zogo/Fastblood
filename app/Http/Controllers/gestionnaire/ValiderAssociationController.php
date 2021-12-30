@@ -4,8 +4,10 @@ namespace App\Http\Controllers\gestionnaire;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use DB;
-class DashboardController extends Controller
+use Illuminate\Support\Facades\Auth;
+use App\Models\Groupe;
+use App\Models\BloodBankManager;
+class ValiderAssociationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +16,17 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $groupeab=DB::table('blood_banks')->get()->sum('num_ab');
-        $groupea=DB::table('blood_banks')->get()->sum('num_a');
-        $groupeb=DB::table('blood_banks')->get()->sum('num_b');
-        $groupeo=DB::table('blood_banks')->get()->sum('num_o');
-        return view('gestionnaire.dashboard',compact('groupeab','groupea','groupeb','groupeo'));
+        $userId = Auth::id();  
+        $users = BloodBankManager::where("enabled","1")->get(); 
+       // $id=$user -> user_id;
+        foreach ($users as $user ) {
+            if($userId == $user -> user_id){
+             $groupes =Groupe::where('blood_bank_id',$user->blood_bank_id)->where('enabled','0')->get();
+             
+               return view('gestionnaire.Association.valideAssociation')->with('groupes',$groupes);
+             
+            }
+        }
     }
 
     /**

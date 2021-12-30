@@ -29,16 +29,18 @@
                                     <th>Numero de poche</th>
                                     <th>Date d'entree</th>
                                     <th>Date de peremption</th>
-                                    <th>Resus</th>
+                                    <th>groupe sanguin</th>
                                  </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>11-08-2018 </td>
-                                    <td>11-08-2018</td>
-                                    <td>negatif</td>
-                                    <td>John Doe</td>
+                                 @foreach ($pockets as $pocket)
+                                  <td>{{$pocket->serail_number}}</td>
+                                    <td>{{$pocket->date_prelevement}} </td>
+                                    <td>{{$pocket->date_peremption}}</td>
+                                    <td>{{$pocket->blood_group}}</td>
+                                   
+                                    @endforeach
                                 </tr>
                                </tbody>
                             </table>

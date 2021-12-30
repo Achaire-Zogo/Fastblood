@@ -37,7 +37,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'App
 });
 
 Route::group(['prefix' => 'directeur', 'middleware' => ['auth'], 'namespace' => 'App\Http\Controllers\directeur', 'as' => 'directeur.'], function() {
-    Route::resource('dashboard', 'DashboardController');
+    // Route::resource('index', 'HomeDirectorController');
+    //Route::resource('listeAssociation', 'ListeAssociationController');
 });
 
 Route::group(['prefix' => 'responsable', 'middleware' => ['auth'], 'namespace' => 'App\Http\Controllers\responsable', 'as' => 'responsable.'], function() {
@@ -71,16 +72,38 @@ Route::get('/dashboard/valideResponsable/director', [App\Http\Controllers\direct
 Route::get('/dashboard/listeResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'index'])->name('listeResponsable');
 Route::get('/dashboard/detaileResponsable/director/{id}', [App\Http\Controllers\director\listeResponsableController::class, 'detail'])->name('detailResponsable');
 Route::post('/dashboard/detaileResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'valideResponsable'])->name('validerResponsable');
+Route::get('/dashboard/listeBanqueSang/director', [App\Http\Controllers\director\ListeBanqueSangController::class, 'index'])->name('listeBanqueSang');
+Route::get('/dashboard/validerBanqueSang/director', [App\Http\Controllers\director\validerBanqueSangController::class, 'index'])->name('validerBanqueSang');
+Route::get('/dashboard/listeAssociation/director', [App\Http\Controllers\director\ListeAssociationController::class, 'index'])->name('listAssociation');
+Route::get('/dashboard/validerAssociation/director', [App\Http\Controllers\director\ValiderAssociationController::class, 'index'])->name('valideAssociation');
+Route::get('/dashboard/listegroupesanguinAB/director', [App\Http\Controllers\director\ListeGroupeSanguinController::class, 'index'])->name('listeGroupeSanguinAB');
+Route::get('/dashboard/listegroupesanguinA/director', [App\Http\Controllers\director\ListeGroupeSanguinController::class, 'groupeA'])->name('listeGroupeSanguinA');
+Route::get('/dashboard/listegroupesanguinB/director', [App\Http\Controllers\director\ListeGroupeSanguinController::class, 'groupeB'])->name('listeGroupeSanguinB');
+Route::get('/dashboard/listegroupesanguinO/director', [App\Http\Controllers\director\ListeGroupeSanguinController::class, 'groupeO'])->name('listeGroupeSanguinO');
+Route::get('/dashboard/listegroupesanguinO/director', [App\Http\Controllers\director\ListeGroupeSanguinController::class, 'groupeO'])->name('listeGroupeSanguinO');
+Route::get('/dashboard/creerBloodBank/director', [App\Http\Controllers\director\bloodBank\CreerBanqueSangController::class, 'index'])->name('bloodBank');
+Route::get('/dashboard/creerResponsable/director', [App\Http\Controllers\director\responsable\CreerResponsableController::class, 'index'])->name('addresponsable');
+Route::get('/dashboard/creerAssociation/director', [App\Http\Controllers\director\Association\CreerAssociationController::class, 'index'])->name('addAssociation');
+Route::post('/dashboard/addResponsable/director', [App\Http\Controllers\director\responsable\CreerResponsableController::class, 'store'])->name('ajouterResponsable');
+Route::post('/dashboard/addbloodBank/director', [App\Http\Controllers\director\bloodBank\CreerBanqueSangController::class, 'store'])->name('addBloodBank');
+Route::post('/dashboard/addassociation/director', [App\Http\Controllers\director\Association\CreerAssociationController::class, 'store'])->name('addassociation');
 
 //route pour le responsable
 Route::get('/dashboard/Responsable', [App\Http\Controllers\responsable\ResponsableController::class, 'index'])->name('responsable');
 
 
-//route pour le gestionnaire
+//route pour le gestidetailAsssociationonnaire
 Route::get('/dashboard/gestionnaire', [App\Http\Controllers\gestionnaire\GestionnaireController::class, 'index'])->name('gestionnaire');
-Route::view('/dashboard', 'gestionnaire/index' )->name('gererbanque');
-Route::view('/groupe', 'gestionnaire/group' )->name('group');
-Route::view('/AjoutDon', 'gestionnaire/ajoutpoche' )->name('adddon');
+Route::get('/gestionnaire/listegroupeAB', [App\Http\Controllers\gestionnaire\ListeGroupeSanguinController::class, 'groupeAB'])->name('gestionnaireGroupab');
+Route::get('/gestionnaire/listegroupeA', [App\Http\Controllers\gestionnaire\ListeGroupeSanguinController::class, 'groupeA'])->name('gestionnaireGroupa');
+Route::get('/gestionnaire/listegroupeB', [App\Http\Controllers\gestionnaire\ListeGroupeSanguinController::class, 'groupeB'])->name('gestionnaireGroupb');
+Route::get('/gestionnaire/listegroupeO', [App\Http\Controllers\gestionnaire\ListeGroupeSanguinController::class, 'groupeO'])->name('gestionnaireGroupo');
+Route::get('/gestionnaire/ajoutPocheSang', [App\Http\Controllers\gestionnaire\ListeGroupeSanguinController::class, 'index'])->name('ajoutPocheSang');
+Route::post('/gestionnaire/addPocheSang', [App\Http\Controllers\gestionnaire\ListeGroupeSanguinController::class, 'store'])->name('addPocheSang');
+Route::get('/gestionnaire/listeAssociation', [App\Http\Controllers\gestionnaire\AssociationController::class, 'index'])->name('listeAssoiationAffi');
+Route::get('/gestionnaire/detailAssociation/{id}', [App\Http\Controllers\gestionnaire\AssociationController::class, 'show'])->name('');
+Route::get('/gestionnaire/validerAssociation', [App\Http\Controllers\gestionnaire\ValiderAssociationController::class, 'index'])->name('validerAssoiationAffi');
+
 Route::view('/Associations', 'gestionnaire/asociations' )->name('associations');
 Route::view('/AssociationsEnAttente', 'gestionnaire/ajoutpoche' )->name('asso_att');
 Route::view('/detailsAsso', 'gestionnaire/detailsAsso' )->name('detAsso');

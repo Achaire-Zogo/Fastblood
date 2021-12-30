@@ -15,32 +15,31 @@
                           <tr>
                              
                               <th> Name</th>
-                              <th>Email</th>
-                              <th>phone</th>
+                              <th>groupe sanguin</th>
+                              <th>nombre de poche</th>
                               <th>Action</th>
                             
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach ($users as $user)
+                          @foreach ($bank as $banks)
                             
                       
                                 <tr>
-                                  <td>{{$user->name}}</td>
+                                  
+    
+                                  <td>{{$banks->name}}</td>
                                   <td class="align-middle">
-                                    {{$user->email}}
+                                    Groupe sanguin AB
                                   </td>
                                   <td>
-                                    {{$user->telephone}}
+                                    {{$banks->num_ab}}
                                   </td>
                                  
-                                  <td>
-                                      <a type="button" href="{}" class="btn btn-primary" >editer</a></td>
                                 
-                                  </td>
-                                  {{-- <td>
-                                  <a type="button" href="{{url('dashboard/detaileResponsable/director/'.$user['id'])}}" class="btn btn-primary" >details</a></td>
-                                </tr> --}}
+                                  <td>
+                                  <a type="button" href="" class="btn btn-primary" >Demander</a></td>
+                                </tr>
                                 @endforeach
                         </tbody>
                       </table>

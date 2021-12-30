@@ -9,7 +9,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Details sur les poches du groupe sanguin</h4>
+                        <h4>Associations</h4>
                         <div class="card-header-form">
                             <form>
                                 <div class="input-group">
@@ -26,21 +26,34 @@
                             <table class="table table-hover mb-0">
                                 <thead>
                                 <tr>
-                                    <th>Numero de poche</th>
-                                    <th>Date d'entree</th>
-                                    <th>Date de peremption</th>
-                                    <th>Resus</th>
-                                 </tr>
+                                    <th>Noms membres</th>
+                                    <th>Email</th>
+                                    <th>Telephone</th>
+                                    <th>Date d'affiliation</th>
+                                    {{-- <th>Adresse</th> --}}
+                                    <th>Titre</th>
+                                    {{-- <th>Action</th> --}}
+                                </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>11-08-2018 </td>
-                                    <td>11-08-2018</td>
-                                    <td>negatif</td>
-                                    <td>John Doe</td>
+                               @foreach ($users as $user)
+                                   
+                              
+                                 <td>{{$user -> name}}</td>
+                                    <td>{{$user->email}}</td>
+                                    <td>{{$user->telephone}}</td>
+                                    <td>{{$user->create_at}}</td>
+                                    {{-- <td>Essos</td> --}}
+                                    @if($user->role_id)==1)
+                                    <td>DONNEUR</td>
+                                    @endif
+                                   <td><a href="" class="btn btn-outline-primary">Chater</a></td>
+                                 @endforeach
                                 </tr>
-                               </tbody>
+                              
+                                
+                                </tbody>
                             </table>
                         </div>
                     </div>

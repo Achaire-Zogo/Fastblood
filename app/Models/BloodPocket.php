@@ -5,16 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BloodBank extends Model
+class BloodPocket extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'address', 'user_id', 'enabled'];
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+    protected $fillable = ['id','serail_number', 'blood_group', 'date_prelevement', 'date_peremption'];
 
     public function bankpockets()
     {
@@ -24,10 +19,5 @@ class BloodBank extends Model
     public function mouvements()
     {
         return $this->hasMany(Mouvement::class);
-    }
-
-    public function bloodbankmanager()
-    {
-        return $this->hasMany(BloodBankManager::class);
     }
 }

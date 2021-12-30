@@ -15,32 +15,25 @@
                           <tr>
                              
                               <th> Name</th>
-                              <th>Email</th>
-                              <th>phone</th>
+                              <th>Description</th>
+                              <th>Status</th>
                               <th>Action</th>
                             
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach ($users as $user)
-                            
-                      
-                                <tr>
-                                  <td>{{$user->name}}</td>
+                          @foreach ($groupes as $groupe)
+                            <tr>
+                             <td>{{$groupe->name}}</td>
                                   <td class="align-middle">
-                                    {{$user->email}}
+                                      {{$groupe->description}}
                                   </td>
                                   <td>
-                                    {{$user->telephone}}
+                                    <div class="badge badge-success">attante</div>
                                   </td>
-                                 
                                   <td>
-                                      <a type="button" href="{}" class="btn btn-primary" >editer</a></td>
-                                
-                                  </td>
-                                  {{-- <td>
-                                  <a type="button" href="{{url('dashboard/detaileResponsable/director/'.$user['id'])}}" class="btn btn-primary" >details</a></td>
-                                </tr> --}}
+                                  <a type="button" href="" class="btn btn-primary" >details</a></td>
+                                </tr>
                                 @endforeach
                         </tbody>
                       </table>

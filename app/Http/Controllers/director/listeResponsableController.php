@@ -10,13 +10,13 @@ class listeResponsableController extends Controller
     public function index()
     {
 
-        $users = User::where("role_id","3")->get();
+        $users = User::where("role_id","3")->where("enabled","1")->get();
         return view('director.listeResponsable')->with('users',$users);
     }
     public function listeResponsableAttente()
     {
 
-        $users = User::where("role_id","3")->where("enabled","1")->get();
+        $users = User::where("role_id","3")->where("enabled","0")->get();
         return view('director.validerResponsable')->with('users',$users);
     }
     public function detail(Request $request)
@@ -25,9 +25,9 @@ class listeResponsableController extends Controller
         return view('director.details',['users'=>$users]);
     }
     public function  valideResponsable(Request $request)
-    {        
+    {     
         $users= User::find($request->id);
-        $users->enabled='0';
+        $users->enabled='1';
         $users->save();
         return redirect('/dashboard/valideResponsable/director');
     }

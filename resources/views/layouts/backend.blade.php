@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="{{ asset('backend/assets/bundles/datatables/datatables.min.css') }}">
     <link rel="stylesheet" href="{{asset('backend/assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{asset('backend/assets/bundles/izitoast/css/iziToast.min.css')}}">
+    <link rel="stylesheet" href="{{asset('backend/assets/bundles/summernote/summernote-bs4.css') }}">
+    <link rel="stylesheet" href="{{asset('backend/assets/bundles/codemirror/lib/codemirror.css') }}">
+    <link rel="stylesheet" href="{{asset('backend/assets/bundles/codemirror/theme/duotone-dark.css') }}">
+    <link rel="stylesheet" href="{{asset('backend/assets/bundles/jquery-selectric/selectric.css') }}">
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="{{ asset('backend/assets/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('toastr.css') }}">
@@ -193,12 +197,13 @@
                     <li class="menu-header">Main</li>
                     @if(session()->get('role')==4)
                     <li class="dropdown active">
-                        <a href="/" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+                        <a href="{{route('director')}}" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                 data-feather="briefcase"></i><span>Gestion des responsables</span></a>
                         <ul class="dropdown-menu">
+                        <li><a class="nav-link" href="{{route('listeResponsable')}}">Creer responsable</a></li>
                         <li><a class="nav-link" href="{{route('valideResponsable')}}">valider les responsables</a></li>
                             <li><a class="nav-link" href="{{route('listeResponsable')}}">listes des responsables</a></li>
                         </ul>
@@ -206,29 +211,30 @@
                     <li class="dropdown">
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Gestion des banques de sang</span></a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="portfolio.html">creer une banque de sang</a></li>
-                            <li><a class="nav-link" href="chat.html">valider banque de sang</a></li>
-                             <li><a class="nav-link" href="blog.html">liste de banque de sang</a></li>
+                            <li><a class="nav-link" href="">creer une banque de sang</a></li>
+                            <li><a class="nav-link" href="{{route('validerBanqueSang')}}">valider banque de sang</a></li>
+                             <li><a class="nav-link" href="{{route('listeBanqueSang')}}">liste de banque de sang</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Gestion des associations</span></a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="email-inbox.html">valider les associations</a></li>
-                            <li><a class="nav-link" href="email-compose.html">liste des associations</a></li>
+                            <li><a class="nav-link" href="{{route('listeResponsable')}}">Creer Association</a></li>
+                            <li><a class="nav-link" href="{{route('valideAssociation')}}">valider les associations</a></li>
+                            <li><a class="nav-link" href="{{route('listAssociation')}}">liste des associations</a></li>
                         </ul>
                     </li>
                     @endif
                     @if(session()->get('role')==2)
                     <li class="dropdown active">
-                        <a href="{{route('gererbanque')}}" class="nav-link"><i data-feather="monitor"></i><span>Gerer la banque de sang</span></a>
+                        <a href="{{route('gestionnaire')}}" class="nav-link"><i data-feather="monitor"></i><span> Banque de sang</span></a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                 data-feather="briefcase"></i><span>Gestion des associations</span></a>
                         <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="{{route('associations')}}">Voir les associations affiliees</a></li>
-                            <li><a class="nav-link" href="{{route('asso_att')}}">Valider une association</a></li>
+                        <li><a class="nav-link" href="{{route('listeAssoiationAffi')}}">Voir les associations affiliees</a></li>
+                            <li><a class="nav-link" href="{{route('validerAssoiationAffi')}}">Valider une association</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -394,6 +400,11 @@
 <script src="{{ asset('backend/assets/bundles/datatables/export-tables/pdfmake.min.js')}}"></script>
 <script src="{{ asset('backend/assets/bundles/datatables/export-tables/vfs_fonts.js')}}"></script>
 <script src="{{ asset('backend/assets/bundles/datatables/export-tables/buttons.print.min.js')}}"></script>
+<script src="{{ asset('backend/assets/bundles/summernote/summernote-bs4.js')}}"></script>
+<script src="{{ asset('backend/assets/bundles/codemirror/lib/codemirror.js')}}"></script>
+<script src="{{ asset('backend/assets/bundles/codemirror/mode/javascript/javascript.js')}}"></script>
+<script src="{{ asset('backend/assets/bundles/jquery-selectric/jquery.selectric.min.js')}}"></script>
+<script src="{{ asset('backend/assets/bundles/ckeditor/ckeditor.js')}}"></script>
 <script src="{{ asset('backend/assets/js/page/datatables.js')}}"></script>
 <!-- Template JS File -->
 @yield('scripts')
