@@ -1,6 +1,6 @@
 @extends('layouts.backend')
 @section('title')
-    {{ __('messages.users') }}
+    {{ __('messages.mouvements') }}
 @endsection
 @section('content')
     <section class="section">
@@ -11,8 +11,8 @@
                         <div class="card-body">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('messages.dashboard') }}</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">{{ __('messages.sliders') }}</li>
+                                    <li class="breadcrumb-item"><a href="{{ route('gestionnaire.dashboard.index') }}">{{ __('messages.dashboard') }}</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ __('messages.mouvements') }}</li>
                                 </ol>
                             </nav>
                         </div>
@@ -23,9 +23,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>{{ __('messages.sliders') }}</h4>
+                            <h4>{{ __('messages.mouvements') }}</h4>
                             <div class="float-right">
-                                <a href="{{ route('admin.slider.create') }}" class="btn btn-primary">{{ __('messages.add') }}</a>
+                                <a href="{{ route('gestionnaire.mouvement.create') }}" class="btn btn-primary">{{ __('messages.add') }}</a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -40,13 +40,15 @@
                                                 <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
                                             </div>
                                         </th>--}}
-                                        <th>{{ __('messages.name') }}</th>
-                                        <th>Photo</th>
+                                        <th>{{ __('messages.serial_number') }}</th>
+                                        <th>{{ __('messages.blood_group') }}</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($sliders as $slider)
+                                    @foreach($bloodpockets as $bloodpocket)
                                         <tr>
                                             {{--<td class="text-center pt-2">
                                                 <div class="custom-checkbox custom-control">
@@ -55,16 +57,26 @@
                                                     <label for="checkbox-{{ $user->id }}" class="custom-control-label">&nbsp;</label>
                                                 </div>
                                             </td>--}}
-                                            <td>{{ $slider->title }}</td>
+                                            <td>{{ $bloodpocket->serail_number }}</td>
+                                            <td>{{ $bloodpocket->blood_group }}</td>
+                                            <td>{{ $bloodpocket->date_prelevement }}</td>
+
                                             <td>
-                                                <img src="{{ asset('storage/slides/'.$slider->photo) }}" alt="" width="100" height="100">
+                                                @if($bloodpocket->date_peremption == $bloodpocket->date_prelevement)
+                                                    <div class="badge badge-danger badge-shadow">{{ __('messages.expired') }}</div>
+                                                @else
+                                                    <div class="badge badge-success badge-shadow">{{ __('messages.valid') }}</div>
+                                                @endif
                                             </td>
                                             <td>
+                                                <a class="btn btn-outline-primary" href="{{ route('gestionnaire.mouvement.edit', $bloodpocket->id) }}" >
+                                                    <i class="fas fa-pen"></i>
+                                                </a>
                                                 <a class="btn btn-outline-danger" href="" onclick="event.preventDefault();
                                                      document.getElementById('delete-form').submit();" title=" {{ __('messages.delete') }}">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </a>
-                                                <form id="delete-form" action="{{ route('admin.slider.destroy', $slider->id) }}" method="POST" class="d-none">
+                                                <form id="delete-form" action="{{ route('gestionnaire.mouvement.destroy', $bloodpocket->id) }}" method="POST" class="d-none">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>

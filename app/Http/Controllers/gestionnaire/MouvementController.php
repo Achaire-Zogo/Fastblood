@@ -3,9 +3,13 @@
 namespace App\Http\Controllers\gestionnaire;
 
 use App\Http\Controllers\Controller;
+use App\Models\BloodBank;
+use App\Models\Mouvement;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class DashboardController extends Controller
+class MouvementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +18,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('gestionnaire.dashboard');
+        $mouvements = Mouvement::joinRelationship('blood_bank')->get();
+        dd($mouvements);
+        return view('gestionnaire.mouvements.index', compact('mouvements'));
     }
 
     /**

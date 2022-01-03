@@ -159,12 +159,11 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right pullDown">
                         <div class="dropdown-title">Hello {{ Auth::user()->name }}</div>
-                        <a href="profile.html" class="dropdown-item has-icon"> <i class="far
+                        <a href="{{ route('my_profile', Auth::user()->email) }}" class="dropdown-item has-icon"> <i class="far
 										fa-user"></i> Profile
-                        </a> <a href="timeline.html" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
-                            Activities
-                        </a> <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
-                            Settings
+                        </a>
+                        <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
+                            {{ __('messages.settings') }}
                         </a>
                         <div class="dropdown-divider"></div>
                         <form method="POST" action="{{ route('logout') }}">
@@ -221,7 +220,7 @@
                     </li>
                     <li class="dropdown {{ Request::is('admin/slider') ? 'active' : '' }}">
                         <a href="{{ route('admin.slider.index') }}" class="nav-link">
-                            <i data-feather="server"></i><span>{{ __('messages.slider') }}</span></a>
+                            <i data-feather="server"></i><span>{{ __('messages.sliders') }}</span></a>
                     </li>
                 </ul>
                 @elseif(Auth::user()->role_id == 2)
@@ -231,11 +230,26 @@
                             <a href="{{ route('directeur.dashboard.index') }}" class="nav-link"><i data-feather="monitor"></i><span>{{ __('messages.dashboard') }}</span></a>
                         </li>
                     </ul>
-                    @elseif(Auth::user()->role_id == 3)
+                @elseif(Auth::user()->role_id == 3)
                     <ul class="sidebar-menu">
                         <li class="menu-header">{{ __('messages.main') }}</li>
                         <li class="dropdown {{ Request::is('responsable/dashboard') ? 'active' : '' }}">
                             <a href="{{ route('responsable.dashboard.index') }}" class="nav-link"><i data-feather="monitor"></i><span>{{ __('messages.dashboard') }}</span></a>
+                        </li>
+                    </ul>
+                @elseif(Auth::user()->role_id == 4)
+                    <ul class="sidebar-menu">
+                        <li class="menu-header">{{ __('messages.main') }}</li>
+                        <li class="dropdown {{ Request::is('gestionnaire/dashboard') ? 'active' : '' }}">
+                            <a href="{{ route('gestionnaire.dashboard.index') }}" class="nav-link"><i data-feather="monitor"></i><span>{{ __('messages.dashboard') }}</span></a>
+                        </li>
+                        <li class="dropdown {{ Request::is('gestionnaire/bloodpocket') ? 'active' : '' }}">
+                            <a href="{{ route('gestionnaire.bloodpocket.index') }}" class="nav-link">
+                                <i data-feather="server"></i><span>{{ __('messages.bloodpockets') }}</span></a>
+                        </li>
+                        <li class="dropdown {{ Request::is('gestionnaire/mouvement') ? 'active' : '' }}">
+                            <a href="{{ route('gestionnaire.mouvement.index') }}" class="nav-link">
+                                <i data-feather="server"></i><span>{{ __('messages.mouvements') }}</span></a>
                         </li>
                     </ul>
                 @endif
@@ -250,7 +264,7 @@
                 <a href="/">FastBlood</a></a>
             </div>
             <div class="footer-right">
-                Centre de Transfusion Sanguine
+                Centre Nationale de Transfusion Sanguine
             </div>
         </footer>
     </div>

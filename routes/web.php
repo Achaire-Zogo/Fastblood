@@ -27,6 +27,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('my-profile/{slug}', [App\Http\Controllers\ProfileController::class, 'my_profile'])->name('my_profile');
+Route::post('update-profile/{id}', [App\Http\Controllers\ProfileController::class, 'update_profile'])->name('update_profile');
+Route::post('update-password/{id}', [App\Http\Controllers\ProfileController::class, 'update_password'])->name('update_password');
+
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin'], 'namespace' => 'App\Http\Controllers\admin', 'as' => 'admin.'], function() {
     Route::resource('dashboard', 'DashboardController');
     Route::resource('user', 'UserController');
@@ -46,8 +50,10 @@ Route::group(['prefix' => 'responsable', 'middleware' => ['auth'], 'namespace' =
     Route::resource('dashboard', 'DashboardController');
 });
 
-Route::group(['prefix' => 'gestionnaire', 'middleware' => ['auth'], 'namespace' => 'App\Http\Controllers\gestionnaire', 'as' => 'gestionnaire.'], function() {
+Route::group(['prefix' => 'gestionnaire', 'middleware' => ['auth', 'gestionnaire'], 'namespace' => 'App\Http\Controllers\gestionnaire', 'as' => 'gestionnaire.'], function() {
     Route::resource('dashboard', 'DashboardController');
+    Route::resource('bloodpocket', 'BloodPocketController');
+    Route::resource('mouvement', 'MouvementController');
 });
 
 Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'namespace' => 'App\Http\Controllers\user', 'as' => 'user.'], function() {

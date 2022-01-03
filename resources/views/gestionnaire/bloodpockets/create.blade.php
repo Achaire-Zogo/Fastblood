@@ -11,9 +11,9 @@
                         <div class="card-body">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('messages.dashboard') }}</a></li>
-                                    <li class="breadcrumb-item"><a href="{{ route('admin.bloodpocket.index') }}">{{ __('messages.bloodbanks') }}</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">{{ __('messages.modify_bloodpocket') }}</li>
+                                    <li class="breadcrumb-item"><a href="{{ route('gestionnaire.dashboard.index') }}">{{ __('messages.dashboard') }}</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('gestionnaire.bloodpocket.index') }}">{{ __('messages.bloodbanks') }}</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ __('messages.add_bloodpocket') }}</li>
                                 </ol>
                             </nav>
                         </div>
@@ -25,13 +25,12 @@
                     <div class="card">
                         <div class="card-header">
                             <h4>
-                                <a href="{{ route('admin.bloodpocket.index') }}" class="btn btn-primary">{{ __('messages.back') }}</a>
+                                <a href="{{ route('gestionnaire.bloodpocket.index') }}" class="btn btn-primary">{{ __('messages.back') }}</a>
                             </h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('admin.bloodpocket.update', $bloodpocket->id) }}" method="POST">
+                            <form action="{{ route('gestionnaire.bloodpocket.store') }}" method="POST">
                                 @csrf
-                                @method('PUT')
                                 <div class="form-group">
                                     <label>{{ __('messages.bloodbanks') }}</label>
                                     <select class="form-control select2" name="blood_bank_id" required>
@@ -42,7 +41,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>{{ __('messages.serial_number') }}</label>
-                                    <input type="text" name="serial_number" value="{{ $bloodpocket->serail_number }}" class="form-control" required>
+                                    <input type="text" name="serial_number" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label>{{ __('messages.blood_group') }}</label>
@@ -59,7 +58,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Date</label>
-                                    <input type="text" value="{{ $bloodpocket->date_prelevement }}" name="date_prelevement" id="date_prelevement" class="form-control datepicker" required>
+                                    <input type="text" name="date_prelevement" id="date_prelevement" class="form-control datepicker" required>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-outline-success">{{ __('messages.save') }}</button>

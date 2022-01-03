@@ -46,10 +46,14 @@
                                 <div class="form-group">
                                     <label>{{ __('messages.blood_group') }}</label>
                                     <select name="blood_group" class="form-control select2" required>
-                                        <option value="A">A</option>
-                                        <option value="0">O</option>
-                                        <option value="B">B</option>
-                                        <option value="AB">AB</option>
+                                        <option value="A+">A+</option>
+                                        <option value="A-">A-</option>
+                                        <option value="0+">O+</option>
+                                        <option value="0-">O-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B-">B-</option>
+                                        <option value="AB+">AB+</option>
+                                        <option value="AB-">AB-</option>
                                     </select>
                                 </div>
                                 <div class="form-group">

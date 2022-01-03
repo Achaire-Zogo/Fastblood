@@ -11,8 +11,8 @@
                         <div class="card-body">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('messages.dashboard') }}</a></li>
-                                    <li class="breadcrumb-item"><a href="{{ route('admin.bloodpocket.index') }}">{{ __('messages.bloodbanks') }}</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('gestionnaire.dashboard.index') }}">{{ __('messages.dashboard') }}</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('gestionnaire.bloodpocket.index') }}">{{ __('messages.bloodbanks') }}</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">{{ __('messages.modify_bloodpocket') }}</li>
                                 </ol>
                             </nav>
@@ -25,11 +25,11 @@
                     <div class="card">
                         <div class="card-header">
                             <h4>
-                                <a href="{{ route('admin.bloodpocket.index') }}" class="btn btn-primary">{{ __('messages.back') }}</a>
+                                <a href="{{ route('gestionnaire.bloodpocket.index') }}" class="btn btn-primary">{{ __('messages.back') }}</a>
                             </h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('admin.bloodpocket.update', $bloodpocket->id) }}" method="POST">
+                            <form action="{{ route('gestionnaire.bloodpocket.update', $bloodpocket->id) }}" method="POST">
                                 @csrf
                                 @method('PUT')
                                 <div class="form-group">

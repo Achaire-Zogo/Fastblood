@@ -51,5 +51,11 @@ return [
     'bloodbankaffiliations' => 'Affiliation Banque de sang',
     'add_bloodbankaffiliation' => 'Ajouter un utilisateur à une banque de sang',
     'sliders' => 'Slides',
+    'add_slider' => 'Ajouter une image défilante',
+    'personal_details'=> 'Detail personnel',
+    'edit_profile' => 'Modifier profil',
+    'setting' => 'Paramètre',
+    'settings' => 'Paramètres',
+    'mouvements' => 'Mouvements',
     ''
 ];

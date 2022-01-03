@@ -15,6 +15,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "intervention/image": "^2.7",
         "jorenvanhocht/laravel-share": "^4.1",
+        "kirschbaum-development/eloquent-power-joins": "^2.5",
         "laravel/framework": "^8.65",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
