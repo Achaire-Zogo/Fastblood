@@ -592,7 +592,7 @@ img {
     position: relative;
     z-index: 1;
     height: 45px;
-    background-color: #006CFF;
+    background-color: #3a8d1c;
 }
 
 .top-header-area p {
@@ -601,7 +601,7 @@ img {
 }
 
 .top-header-area p span {
-    color: #FF0000;
+    color: #ffffff;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -800,7 +800,7 @@ img {
 }
 
 .hero-slides-content h2 {
-    color: #006CFF;
+    color: #3a8d1c;
     font-size: 60px;
     margin-bottom: 20px;
 }
@@ -818,7 +818,7 @@ img {
 }
 
 .hero-slides-content h5 {
-    color: #006CFF;
+    color: #3a8d1c;
     font-size: 22px;
     font-weight: 600;
 }
@@ -837,7 +837,7 @@ img {
     opacity: 0;
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
-    background-color: #006CFF;
+    background-color: #3a8d1c;
     font-size: 14px;
 }
 

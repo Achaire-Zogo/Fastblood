@@ -32,7 +32,12 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    public function groupe_users()
+    public function groupe()
+    {
+        return $this->hasMany(Groupe::class);
+    }
+
+    public function groupeusers()
     {
         return $this->hasMany(GroupeUser::class);
     }
@@ -46,6 +51,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(UserSosSignal::class);
     }
+
 
     /**
      * The attributes that should be hidden for serialization.

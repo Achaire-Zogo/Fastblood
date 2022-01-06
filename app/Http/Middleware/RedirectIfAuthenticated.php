@@ -17,16 +17,24 @@ class RedirectIfAuthenticated
      * @param  string|null  ...$guards
      * @return mixed
      */
-    public function handle(Request $request, Closure $next, ...$guards)
+    public function handle(Request $request, Closure $next, ...$guard)
     {
-        $guards = empty($guards) ? [null] : $guards;
+        //$guards = empty($guards) ? [null] : $guards;
 
-        foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
-            }
+        if (Auth::guard($guard)->check() && Auth::user()->role_id == 1) {
+            return redirect()->route('admin.dashboard.index');
+        } elseif (Auth::guard($guard)->check() && Auth::user()->role_id == 2) {
+            return redirect()->route('directeur.dashboard.index');
+        } elseif (Auth::guard($guard)->check() && Auth::user()->role_id == 3) {
+            return redirect()->route('responsable.dashboard.index');
+        } elseif (Auth::guard($guard)->check() && Auth::user()->role_id == 4) {
+            return redirect()->route('gestionnaire.dashboard.index');
+        } elseif (Auth::guard($guard)->check() && Auth::user()->role_id == 5) {
+            return redirect()->route('user.dashboard.index');
+        } else {
+            return $next($request);
         }
 
-        return $next($request);
+        //return $next($request);
     }
 }

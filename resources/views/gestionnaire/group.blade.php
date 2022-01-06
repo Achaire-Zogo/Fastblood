@@ -30,8 +30,7 @@
                                     <th>Date d'entree</th>
                                     <th>Date de peremption</th>
                                     <th>Resus</th>
-                                    <th>Donneur</th>
-                                </tr>
+                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
@@ -41,49 +40,7 @@
                                     <td>negatif</td>
                                     <td>John Doe</td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>18-08-2018 </td>
-                                    <td>19-09-2018</td>
-                                    <td>negatif</td>
-                                    <td>Zogo</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>11-08-2018 </td>
-                                    <td>11-08-2018</td>
-                                    <td>negatif</td>
-                                    <td>John Doe</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                   <td>11-08-2018 </td>
-                                    <td>11-08-2018</td>
-                                    <td>negatif</td>
-                                    <td>John Doe</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                   <td>11-08-2018 </td>
-                                    <td>11-08-2018</td>
-                                    <td>negatif</td>
-                                    <td>John Doe</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                   <td>11-08-2018 </td>
-                                    <td>11-08-2018</td>
-                                    <td>negatif</td>
-                                    <td>John Doe</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                   <td>11-08-2018 </td>
-                                    <td>11-08-2018</td>
-                                    <td>negatif</td>
-                                    <td>John Doe</td>
-                                </tr>
-                                </tbody>
+                               </tbody>
                             </table>
                         </div>
                     </div>

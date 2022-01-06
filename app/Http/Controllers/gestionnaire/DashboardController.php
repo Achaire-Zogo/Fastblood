@@ -4,7 +4,7 @@ namespace App\Http\Controllers\gestionnaire;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use DB;
 class DashboardController extends Controller
 {
     /**
@@ -14,7 +14,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        //
+        $groupeab=DB::table('blood_banks')->get()->sum('num_ab');
+        $groupea=DB::table('blood_banks')->get()->sum('num_a');
+        $groupeb=DB::table('blood_banks')->get()->sum('num_b');
+        $groupeo=DB::table('blood_banks')->get()->sum('num_o');
+        return view('gestionnaire.dashboard',compact('groupeab','groupea','groupeb','groupeo'));
     }
 
     /**

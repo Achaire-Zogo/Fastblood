@@ -1,15 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\informations\Faq;
-use App\Http\Controllers\user\UserController;
-use App\Http\Controllers\director\HomeDirectorController;
-use App\Http\Controllers\responsable\ResponsableController;
-use App\Http\Controllers\gestionnaire\GestionnaireController;
+use App\Http\Controllers\user\AssociationController;
 use App\Http\Controllers\informations\Connaitre_plus;
 use App\Http\Controllers\informations\Qui_peut_donner;
+use App\Http\Controllers\AssociationUjoinedController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,67 +21,53 @@ use App\Http\Controllers\informations\Qui_peut_donner;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('locale/{locale}', function ($locale) {
+    Session::put('locale', $locale);
+    return redirect()->back();
+});
 
 Route::get('/', function () {
-    return view('home');
+    return view('frontend.homepage');
 });
 
 Auth::routes();
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'App\Http\Controllers\admin', 'as' => 'admin.'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin'], 'namespace' => 'App\Http\Controllers\admin', 'as' => 'admin.'], function() {
     Route::resource('dashboard', 'DashboardController');
+    Route::resource('user', 'UserController');
+    Route::resource('bloodbank', 'BloodBankController');
+    Route::resource('bloodpocket', 'BloodPocketController');
+    Route::resource('bloodbankmanager', 'BloodBankManagerController');
+    Route::resource('groupe', 'GroupeController');
+    Route::resource('bloodbankaffiliation', 'BlooBankAffiliationController');
+    Route::resource('slider', 'SliderController');
 });
 
 Route::group(['prefix' => 'directeur', 'middleware' => ['auth'], 'namespace' => 'App\Http\Controllers\directeur', 'as' => 'directeur.'], function() {
     Route::resource('dashboard', 'DashboardController');
+    Route::resource('reponseC', 'ReponseCommunautaireController');
+    Route::resource('annonce_collective', 'AnnonceCollectiveController');
+    Route::resource('publication_generale', 'PublicationGeneraleController');
 });
 
 Route::group(['prefix' => 'responsable', 'middleware' => ['auth'], 'namespace' => 'App\Http\Controllers\responsable', 'as' => 'responsable.'], function() {
     Route::resource('dashboard', 'DashboardController');
 });
 
-Route::group(['prefix' => 'gestionnaire', 'middleware' => ['auth'], 'namespace' => 'App\Http\Controllers\gestionnaire', 'as' => 'gestionnaire.'], function() {
-    Route::resource('dashboard', 'DashboardController');
-});
+// Route::group(['prefix' => 'gestionnaire', 'middleware' => ['auth'], 'namespace' => 'App\Http\Controllers\gestionnaire', 'as' => 'gestionnaire.'], function() {
+//     Route::resource('dashboard', 'DashboardController');
+// });
 
 Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'namespace' => 'App\Http\Controllers\user', 'as' => 'user.'], function() {
     Route::resource('dashboard', 'DashboardController');
+    Route::resource('donation', 'DonationController');
+    Route::resource('demander', 'DemanderController');
+    Route::resource('association', 'AssociationController');
+    Route::resource('unjoind', 'AssociationUjoinedController');
+
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// //route pour le directeur
-// Route::get('/dashboard/director', [App\Http\Controllers\director\HomeDirectorController::class, 'index'])->name('director');
-// Route::get('/dashboard/valideResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'listeResponsableAttente'])->name('valideResponsable');
-// Route::get('/dashboard/listeResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'index'])->name('listeResponsable');
-// Route::get('/dashboard/detaileResponsable/director/{id}', [App\Http\Controllers\director\listeResponsableController::class, 'detail'])->name('detailResponsable');
-// Route::post('/dashboard/detaileResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'valideResponsable'])->name('validerResponsable');
-
-Route::view('/connexion', 'auth/login' )->name('loginpage');
-Route::get('/signup_page', 'App\Http\Controllers\Auth\SignupController@signuppage' )->name('signuppage');
-Route::post('/login', 'App\Http\Controllers\Auth\SigninController@login');
-Route::post('/signup', 'App\Http\Controllers\Auth\SignupController@signup');
-
-
-Route::get('/dashboard/director', [App\Http\Controllers\director\HomeDirectorController::class, 'index'])->name('director');
-Route::get('/dashboard/valideResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'listeResponsableAttente'])->name('valideResponsable');
-Route::get('/dashboard/listeResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'index'])->name('listeResponsable');
-Route::get('/dashboard/detaileResponsable/director/{id}', [App\Http\Controllers\director\listeResponsableController::class, 'detail'])->name('detailResponsable');
-Route::post('/dashboard/detaileResponsable/director', [App\Http\Controllers\director\listeResponsableController::class, 'valideResponsable'])->name('validerResponsable');
-
-//route pour le responsable
-Route::get('/dashboard/Responsable', [App\Http\Controllers\responsable\ResponsableController::class, 'index'])->name('responsable');
-
-
-//route pour le gestionnaire
-Route::get('/dashboard/gestionnaire', [App\Http\Controllers\gestionnaire\GestionnaireController::class, 'index'])->name('gestionnaire');
-Route::view('/dashboard', 'gestionnaire/index' )->name('gererbanque');
-Route::view('/groupe', 'gestionnaire/group' )->name('group');
-Route::view('/AjoutDon', 'gestionnaire/ajoutpoche' )->name('adddon');
-Route::view('/Associations', 'gestionnaire/asociations' )->name('associations');
-Route::view('/AssociationsEnAttente', 'gestionnaire/ajoutpoche' )->name('asso_att');
-Route::view('/detailsAsso', 'gestionnaire/detailsAsso' )->name('detAsso');
-//route pour le user
-Route::get('/dashboard/user', [App\Http\Controllers\user\UserController::class, 'index'])->name('user');
 
 //Foire aux Questions
 Route::get('/faq/don_de_sang', [Faq::class, 'faq_don_de_sang'])->name('faq_don_de_sang');
@@ -105,3 +87,39 @@ Route::get('/qui_peut_donner/condition', [Qui_peut_donner::class, 'qpd_condition
 Route::get('/qui_peut_donner/contre_indication', [Qui_peut_donner::class, 'qpd_contre_indications'])->name('qpd_contre_indications');
 Route::get('/qui_peut_donner/delai_entre_2_don', [Qui_peut_donner::class, 'qpd_delai_entre_2_don'])->name('qpd_delai_entre_2_don');
 Route::get('/qui_peut_donner/puis_je_donner?', [Qui_peut_donner::class, 'qpd_puis_je_donner'])->name('qpd_puis_je_donner');
+// //route pour le directeur
+
+//directeur
+Route::view('/dashboard', 'gestionnaire/index' )->name('gererbanque');
+Route::get('/banques', 'App\Http\Controllers\director\BanksController@show' )->name('gererBanques');
+Route::post('/addBank', 'App\Http\Controllers\director\BanksController@create' );
+Route::get('/details', 'App\Http\Controllers\director\BanksController@voirPlus' )->name('voirPlusBanque');
+Route::post('/editBank', 'App\Http\Controllers\director\BanksController@edit' );
+Route::get('/delBank', 'App\Http\Controllers\director\BanksController@destroy' );
+
+Route::get('/editBankForm', 'App\Http\Controllers\director\BanksController@editForm' );
+Route::view('/ajout_banque', 'director/addBank' )->name('addBankForm');
+Route::get('/Utilisateurs', 'App\Http\Controllers\director\UserController@show' )->name('gererUsers');
+Route::get('/details_user', 'App\Http\Controllers\director\UserController@voirPlus' )->name('voirPlusUser');
+Route::post('/affBank', 'App\Http\Controllers\director\UserController@affBank' );
+Route::post('/affGrp', 'App\Http\Controllers\director\UserController@affGrp' );
+Route::get('/delAffBank', 'App\Http\Controllers\director\UserController@delAffBank' );
+Route::get('/delAffGrp', 'App\Http\Controllers\director\UserController@delAffGrp' );
+Route::view('/ajout_user', 'director/addUser' )->name('addUserForm');
+Route::post('/addUser', 'App\Http\Controllers\director\UserController@create' );
+Route::get('/delUser', 'App\Http\Controllers\director\UserController@destroy' );
+Route::get('/modif_user', 'App\Http\Controllers\director\UserController@editForm' )->name('editUserForm');
+Route::post('/editUser', 'App\Http\Controllers\director\UserController@edit' );
+Route::get('/Associations', 'App\Http\Controllers\director\AssoController@show' )->name('gererAsso');
+
+//route pour le gestidetailAsssociationonnaire
+Route::get('/dashboard/gestionnaire', [App\Http\Controllers\gestionnaire\GestionnaireController::class, 'index'])->name('gestionnaire');
+Route::get('/gestionnaire/listegroupeAB', [App\Http\Controllers\gestionnaire\ListeGroupeSanguinController::class, 'groupeAB'])->name('gestionnaireGroupab');
+Route::get('/gestionnaire/listegroupeA', [App\Http\Controllers\gestionnaire\ListeGroupeSanguinController::class, 'groupeA'])->name('gestionnaireGroupa');
+Route::get('/gestionnaire/listegroupeB', [App\Http\Controllers\gestionnaire\ListeGroupeSanguinController::class, 'groupeB'])->name('gestionnaireGroupb');
+Route::get('/gestionnaire/listegroupeO', [App\Http\Controllers\gestionnaire\ListeGroupeSanguinController::class, 'groupeO'])->name('gestionnaireGroupo');
+Route::get('/gestionnaire/ajoutPocheSang', [App\Http\Controllers\gestionnaire\ListeGroupeSanguinController::class, 'index'])->name('ajoutPocheSang');
+Route::post('/gestionnaire/addPocheSang', [App\Http\Controllers\gestionnaire\ListeGroupeSanguinController::class, 'store'])->name('addPocheSang');
+Route::get('/gestionnaire/listeAssociation', [App\Http\Controllers\gestionnaire\AssociationController::class, 'index'])->name('listeAssoiationAffi');
+Route::get('/gestionnaire/detailAssociation/{id}', [App\Http\Controllers\gestionnaire\AssociationController::class, 'show'])->name('');
+Route::get('/gestionnaire/validerAssociation', [App\Http\Controllers\gestionnaire\ValiderAssociationController::class, 'index'])->name('validerAssoiationAffi');

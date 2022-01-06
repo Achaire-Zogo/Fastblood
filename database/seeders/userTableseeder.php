@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 use DB;
 class userTableseeder extends Seeder
 {
@@ -13,9 +14,11 @@ class userTableseeder extends Seeder
      */
     public function run()
     {
-        DB::table("roles")->insert([
-            ["role_id"=>'1',"name"=>"admin","telephone"=>"654567898","email"=>"michellefotso2@gmail.com","enabled"=>"0"],
-            
+        DB::table("users")->insert([
+            // ["role_id"=>'1',"name"=>"admin","telephone"=>"657515280","email"=>"admin@gmail.com","enabled"=>"1","password"=> Hash::make("usertest")],
+            // ["role_id"=>'2',"name"=>"directeur","telephone"=>"650124582","email"=>"directeur@gmail.com","enabled"=>"1","password"=> Hash::make("usertest")],
+            ["role_id"=>'4',"name"=>"getionnaire","telephone"=>"670124582","email"=>"getionnaire@gmail.com","enabled"=>"1","password"=> Hash::make("usertest")],
+
         ]);
     }
 }

@@ -1,6 +1,6 @@
 
 @extends('layout')
-@section('body')
+@section('content')
 
     <!-- ***** Hero Area Start ***** -->
     <section class="hero-area">
@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-                   <!-- Single Hero Slide -->
+<!-- Single Hero Slide -->
             <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(img/bg-img/pex2.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
@@ -73,33 +73,15 @@
                                                 <div class="col-12 col-md-4">
                                                     <div class="form-group">
                                                         <select class="form-control" id="speciality">
-                                                        <option>Speciality 1</option>
-                                                        <option>Speciality 2</option>
-                                                        <option>Speciality 3</option>
-                                                        <option>Speciality 4</option>
-                                                        <option>Speciality 5</option>
+                                                        <option>Centre De Sante</option>
                                                     </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-4">
                                                     <div class="form-group">
                                                         <select class="form-control" id="doctors">
-                                                        <option>Doctors 1</option>
-                                                        <option>Doctors 2</option>
-                                                        <option>Doctors 3</option>
-                                                        <option>Doctors 4</option>
-                                                        <option>Doctors 5</option>
+                                                        <option>Groupe A+</option>
                                                     </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 col-md-2">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" name="date" id="date" placeholder="Date">
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 col-md-2">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" name="time" id="time" placeholder="Time">
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-4">
@@ -107,24 +89,9 @@
                                                         <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="name" id="name" placeholder="Name">
                                                     </div>
                                                 </div>
-                                                <div class="col-12 col-md-4">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="number" id="number" placeholder="Phone">
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 col-md-4">
-                                                    <div class="form-group">
-                                                        <input type="email" class="form-control border-top-0 border-right-0 border-left-0" name="email" id="email" placeholder="E-mail">
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 col-md-7">
-                                                    <div class="form-group mb-0">
-                                                        <textarea name="message" class="form-control mb-0 border-top-0 border-right-0 border-left-0" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-                                                    </div>
-                                                </div>
                                                 <div class="col-12 col-md-5 mb-0">
                                                     <div class="form-group mb-0">
-                                                        <button type="submit" class="btn medilife-btn">Faire une demande</button>
+                                                        <button type="submit" class="btn medilife-btn">Faire une Demande</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -158,6 +125,7 @@
         </div>
         <!-- ***** Book An Appoinment Area End ***** -->
 
+s
     <!-- ***** Features Area Start ***** -->
     <div class="medilife-features-area section-padding-100">
         <div class="container">
@@ -393,8 +361,8 @@
                             </div>
                         </div>
                     </div>
-        </div>
-    </section>
+                </div>
+            </section>
             <!-- BLOG END -->
 
         <!-- WORK START -->
@@ -523,10 +491,10 @@
                             <div class="text-center mt-30">
                                 <a href="more-bank.html" class="btn btn-custom"> Voir plus ...</a>
                             </div>
+                        </div>
                     </div>
-            </div>
-        </div>
-    </section>
+                </div>
+            </section>
             <!-- BLOG END -->
 
     <!-- ***** Blog Area Start ***** -->

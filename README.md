@@ -18,6 +18,7 @@
 4. brian2694/laravel-toastr: for Toast notification
 5. intervention/image: for image creation while uploading
 6. spatie/laravel-sitemap: generating the sitemap of the application
+7. jorenvanhocht/laravel-share: to share to social networks
 
 #### HOW TO RUN THE App
 1. Clone the repository from Heroku CLI
