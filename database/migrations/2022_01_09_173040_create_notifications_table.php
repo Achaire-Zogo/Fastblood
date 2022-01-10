@@ -20,6 +20,7 @@ class CreateNotificationsTable extends Migration
             $table->string('title')->nullable();
             $table->foreign('role_id')->references('id')->on('roles')->cascadeOnDelete();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

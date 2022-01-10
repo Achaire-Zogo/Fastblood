@@ -15,12 +15,11 @@ class CreateMouvementsTable extends Migration
     {
         Schema::create('mouvements', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('blood_group_id');
-            $table->unsignedBigInteger('blood_bank_id');
+            $table->unsignedBigInteger('blood_pocket_id');
             $table->integer('type_mouvement'); // 0 for exit and 1 for entry
-            $table->foreign('blood_group_id')->references('id')->on('blood_groups')->cascadeOnDelete();
-            $table->foreign('blood_bank_id')->references('id')->on('blood_banks')->cascadeOnDelete();
+            $table->foreign('blood_pocket_id')->references('id')->on('blood_pockets')->cascadeOnDelete();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

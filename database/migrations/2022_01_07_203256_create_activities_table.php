@@ -23,6 +23,7 @@ class CreateActivitiesTable extends Migration
             $table->string('quartier')->nullable();
             $table->foreign('type_activity_id')->references('id')->on('type_activities')->cascadeOnDelete();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

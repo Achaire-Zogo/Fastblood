@@ -10,4 +10,9 @@ class TypeActivity extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
+
+    public function activities()
+    {
+        return $this->hasMany(Activity::class);
+    }
 }

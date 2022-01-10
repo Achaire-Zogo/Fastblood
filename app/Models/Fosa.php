@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Fosa extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = ['type_fosa_id', 'region_id', 'department_id', 'name'];
 
@@ -24,5 +25,10 @@ class Fosa extends Model
     public function department()
     {
         return $this->belongsTo(Department::class);
+    }
+
+    public function bloodbanks()
+    {
+        return $this->hasMany(BloodBank::class);
     }
 }

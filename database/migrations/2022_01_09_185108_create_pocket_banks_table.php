@@ -20,6 +20,7 @@ class CreatePocketBanksTable extends Migration
             $table->foreign('blood_bank_id')->references('id')->on('blood_banks')->cascadeOnDelete();
             $table->foreign('blood_pocket_id')->references('id')->on('blood_pockets')->cascadeOnDelete();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

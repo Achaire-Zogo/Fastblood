@@ -22,6 +22,7 @@ class CreateForumsTable extends Migration
             $table->text('description')->nullable();
             $table->foreign('administrator')->references('id')->on('users')->cascadeOnDelete();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

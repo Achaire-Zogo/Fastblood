@@ -20,6 +20,7 @@ class CreateUserForumsTable extends Migration
             $table->foreign('forum_id')->references('id')->on('forums')->cascadeOnDelete();
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

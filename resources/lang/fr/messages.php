@@ -84,7 +84,7 @@ return [
     'accounts' => 'Comptes',
     'add_account' => 'Ajouter un compte',
     'roles' => 'Roles',
+    'profile_picture' => 'Photo de profil',
+    'edit_account' => 'Modifier compte',
     ''
-
-
 ];

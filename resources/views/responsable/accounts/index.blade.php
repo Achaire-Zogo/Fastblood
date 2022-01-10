@@ -42,19 +42,33 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>Name</td>
-                                        <td>example@domain.com</td>
-                                        <td>646534543</td>
-                                        <td>
-                                            <span class="badge badge-success">{{ __('messages.enabled') }}</span>
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-info">
-                                                <i data-feather="edit-2"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    @foreach($users as $user)
+                                        <tr>
+                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td>{{ $user->telephone }}</td>
+                                            <td>
+                                                @if($user->enabled == 1)
+                                                    <span class="badge badge-success">{{ __('messages.enabled') }}</span>
+                                                @else
+                                                    <span class="badge badge-danger">{{ __('messages.disabled') }}</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('responsable.account.edit', $user->id) }}" class="btn btn-info">
+                                                    <i class="fas fa-pen"></i>
+                                                </a>
+                                                <a class="btn btn-outline-danger" href="" onclick="event.preventDefault();
+                                                     document.getElementById('delete-form').submit();" title=" {{ __('messages.delete') }}">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </a>
+                                                <form id="delete-form" action="{{ route('responsable.account.destroy', $user->id) }}" method="POST" class="d-none">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

@@ -19,6 +19,7 @@ class CreatePartnersTable extends Migration
             $table->string('description')->nullable();
             $table->string('contact')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

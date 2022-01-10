@@ -19,6 +19,7 @@ class CreateDemandsTable extends Migration
             $table->integer('condition');
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

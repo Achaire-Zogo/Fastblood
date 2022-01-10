@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class TypeAssociation extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['name'];
+
+    public function associations()
+    {
+        return $this->hasMany(Association::class);
+    }
 }

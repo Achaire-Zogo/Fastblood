@@ -20,6 +20,7 @@ class CreateUserBanksTable extends Migration
             $table->foreign('blood_bank_id')->references('id')->on('blood_banks')->cascadeOnDelete();
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

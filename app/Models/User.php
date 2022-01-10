@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Kirschbaum\PowerJoins\PowerJoins;
@@ -11,7 +12,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, PowerJoins;
+    use HasApiTokens, HasFactory, Notifiable, PowerJoins, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -33,24 +34,29 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    public function groupe()
-    {
-        return $this->hasMany(Groupe::class);
-    }
-
-    public function groupeusers()
-    {
-        return $this->hasMany(GroupeUser::class);
-    }
-
     public function bloodbanks()
     {
         return $this->hasMany(BloodBank::class);
     }
 
-    public function usersossignals()
+    public function demands()
     {
-        return $this->hasMany(UserSosSignal::class);
+        return $this->hasMany(Demand::class);
+    }
+
+    public function forums()
+    {
+        return $this->hasMany(Forum::class);
+    }
+
+    public function userforums()
+    {
+        return $this->hasMany(UserForum::class);
+    }
+
+    public function userbanks()
+    {
+        return $this->hasMany(UserBank::class);
     }
 
     /**

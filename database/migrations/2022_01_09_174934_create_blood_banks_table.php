@@ -21,6 +21,7 @@ class CreateBloodBanksTable extends Migration
             $table->integer('status')->default(0);
             $table->foreign('fosa_id')->references('id')->on('fosas')->cascadeOnDelete();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

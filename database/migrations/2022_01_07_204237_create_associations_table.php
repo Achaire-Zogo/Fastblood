@@ -23,7 +23,7 @@ class CreateAssociationsTable extends Migration
             $table->string('siege')->nullable();
             $table->string('description')->nullable();
             $table->timestamps();
-
+            $table->softDeletes();
             $table->foreign('type_association_id')->references('id')->on('type_associations')->cascadeOnDelete();
         });
     }

@@ -16,7 +16,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{{ route('responsable.dashboard.index') }}">{{ __('messages.dashboard') }}</a></li>
                                     <li class="breadcrumb-item"><a href="{{ route('responsable.account.index') }}">{{ __('messages.accounts') }}</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">{{ __('messages.add_account') }}</li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ __('messages.edit_account') }}</li>
                                 </ol>
                             </nav>
                         </div>
@@ -32,11 +32,12 @@
                             </h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('responsable.account.store') }}" method="POST">
+                            <form action="{{ route('responsable.account.update', $user->id) }}" method="POST">
                                 @csrf
+                                @method('PUT')
                                 <div class="form-group">
                                     <label>{{ __('messages.name') }}</label>
-                                    <input type="text" name="name" class="form-control" required>
+                                    <input type="text" value="{{ $user->name }}" name="name" class="form-control" required>
                                 </div>
 
                                 <div class="form-group">
@@ -50,12 +51,12 @@
 
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="email" class="form-control" name="email" required placeholder="Email address" />
+                                    <input type="email" value="{{ $user->email }}" class="form-control" name="email" required placeholder="Email address" />
                                 </div>
 
                                 <div class="form-group">
                                     <label>Telephone</label>
-                                    <input type="tel" name="telephone" id="telephone" class="form-control" required>
+                                    <input type="tel" name="telephone" value="{{ $user->telephone }}" id="telephone" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label>{{ __('messages.password') }}</label>
