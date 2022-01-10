@@ -1,7 +1,7 @@
 
 @extends('layout')
-@section('body')
- 
+@section('content')
+
     <!-- ***** Hero Area Start ***** -->
     <section class="hero-area">
         <div class="hero-slides owl-carousel">
@@ -73,33 +73,15 @@
                                                 <div class="col-12 col-md-4">
                                                     <div class="form-group">
                                                         <select class="form-control" id="speciality">
-                                                        <option>Speciality 1</option>
-                                                        <option>Speciality 2</option>
-                                                        <option>Speciality 3</option>
-                                                        <option>Speciality 4</option>
-                                                        <option>Speciality 5</option>
+                                                        <option>Centre De Sante</option>
                                                     </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-4">
                                                     <div class="form-group">
                                                         <select class="form-control" id="doctors">
-                                                        <option>Doctors 1</option>
-                                                        <option>Doctors 2</option>
-                                                        <option>Doctors 3</option>
-                                                        <option>Doctors 4</option>
-                                                        <option>Doctors 5</option>
+                                                        <option>Groupe A+</option>
                                                     </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 col-md-2">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" name="date" id="date" placeholder="Date">
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 col-md-2">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" name="time" id="time" placeholder="Time">
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-4">
@@ -107,24 +89,9 @@
                                                         <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="name" id="name" placeholder="Name">
                                                     </div>
                                                 </div>
-                                                <div class="col-12 col-md-4">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="number" id="number" placeholder="Phone">
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 col-md-4">
-                                                    <div class="form-group">
-                                                        <input type="email" class="form-control border-top-0 border-right-0 border-left-0" name="email" id="email" placeholder="E-mail">
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 col-md-7">
-                                                    <div class="form-group mb-0">
-                                                        <textarea name="message" class="form-control mb-0 border-top-0 border-right-0 border-left-0" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-                                                    </div>
-                                                </div>
                                                 <div class="col-12 col-md-5 mb-0">
                                                     <div class="form-group mb-0">
-                                                        <button type="submit" class="btn medilife-btn">Make an Appointment </button>
+                                                        <button type="submit" class="btn medilife-btn">Faire une Demande</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -157,8 +124,8 @@
             </div>
         </div>
         <!-- ***** Book An Appoinment Area End ***** -->
-    
-s    
+
+s
     <!-- ***** Features Area Start ***** -->
     <div class="medilife-features-area section-padding-100">
         <div class="container">
@@ -281,14 +248,14 @@ s
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="row">
                         <div class="col-md-4">
                             <article class="post mt-30">
                                 <div class="post-preview">
                                     <a href="#"><img src="img/blog-img/3.jpg" alt="" class="img-fluid mx-auto d-block"></a>
                                 </div>
-    
+
                                 <div class="post-header">
                                     <h4 class="post-title"><a href="#"> The business woman hard work</a></h4>
                                     <ul class="post-meta">
@@ -296,13 +263,13 @@ s
                                         <li><i class="mdi mdi-tag-text-outline"></i>
                                             <a href="#"> <small style="font-style: italic;">Le direceteur</small></a></li>
                                     </ul>
-    
+
                                     <div class="post-content">
                                         <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
                                     </div>
-    
+
                                     <span class="bar"></span>
-    
+
                                     <div class="post-footer">
                                         <div class="likes">
                                             <ul class="post-meta">
@@ -317,13 +284,13 @@ s
                                 </div>
                             </article>
                         </div>
-                        
+
                         <div class="col-md-4">
                             <article class="post mt-30">
                                 <div class="post-preview">
                                     <a href="#"><img src="img/blog-img/2.jpg" alt="" class="img-fluid mx-auto d-block"></a>
                                 </div>
-    
+
                                 <div class="post-header">
                                     <h4 class="post-title"><a href="#">Business adviser analyzing financial</a></h4>
                                     <ul class="post-meta">
@@ -334,9 +301,9 @@ s
                                     <div class="post-content">
                                         <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
                                     </div>
-    
+
                                     <span class="bar"></span>
-    
+
                                     <div class="post-footer">
                                         <div class="likes">
                                             <ul class="post-meta">
@@ -351,13 +318,13 @@ s
                                 </div>
                             </article>
                         </div>
-                            
+
                         <div class="col-md-4">
                             <article class="post mt-30">
                                 <div class="post-preview">
                                     <a href="#"><img src="img/blog-img/1.jpg" alt="" class="img-fluid mx-auto d-block"></a>
                                 </div>
-    
+
                                 <div class="post-header">
                                     <h4 class="post-title"><a href="#">The progress work of the company</a></h4>
                                     <ul class="post-meta">
@@ -365,13 +332,13 @@ s
                                         <li><i class="mdi mdi-tag-text-outline"></i>
                                             <a href="#"> <small style="font-style: italic;">Center Bank</small></a></li>
                                     </ul>
-    
+
                                     <div class="post-content">
                                         <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
                                     </div>
-    
+
                                     <span class="bar"></span>
-    
+
                                     <div class="post-footer">
                                         <div class="likes">
                                             <ul class="post-meta">
@@ -397,7 +364,7 @@ s
                 </div>
             </section>
             <!-- BLOG END -->
-    
+
         <!-- WORK START -->
 
         <!-- BLOG START -->
@@ -413,14 +380,14 @@ s
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="row">
                         <div class="col-md-4">
                             <article class="post mt-30">
                                 <div class="post-preview">
                                     <a href="#"><img src="img/blog-img/3.jpg" alt="" class="img-fluid mx-auto d-block"></a>
                                 </div>
-    
+
                                 <div class="post-header">
                                     <h4 class="post-title"><a href="#"> The business woman hard work</a></h4>
                                     <ul class="post-meta">
@@ -428,13 +395,13 @@ s
                                         <li><i class="mdi mdi-tag-text-outline"></i>
                                             <a href="#"> <small style="font-style: italic;">Le direceteur</small></a></li>
                                     </ul>
-    
+
                                     <div class="post-content">
                                         <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
                                     </div>
-    
+
                                     <span class="bar"></span>
-    
+
                                     <div class="post-footer">
                                         <div class="likes">
                                             <ul class="post-meta">
@@ -449,13 +416,13 @@ s
                                 </div>
                             </article>
                         </div>
-                        
+
                         <div class="col-md-4">
                             <article class="post mt-30">
                                 <div class="post-preview">
                                     <a href="#"><img src="img/blog-img/2.jpg" alt="" class="img-fluid mx-auto d-block"></a>
                                 </div>
-    
+
                                 <div class="post-header">
                                     <h4 class="post-title"><a href="#">Business adviser analyzing financial</a></h4>
                                     <ul class="post-meta">
@@ -466,9 +433,9 @@ s
                                     <div class="post-content">
                                         <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
                                     </div>
-    
+
                                     <span class="bar"></span>
-    
+
                                     <div class="post-footer">
                                         <div class="likes">
                                             <ul class="post-meta">
@@ -483,13 +450,13 @@ s
                                 </div>
                             </article>
                         </div>
-                            
+
                         <div class="col-md-4">
                             <article class="post mt-30">
                                 <div class="post-preview">
                                     <a href="#"><img src="img/blog-img/1.jpg" alt="" class="img-fluid mx-auto d-block"></a>
                                 </div>
-    
+
                                 <div class="post-header">
                                     <h4 class="post-title"><a href="#">The progress work of the company</a></h4>
                                     <ul class="post-meta">
@@ -497,13 +464,13 @@ s
                                         <li><i class="mdi mdi-tag-text-outline"></i>
                                             <a href="#"> <small style="font-style: italic;">Center Bank</small></a></li>
                                     </ul>
-    
+
                                     <div class="post-content">
                                         <p class="text-muted">These cases are perfectly simple and easy to distinguish. In a free hour, when nothing prevents our being able to do what we like best.</p>
                                     </div>
-    
+
                                     <span class="bar"></span>
-    
+
                                     <div class="post-footer">
                                         <div class="likes">
                                             <ul class="post-meta">
@@ -607,10 +574,10 @@ s
                             <a href="#" class="headline">Good news for the pacients</a>
                             <p>Dolor sit amet, consecte tuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
                             <a href="#" class="comments">3 Comments</a>
-                        </div> 
+                        </div>
                     </div>
                 </div>
-            </div>   
+            </div>
             <div class="row mb-30">
                 <div class="col-md-12">
                     <div class="text-center mt-10">

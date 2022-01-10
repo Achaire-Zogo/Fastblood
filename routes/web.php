@@ -79,3 +79,5 @@ Route::get('/listeAssociation/user', [App\Http\Controllers\user\ListeAssociation
 Route::get('/MesAssociation/user', [App\Http\Controllers\user\MesAssociationController::class, 'index'])->name('MesAssociation');
 Route::get('/creerAssociation/user', [App\Http\Controllers\user\CreerAssociationController::class, 'index'])->name('creerAssociation');
 
+//route pour le directeur
+Route::get('/tableau_de_bord', 'App\Http\Controllers\directeur\DashboardController@index' )->name('DB_Directeur');

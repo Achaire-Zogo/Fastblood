@@ -40,17 +40,17 @@ class LoginController extends Controller
 
     protected function authenticated($request, $user)
     {
-        if ($user->role_id==1) {
+        if ($user->role_id == 1 && $user->enabled == 1) {
             $this->redirectTo = route('admin.dashboard.index');
-        } elseif($user->role_id == 2) {
+        } elseif($user->role_id == 2 && $user->enabled == 1) {
             $this->redirectTo = route('directeur.dashboard.index');
-        } elseif ($user->role_id == 3) {
+        } elseif ($user->role_id == 3 && $user->enabled == 1) {
             $this->redirectTo = route('responsable.dashboard.index');
-        } elseif($user->role_id == 4) {
-            $this->redirectTo = route('gestionnaire.dashboard.index');
-        } else {
+        } elseif($user->role_id == 4 && $user->enabled == 1) {
+            $this->redirectTo = route('gestionnaire');
+        } elseif($user->role_id == 5 && $user->enabled == 1) {
             $this->redirectTo = route('user.dashboard.index');
         }
     }
-   
+
 }
