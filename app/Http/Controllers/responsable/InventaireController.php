@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\directeur;
+namespace App\Http\Controllers\responsable;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class InventaireController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('director.dashboard');
+        return view('responsable.inventaires.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+        return view('responsable.inventaires.create');
     }
 
     /**
