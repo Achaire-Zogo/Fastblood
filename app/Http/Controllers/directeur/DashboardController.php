@@ -4,6 +4,7 @@ namespace App\Http\Controllers\directeur;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -14,8 +15,20 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $post = DB::table('blood_pockets')->get('*')->toArray();
+      foreach($post as $row)
+       {
+          $data[] = array
+           (
+            'label'=>$row->blood_group,
+            'y'=>$row->date_prelevement
+           );
+       }
+        // return view('director.index',['data' => $data])
         return view('director.index');
     }
+
+
 
     /**
      * Show the form for creating a new resource.

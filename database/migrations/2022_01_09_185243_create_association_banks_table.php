@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMouvementsTable extends Migration
+class CreateAssociationBanksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,14 @@ class CreateMouvementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('mouvements', function (Blueprint $table) {
+        Schema::create('association_banks', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('blood_bank_id');
-            $table->unsignedBigInteger('blood_pocket_id');
-            $table->integer('type_mouvement');
-            $table->date('date_mouvement');
-
+            $table->unsignedBigInteger('association_id');
             $table->foreign('blood_bank_id')->references('id')->on('blood_banks')->cascadeOnDelete();
-            $table->foreign('blood_pocket_id')->references('id')->on('blood_pockets')->cascadeOnDelete();
+            $table->foreign('association_id')->references('id')->on('associations')->cascadeOnDelete();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -33,6 +31,6 @@ class CreateMouvementsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mouvements');
+        Schema::dropIfExists('association_banks');
     }
 }

@@ -28,7 +28,7 @@ class DonationController extends Controller
      */
     public function create()
     {
-        $banks = BloodBank::where('enabled', 1)->get();
+        $banks = BloodBank::where('status', 1)->get();
         return view('user.donation.create', compact('banks'));
     }
 

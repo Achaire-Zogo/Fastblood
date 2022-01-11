@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserSosSignalsTable extends Migration
+class CreateUserBanksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateUserSosSignalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_sos_signals', function (Blueprint $table) {
+        Schema::create('user_banks', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('blood_bank_id');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('sos_id');
-            $table->integer('enabled')->default(0);
-            $table->timestamps();
-
+            $table->foreign('blood_bank_id')->references('id')->on('blood_banks')->cascadeOnDelete();
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
-            $table->foreign('sos_id')->references('id')->on('sos')->cascadeOnDelete();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -32,6 +31,6 @@ class CreateUserSosSignalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_sos_signals');
+        Schema::dropIfExists('user_banks');
     }
 }

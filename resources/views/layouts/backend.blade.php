@@ -231,20 +231,20 @@
                         <a href="{{ route('user.dashboard.index') }}" class="nav-link"><i data-feather="monitor"></i><span>{{ __('messages.dashboard') }}</span></a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                            data-feather="briefcase"></i><span>Banque DE sang</span></a>
-                        <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="#">Voir les banques de sang</a></li>
-                          <li><a class="nav-link" href="#">Inventaires</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Comptes</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="#">Comptes responsable</a></li>
-                            <li><a class="nav-link" href="#">Notifications</a></li>
-                        </ul>
-                    </li>
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                data-feather="briefcase"></i><span>Banque de sang</span></a>
+                            <ul class="dropdown-menu">
+                            <li><a class="nav-link" href="{{ route('directeur.BloodBank.index') }}">Voir les banques de sang</a></li>
+                              <li><a class="nav-link" href="{{ route('directeur.Inventaire.index') }}">Inventaires</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Comptes</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="{{ route('directeur.Responsable.index') }}">Comptes responsable</a></li>
+                                <li><a class="nav-link" href="{{ route('directeur.Notification.index') }}">Notifications</a></li>
+                            </ul>
+                        </li>
                     <li class="dropdown">
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Reponses Communautaire</span></a>
                         <ul class="dropdown-menu">

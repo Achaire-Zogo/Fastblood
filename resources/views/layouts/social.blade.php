@@ -70,7 +70,7 @@
 		<div class="top-area">
 			<ul class="main-menu">
 				<li>
-					<a href="/" title="">Allez au CENTRE</a>
+					<a href="/" title="">Allez au Centre</a>
                 </li>
                 <li>
                 <a href="{{route('user.association.index')}}" title="">Discutions</a>
@@ -143,8 +143,13 @@
 					<a href="#" title=""><i class="ti-user"></i> view profile</a>
 					<a href="#" title=""><i class="ti-pencil-alt"></i>edit profile</a>
 					<a href="#" title=""><i class="ti-target"></i>activity log</a>
-					<a href="#" title=""><i class="ti-settings"></i>account setting</a>
-					<a href="#" title=""><i class="ti-power-off"></i>log out</a>
+                    <a href="#" title=""><i class="ti-settings"></i>account setting</a>
+                    <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                    <a href="{{route('logout')}}" title="" onclick="event.preventDefault();this.closest('form').submit();"><i class="ti-power-off"></i>
+                        {{ __('messages.logout') }}
+                    </a>
+                    </form>
 				</div>
 			</div>
 		</div>
@@ -162,39 +167,27 @@
                                             <ul class="naves">
                                                 <li>
                                                     <i class="ti-clipboard"></i>
-                                                    <a href="#" title="">Mes Demandes de Sang</a>
+                                                <a href="{{route('user.demander.create')}}" title="">Faire une Demande</a>
                                                 </li>
                                                 <li>
                                                     <i class="ti-mouse-alt"></i>
-                                                    <a href="#" title="">Mes Dons De Sang</a>
+                                                <a href="{{route('user.donation.create')}}" title="">Faire un Don</a>
                                                 </li>
                                                 <li>
                                                     <i class="ti-files"></i>
-                                                    <a href="#" title="">My pages</a>
+                                                    <a href="#" title="">Creer Une Association</a>
                                                 </li>
                                                 <li>
                                                     <i class="ti-user"></i>
-                                                    <a href="#" title="">friends</a>
+                                                    <a href="#" title="">Mes Association</a>
                                                 </li>
                                                 <li>
-                                                    <i class="ti-image"></i>
-                                                    <a href="#" title="">images</a>
-                                                </li>
-                                                <li>
-                                                    <i class="ti-video-camera"></i>
-                                                    <a href="#" title="">videos</a>
-                                                </li>
-                                                <li>
-                                                    <i class="ti-comments-smiley"></i>
-                                                    <a href="#" title="">Messages</a>
-                                                </li>
-                                                <li>
-                                                    <i class="ti-bell"></i>
-                                                    <a href="#" title="">Notifications</a>
-                                                </li>
-                                                <li>
-                                                    <i class="ti-power-off"></i>
-                                                    <a href="#" title="">Logout</a>
+                                                    <form method="POST" action="{{ route('logout') }}">
+                                                            @csrf
+                                                    <a href="{{route('logout')}}" title="" onclick="event.preventDefault();this.closest('form').submit();"><i class="ti-power-off"></i>
+                                                        {{ __('messages.logout') }}
+                                                    </a>
+                                                    </form>
                                                 </li>
                                             </ul>
                                         </div><!-- Shortcuts -->

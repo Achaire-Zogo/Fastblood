@@ -4,30 +4,36 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BloodBank extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
-    protected $fillable = ['name', 'address', 'user_id', 'enabled'];
+    protected $fillable = ['fosa_id', 'name', 'contact', 'status'];
 
-    public function user()
+    public function fosa()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Fosa::class);
     }
 
-    public function bankpockets()
+    public function bloodpockets()
     {
-        return $this->hasMany(BankPocket::class);
+        return $this->hasMany(BloodPocket::class);
     }
 
-    public function mouvements()
+    public function userbanks()
     {
-        return $this->hasMany(Mouvement::class);
+        return $this->hasMany(UserBank::class);
     }
 
-    public function bloodbankmanager()
+    public function pocketbanks()
     {
-        return $this->hasMany(BloodBankManager::class);
+        return $this->hasMany(PocketBank::class);
+    }
+
+    public function associationbanks()
+    {
+        return $this->hasMany(AssociationBank::class);
     }
 }
