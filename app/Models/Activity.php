@@ -21,4 +21,9 @@ class Activity extends Model
     {
         return $this->hasMany(PartnerActivity::class);
     }
+
+    public function resultats()
+    {
+        return $this->hasMany(Resultat::class);
+    }
 }

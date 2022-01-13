@@ -43,6 +43,27 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($associations as $association)
+                                        <tr>
+                                            <td>{{ $association->association->name }}</td>
+                                            <td>{{ $association->association->description }}</td>
+                                            <td></td>
+                                            <td>{{ $association->association->created_at }}</td>
+                                            <td>
+                                                <a href="{{ route('responsable.association.edit', $association->id) }}" class="btn btn-info">
+                                                    <i class="fas fa-pen"></i>
+                                                </a>
+                                                <a class="btn btn-outline-danger" href="" onclick="event.preventDefault();
+                                                     document.getElementById('delete-form').submit();" title=" {{ __('messages.delete') }}">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </a>
+                                                <form id="delete-form" action="{{ route('responsable.association.destroy', $association->id) }}" method="POST" class="d-none">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

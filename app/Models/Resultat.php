@@ -5,21 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Kirschbaum\PowerJoins\PowerJoins;
 
-class AssociationBank extends Model
+class Resultat extends Model
 {
-    use HasFactory, SoftDeletes, PowerJoins;
+    use HasFactory, SoftDeletes;
 
-    protected $fillable = ['association_id', 'blood_bank_id'];
+    protected $fillable = ['association_id', 'activity_id', 'nbre_personne', 'nbre_poche', 'comments'];
 
     public function association()
     {
         return $this->belongsTo(Association::class);
     }
 
-    public function bloodbank()
+    public function activity()
     {
-        return $this->belongsTo(BloodBank::class);
+        return $this->belongsTo(Activity::class);
     }
 }

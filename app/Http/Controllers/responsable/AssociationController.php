@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\responsable;
 
 use App\Http\Controllers\Controller;
+use App\Models\Association;
+use App\Models\AssociationBank;
+use App\Models\UserBank;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AssociationController extends Controller
 {
@@ -14,7 +18,11 @@ class AssociationController extends Controller
      */
     public function index()
     {
-        return view('responsable.associations.index');
+        /*$user_bank = UserBank::where('user_id', Auth::user()->id)->first();
+        $associations = AssociationBank::where('blood_bank_id', $user_bank->blood_bank_id)->get();*/
+        $associations = AssociationBank::joinRelationship('association');
+        dd($associations);
+        return view('responsable.associations.index', compact('associations'));
     }
 
     /**
